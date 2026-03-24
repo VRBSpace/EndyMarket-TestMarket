@@ -1,0 +1,124 @@
+INFO - 2025-11-25 09:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 09:56:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 09:56:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 09:56:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 09:57:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 09:57:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 09:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 09:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 10:01:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 10:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 10:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 10:07:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 10:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 10:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 10:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 10:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 10:40:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 11:21:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 11:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 11:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 11:23:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 11:23:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 11:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 11:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 11:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 12:00:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:01:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-25 13:02:03 --> CodeIgniter\View\Exceptions\ViewException: Невалиден файл: themes/bestphone/pages/VIEW__assets.php
+in FCPATH/vendor/codeigniter4/framework/system/Exceptions/FrameworkException.php on line 39.
+ 1 FCPATH/vendor/codeigniter4/framework/system/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('themes/bestphone/pages/VIEW__assets.php')
+ 2 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/pages/VIEW__assets', [], true)
+ 3 APPPATH/Controllers/Pages.php(39): view('themes/bestphone/pages/VIEW__assets', [...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Pages->index('assets', 'js', 'theme', 'electro', 'pagePreloader.js')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-25 13:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-25 13:02:28 --> CodeIgniter\View\Exceptions\ViewException: Невалиден файл: themes/bestphone/pages/VIEW__assets.php
+in FCPATH/vendor/codeigniter4/framework/system/Exceptions/FrameworkException.php on line 39.
+ 1 FCPATH/vendor/codeigniter4/framework/system/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('themes/bestphone/pages/VIEW__assets.php')
+ 2 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/pages/VIEW__assets', [], true)
+ 3 APPPATH/Controllers/Pages.php(39): view('themes/bestphone/pages/VIEW__assets', [...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Pages->index('assets', 'js', 'theme', 'electro', 'pagePreloader.js')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-25 13:02:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:02:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:44:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 13:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-25 13:59:57 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Controllers/Account.php on line 49.
+ 1 APPPATH/Controllers/Account.php(49): trim(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Account->login()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Account))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-25 13:59:57 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Controllers/Account.php on line 50.
+ 1 APPPATH/Controllers/Account.php(50): trim(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Account->login()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Account))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-25 13:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 15:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 15:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 15:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 15:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 16:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 16:55:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 17:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 17:04:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 17:04:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-25 17:04:44 --> CodeIgniter\View\Exceptions\ViewException: Невалиден файл: themes/bestphone/pages/VIEW__assets.php
+in FCPATH/vendor/codeigniter4/framework/system/Exceptions/FrameworkException.php on line 39.
+ 1 FCPATH/vendor/codeigniter4/framework/system/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('themes/bestphone/pages/VIEW__assets.php')
+ 2 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/pages/VIEW__assets', [], true)
+ 3 APPPATH/Controllers/Pages.php(39): view('themes/bestphone/pages/VIEW__assets', [...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Pages->index('assets', 'js', 'theme', 'electro', 'pagePreloader.js')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-25 17:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 17:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-25 17:04:48 --> CodeIgniter\View\Exceptions\ViewException: Невалиден файл: themes/bestphone/pages/VIEW__assets.php
+in FCPATH/vendor/codeigniter4/framework/system/Exceptions/FrameworkException.php on line 39.
+ 1 FCPATH/vendor/codeigniter4/framework/system/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('themes/bestphone/pages/VIEW__assets.php')
+ 2 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/pages/VIEW__assets', [], true)
+ 3 APPPATH/Controllers/Pages.php(39): view('themes/bestphone/pages/VIEW__assets', [...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Pages->index('assets', 'js', 'theme', 'electro', 'pagePreloader.js')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-25 17:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 17:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 17:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 17:42:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 17:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 17:52:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 17:52:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-25 20:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,0 +1,315 @@
+.breadcrumb-item{
+     padding-left: 0.2rem  !Important;
+     font-style: italic;
+} 
+
+.breadcrumb-item a{
+     padding: 0.2rem  !Important;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    padding-right: 0.5rem;
+    color: inherit; /* може да се смени на #999 за по-светъл */
+}
+.ec-shopping-bag{
+    cursor:pointer;
+}
+
+#css-ribbon {
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    --r: .8em; /* control the cutout */
+    border-block: .8em solid #0000;
+    padding-inline: calc(var(--r) + .25em) .5em;
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%,0 calc(100% - .25em),var(--r) 50%,0 .25em);
+    background:radial-gradient(.4em 50% at right,#000a,#0000) border-box, #dd0017  padding-box;
+    color: #fff;
+}
+
+#css-carLogo{
+    width: 40px;
+    animation: rotate 3s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate {
+    50% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* По избор: анимиран ефект на пулсиране */
+
+.css-glow-animate::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-20deg);
+    animation: shine 1.5s infinite;
+    z-index: 0;
+}
+
+.css-glow-animate  {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes glowPulse {
+    from {
+        text-shadow:
+            0 0 5px rgb(18, 18, 18),
+            0 0 10px rgb(243, 163, 65),
+            0 0 20px rgb(247, 187, 71)
+    }
+}
+
+.blurred {
+    filter: blur(5px);
+    pointer-events: none; /* Optional: Prevent interaction with blurred content */
+    transition: filter 0.3s ease;
+}
+
+.cart-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+iframe{
+    width: 100%;
+}
+
+/* .ec-add-to-cart:hover {
+    color:#ffe493 !important;
+} */
+
+/* .cart-table td,.cart-table th{
+    color: #000 !important;
+} */
+
+label{
+    margin:0;
+}
+
+.h-50px{
+    height: 50px;
+}
+
+.h-15px{
+    height: 15px;
+}
+
+.w-10px{
+    width: 10px !important;
+}
+.w-10{
+    width: 10% !important;
+}
+.w-5{
+    width: 5% !important;
+}
+
+.font-weight-bold-600 {
+    font-weight: 600 !important;
+}
+.css-counter-ul:not(.dropdown-menu) {
+    list-style-type: none;
+    counter-reset: css-counters 0;
+}
+
+.css-counter-ul li:before {
+    counter-increment: css-counters;
+    content: counters(css-counters, ".") ".";
+}
+
+.row-dashed > tbody > tr {
+    border-bottom: 2px dashed #bababa;
+}
+
+.table-striped > tbody > tr:nth-child(2n) {
+    background-color: #e3e3e3;
+}
+
+td,th{
+    vertical-align: middle;
+}
+
+.text-decoration-line-through{
+    text-decoration: line-through;
+}
+
+.label-latest::before {
+    content: "";
+    border-bottom: 5px solid transparent;
+    border-right: 80px solid #a9897f;
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+}
+
+.label-sale {
+    top: 5px;
+    right: 5px;
+    background: #EA2E49;
+    color: #fff;
+    padding: 5px 5px 6px 5px;
+    position: absolute;
+    width:80px;
+    text-align: center;
+    box-shadow: 0 2px 6px -2px #530505;
+    z-index: 1;
+}
+
+.css-old-price::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: #cb1108;
+    position: relative;
+    bottom: 14px;
+    -ms-transform: rotate(-35deg);
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+}
+
+
+#css-searchBoxEffect {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 16, 15, 0.7);
+
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+
+    -webkit-transform: translate(0px, -100%) scale(0, 0);
+    -moz-transform: translate(0px, -100%) scale(0, 0);
+    -o-transform: translate(0px, -100%) scale(0, 0);
+    -ms-transform: translate(0px, -100%) scale(0, 0);
+    transform: translate(0px, -100%) scale(0, 0);
+
+    opacity: 0;
+}
+
+#css-searchBoxEffect.open {
+    -webkit-transform: translate(0px, 0px) scale(1, 1);
+    -moz-transform: translate(0px, 0px) scale(1, 1);
+    -o-transform: translate(0px, 0px) scale(1, 1);
+    -ms-transform: translate(0px, 0px) scale(1, 1);
+    transform: translate(0px, 0px) scale(1, 1);
+    opacity: 1;
+    z-index: 999;
+}
+
+
+.fw-bold{
+    font-weight: bold;
+}
+
+.well {
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+    display:none;
+    margin:1em;
+    /*    background: #fff;*/
+    width: auto;
+    height: auto;
+    top:50%;
+
+    /*    opacity: 1;
+        visibility: visible;
+        position: fixed;*/
+    overflow: auto;
+    z-index: 100001;
+    top: 20%;
+    left: 0;
+    transform: translate(calc(50vw - 50%));
+
+}
+.well .popup_close {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    border-radius: 2px;
+    background: none;
+    border: 0;
+    font-size: 40px !Important;
+    padding: 0 10px;
+}
+
+
+
+ul.css-grid-columns-2 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+ul.css-grid-columns-3 {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+ul.css-grid-columns-3 {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+/* sweet alert2 styles */
+.colored-toast{
+    font-size: 0.7rem !important;
+}
+
+.colored-toast.swal2-icon-success {
+    background-color: #88ba6b  !important;
+}
+
+.colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+}
+
+.colored-toast.swal2-icon-warning {
+    background-color: #f8bb86 !important;
+}
+
+.colored-toast.swal2-icon-info {
+    background-color: #3fc3ee !important;
+}
+
+.colored-toast.swal2-icon-question {
+    background-color: #87adbd !important;
+}
+
+.colored-toast .swal2-title {
+    color: white;
+}
+
+.colored-toast .swal2-close {
+    color: white;
+}
+
+.colored-toast .swal2-html-container {
+    color: white;
+}/* end sweet alert2 styles */

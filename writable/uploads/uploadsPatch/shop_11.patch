@@ -1,0 +1,92 @@
+Index: app/Views/themes/valpers/shop/VIEW__shop-productsGrid.php
+===================================================================
+--- app/Views/themes/valpers/shop/VIEW__shop-productsGrid.php	(revision 370)
++++ app/Views/themes/valpers/shop/VIEW__shop-productsGrid.php	(working copy)
+@@ -64,13 +64,18 @@
+                                     <div class="text-center text-gray-100 fw-bold <?= $product['is_promo'] && $product['zavishena_zena'] ? 'text-danger' : '' ?>">
+ 
+                                         <?php
+-                                        //  проверка дали е логнат и  продукта дали е промоция  
+-                                        if (session() -> has('user_id') && !$product['is_promo']) {
+-                                            $_price = $product[$productPriceLevel];
+-                                        } else {
++                                        //  проверка дали е логнат и  продукта дали е промоция 
++                                        $_price = $product['cenaKKC'];
++
++                                        if ($product['is_promo']) {
+                                             $_price = $product['cenaPromo'];
+                                         }
+ 
++                                        if (session() -> has('user_id') && empty($product['cenaPromo'])) {
++                                            $_price = $product[$productPriceLevel];
++                                        }
++
++
+                                         echo!empty($_price) ? preg_replace('/\.([0-9]*)/', '<sup class="font-size-14"> .$1</sup>', number_format($_price, 2)) : '';
+                                         ?>
+                                         <small class="fw-bold">лв.</small>
+Index: app/Views/themes/valpers/shop/VIEW__shop-productsList.php
+===================================================================
+--- app/Views/themes/valpers/shop/VIEW__shop-productsList.php	(revision 370)
++++ app/Views/themes/valpers/shop/VIEW__shop-productsList.php	(working copy)
+@@ -76,12 +76,16 @@
+                                     <div class="text-gray-100 fw-bold <?= $product['is_promo'] && $product['zavishena_zena'] ? 'text-danger' : '' ?>">
+                                         <?php
+                                         //  проверка дали е логнат и  продукта дали е промоция  
+-                                        if (session() -> has('user_id') && !$product['is_promo']) {
+-                                            $_price = $product[$productPriceLevel];
+-                                        } else {
++                                        $_price = $product['cenaKKC'];
++
++                                        if ($product['is_promo']) {
+                                             $_price = $product['cenaPromo'];
+                                         }
+ 
++                                        if (session() -> has('user_id') && empty($product['cenaPromo'])) {
++                                            $_price = $product[$productPriceLevel];
++                                        }
++
+                                         echo!empty($_price) ? preg_replace('/\.([0-9]*)/', '<sup class="font-size-14"> .$1</sup>', number_format($_price, 2)) : '';
+                                         ?>
+                                         <small class="fw-bold">лв.</small>
+Index: app/Views/themes/valpers/shop/VIEW__single-product.php
+===================================================================
+--- app/Views/themes/valpers/shop/VIEW__single-product.php	(revision 370)
++++ app/Views/themes/valpers/shop/VIEW__single-product.php	(working copy)
+@@ -34,6 +34,8 @@
+                             <?php
+                             $_price = session() -> has('user_id') ? $product -> $productPriceLevel : $product -> cenaKKC;
+ 
++                            //dd($_price);
++
+                             if ($product -> is_promo && !empty($product -> zavishena_zena)) {
+                                 $_price          = $product -> cenaPromo;
+                                 $_zavishena_zena = $product -> zavishena_zena - $_price;
+@@ -153,11 +155,15 @@
+                                 <div class="mb-4">
+                                     <div class="d-flex align-items-center">
+                                         <?php
+-                                        if (session() -> has('user_id') && !$product -> is_promo) {
+-                                            $_price = $product -> $productPriceLevel;
+-                                        } else {
++                                        $_price = $product -> cenaKKC;
++
++                                        if ($product -> is_promo) {
+                                             $_price = $product -> cenaPromo;
+                                         }
++
++                                        if (session() -> has('user_id') && empty($product -> is_promo)) {
++                                            $_price = $product -> $productPriceLevel;
++                                        }
+                                         ?>
+ 
+                                         <ins class="font-size-36 text-decoration-none fw-bold mr-4 <?= $product -> is_promo && $product -> zavishena_zena ? 'text-danger' : '' ?>">
+@@ -257,7 +263,7 @@
+                                         <div class="table-responsive">
+                                             <table class="table table-hover">
+                                                 <tbody>
+-                                                    <?php $_sizeArr = sizeof($categoryAttributes) // размер на масива   ?>
++                                                    <?php $_sizeArr = sizeof($categoryAttributes) // размер на масива     ?>
+                                                     <?php foreach ($categoryAttributes as $k => $ca): ?>
+                                                         <tr>
+                                                             <td class="col-5 px-4 px-xl-5 border-top-0 border-bottom2 border-end <?= $k == 0 ? 'hrv' : ( $k == $_sizeArr - 1 ? 'hrv' : '') ?>"><?= $ca['category_characteristic_value'] ?? '' ?></td>

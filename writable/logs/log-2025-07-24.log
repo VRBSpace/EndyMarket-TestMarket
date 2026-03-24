@@ -1,0 +1,525 @@
+INFO - 2025-07-24 12:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 13:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 13:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 14:44:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 14:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 15:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 15:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:44:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:48:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:50:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:50:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:53:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 16:53:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 17:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:08:27 --> ErrorException: Undefined variable $categoryId
+in APPPATH/Controllers/Home.php on line 41.
+ 1 APPPATH/Controllers/Home.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoryId', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Home.php', 41)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-07-24 17:17:18 --> mysqli_sql_exception: Unknown column 'latest' in 'ORDER BY' in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.*, `...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*, `...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*, `...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php(174): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Home.php(38): App\Models\MODEL__product->get__all_product(Array)
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-07-24 17:17:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'latest' in 'ORDER BY'
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12', [...], false)
+ 2 APPPATH/Models/MODEL__product.php(174): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Home.php(38): App\Models\MODEL__product->get__all_product([...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-07-24 17:17:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'latest' in 'ORDER BY'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12', [...], false)
+ 4 APPPATH/Models/MODEL__product.php(174): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Home.php(38): App\Models\MODEL__product->get__all_product([...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-07-24 17:17:18 --> [Caused by] mysqli_sql_exception: Unknown column 'latest' in 'ORDER BY'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12', [...], false)
+ 5 APPPATH/Models/MODEL__product.php(174): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(38): App\Models\MODEL__product->get__all_product([...])
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-07-24 17:18:18 --> mysqli_sql_exception: Unknown column 'latest' in 'ORDER BY' in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.*, `...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*, `...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*, `...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php(174): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Home.php(38): App\Models\MODEL__product->get__all_product(Array)
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-07-24 17:18:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'latest' in 'ORDER BY'
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12', [...], false)
+ 2 APPPATH/Models/MODEL__product.php(174): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Home.php(38): App\Models\MODEL__product->get__all_product([...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-07-24 17:18:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'latest' in 'ORDER BY'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12', [...], false)
+ 4 APPPATH/Models/MODEL__product.php(174): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Home.php(38): App\Models\MODEL__product->get__all_product([...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-07-24 17:18:18 --> [Caused by] mysqli_sql_exception: Unknown column 'latest' in 'ORDER BY'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+ORDER BY latest
+ LIMIT 12', [...], false)
+ 5 APPPATH/Models/MODEL__product.php(174): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(38): App\Models\MODEL__product->get__all_product([...])
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:20:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:20:00 --> ErrorException: Undefined variable $products
+in APPPATH/Controllers/Home.php on line 40.
+ 1 APPPATH/Controllers/Home.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $products', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Home.php', 40)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:21:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:21:08 --> ErrorException: Undefined array key "offset"
+in APPPATH/Models/MODEL__product.php on line 159.
+ 1 APPPATH/Models/MODEL__product.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "offset"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 159)
+ 2 APPPATH/Controllers/Home.php(41): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:21:11 --> ErrorException: Undefined array key "offset"
+in APPPATH/Models/MODEL__product.php on line 159.
+ 1 APPPATH/Models/MODEL__product.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "offset"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 159)
+ 2 APPPATH/Controllers/Home.php(41): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:21:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:21:29 --> ErrorException: Undefined array key "offset"
+in APPPATH/Models/MODEL__product.php on line 159.
+ 1 APPPATH/Models/MODEL__product.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "offset"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 159)
+ 2 APPPATH/Controllers/Home.php(41): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:21:30 --> ErrorException: Undefined array key "offset"
+in APPPATH/Models/MODEL__product.php on line 159.
+ 1 APPPATH/Models/MODEL__product.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "offset"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 159)
+ 2 APPPATH/Controllers/Home.php(41): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:21:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:21:41 --> ErrorException: Undefined array key "offset"
+in APPPATH/Models/MODEL__product.php on line 159.
+ 1 APPPATH/Models/MODEL__product.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "offset"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 159)
+ 2 APPPATH/Controllers/Home.php(41): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:21:43 --> ErrorException: Undefined array key "offset"
+in APPPATH/Models/MODEL__product.php on line 159.
+ 1 APPPATH/Models/MODEL__product.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "offset"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 159)
+ 2 APPPATH/Controllers/Home.php(41): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:22:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:22:36 --> ErrorException: Undefined array key "productPriceLevel"
+in APPPATH/Models/MODEL__product.php on line 92.
+ 1 APPPATH/Models/MODEL__product.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "productPriceLevel"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 92)
+ 2 APPPATH/Controllers/Home.php(35): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:22:38 --> ErrorException: Undefined array key "productPriceLevel"
+in APPPATH/Models/MODEL__product.php on line 92.
+ 1 APPPATH/Models/MODEL__product.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "productPriceLevel"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 92)
+ 2 APPPATH/Controllers/Home.php(35): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:23:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:23:27 --> ErrorException: Undefined variable $categoryId
+in APPPATH/Controllers/Home.php on line 31.
+ 1 APPPATH/Controllers/Home.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoryId', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Home.php', 31)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:23:54 --> ErrorException: Undefined array key "productPriceLevel"
+in APPPATH/Models/MODEL__product.php on line 92.
+ 1 APPPATH/Models/MODEL__product.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "productPriceLevel"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 92)
+ 2 APPPATH/Controllers/Home.php(54): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:24:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:24:53 --> ErrorException: Undefined array key "productPriceLevel"
+in APPPATH/Models/MODEL__product.php on line 92.
+ 1 APPPATH/Models/MODEL__product.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "productPriceLevel"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 92)
+ 2 APPPATH/Controllers/Home.php(54): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:26:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:26:33 --> ErrorException: Undefined array key "productPriceLevel"
+in APPPATH/Models/MODEL__product.php on line 92.
+ 1 APPPATH/Models/MODEL__product.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "productPriceLevel"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 92)
+ 2 APPPATH/Controllers/Home.php(56): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:26:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:26:35 --> ErrorException: Undefined array key "productPriceLevel"
+in APPPATH/Models/MODEL__product.php on line 92.
+ 1 APPPATH/Models/MODEL__product.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "productPriceLevel"', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php', 92)
+ 2 APPPATH/Controllers/Home.php(56): App\Models\MODEL__product->get__all_product([...])
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-24 17:27:23 --> ErrorException: Undefined variable $f_isInstock
+in APPPATH/Controllers/Home.php on line 62.
+ 1 APPPATH/Controllers/Home.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $f_isInstock', '/home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Home.php', 62)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-07-24 17:28:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-07-24 17:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,0 +1,9 @@
+CRITICAL - 2025-07-03 07:19:02 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 884.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/Gdpr.php(73): CodeIgniter\Model->__call('getBrands', [])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Gdpr->policy()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gdpr))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(78): CodeIgniter\CodeIgniter->run()

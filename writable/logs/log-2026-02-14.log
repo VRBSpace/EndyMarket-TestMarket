@@ -1,0 +1,409 @@
+INFO - 2026-02-14 00:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 00:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 00:59:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 02:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 02:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 04:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 04:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 04:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 04:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 05:10:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 05:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 05:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 06:29:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 08:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 09:18:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 09:54:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 10:35:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 10:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 10:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 10:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 10:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 13:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 13:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 13:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 13:05:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 13:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 13:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 13:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 13:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 13:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:39:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 16:39:55 --> TypeError: App\Controllers\ResizeImage::resize(): Return value must be of type CodeIgniter\HTTP\ResponseInterface, bool returned
+in APPPATH/Controllers/ResizeImage.php on line 29.
+ 1 APPPATH/Controllers/ResizeImage.php(15): App\Controllers\ResizeImage->resize('', 300, 300)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\ResizeImage->thumb()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResizeImage))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 16:39:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:39:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:39:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:39:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 16:40:59 --> TypeError: App\Controllers\ResizeImage::resize(): Return value must be of type CodeIgniter\HTTP\ResponseInterface, bool returned
+in APPPATH/Controllers/ResizeImage.php on line 29.
+ 1 APPPATH/Controllers/ResizeImage.php(15): App\Controllers\ResizeImage->resize('', 300, 300)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\ResizeImage->thumb()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResizeImage))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 16:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:41:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:41:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:41:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:42:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:42:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 16:42:35 --> TypeError: App\Controllers\ResizeImage::resize(): Return value must be of type CodeIgniter\HTTP\ResponseInterface, bool returned
+in APPPATH/Controllers/ResizeImage.php on line 29.
+ 1 APPPATH/Controllers/ResizeImage.php(15): App\Controllers\ResizeImage->resize('', 300, 300)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\ResizeImage->thumb()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResizeImage))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 16:42:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:43:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:43:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:43:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 16:44:32 --> TypeError: App\Controllers\ResizeImage::resize(): Return value must be of type CodeIgniter\HTTP\ResponseInterface, bool returned
+in APPPATH/Controllers/ResizeImage.php on line 29.
+ 1 APPPATH/Controllers/ResizeImage.php(15): App\Controllers\ResizeImage->resize('', 300, 300)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\ResizeImage->thumb()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResizeImage))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 16:44:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:44:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 16:45:55 --> TypeError: App\Controllers\ResizeImage::resize(): Return value must be of type CodeIgniter\HTTP\ResponseInterface, bool returned
+in APPPATH/Controllers/ResizeImage.php on line 29.
+ 1 APPPATH/Controllers/ResizeImage.php(15): App\Controllers\ResizeImage->resize('', 300, 300)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\ResizeImage->thumb()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResizeImage))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 16:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:46:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 16:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 18:17:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 18:23:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:15:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:01 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('56679')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:07 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('13912')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:18 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('946')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:19 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('7904')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:22 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('950')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:29 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('948')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-14 21:16:32 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Controllers/Account.php on line 49.
+ 1 APPPATH/Controllers/Account.php(49): trim(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Account->login()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Account))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+WARNING - 2026-02-14 21:16:32 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Controllers/Account.php on line 50.
+ 1 APPPATH/Controllers/Account.php(50): trim(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Account->login()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Account))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:36 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('947')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:37 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('5551')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:39 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('949')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:43 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('7901')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:44 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('7903')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:45 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('951')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:49 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('7916')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:51 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('5316')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:51 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('2677')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:52 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('68')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:16:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:55 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('7898')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:16:55 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('2153')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:17:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:17:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:17:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:17:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:35:17 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('56679')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 21:35:32 --> TypeError: App\Controllers\Shop::slugify_bg(): Argument #1 ($text) must be of type string, null given, called in /home/marketbg/public_html/portal.testmarketbg.com/app/Controllers/Shop.php on line 420
+in APPPATH/Controllers/Shop.php on line 38.
+ 1 APPPATH/Controllers/Shop.php(420): App\Controllers\Shop->slugify_bg(null)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('13912')
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2026-02-14 21:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:35:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:36:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:38:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:44:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:53:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:53:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 21:53:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 23:59:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-02-14 23:59:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-14 23:59:56 --> TypeError: App\Controllers\ResizeImage::resize(): Return value must be of type CodeIgniter\HTTP\ResponseInterface, bool returned
+in APPPATH/Controllers/ResizeImage.php on line 29.
+ 1 APPPATH/Controllers/ResizeImage.php(15): App\Controllers\ResizeImage->resize('', 300, 300)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\ResizeImage->thumb()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResizeImage))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()

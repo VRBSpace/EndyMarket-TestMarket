@@ -1,0 +1,723 @@
+INFO - 2025-11-24 13:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 13:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 13:55:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-24 13:55:45 --> ErrorException: Undefined array key "filters"
+in APPPATH/Controllers/Shop.php on line 79.
+ 1 APPPATH/Controllers/Shop.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "filters"', '/home/rnr75/public_html/portal.rnr75.com/app/Controllers/Shop.php', 79)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-24 13:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-24 13:56:21 --> ErrorException: Undefined array key "filters"
+in APPPATH/Controllers/Shop.php on line 79.
+ 1 APPPATH/Controllers/Shop.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "filters"', '/home/rnr75/public_html/portal.rnr75.com/app/Controllers/Shop.php', 79)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-24 13:56:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 13:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-24 13:56:53 --> ErrorException: Undefined array key "filters"
+in APPPATH/Controllers/Shop.php on line 79.
+ 1 APPPATH/Controllers/Shop.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "filters"', '/home/rnr75/public_html/portal.rnr75.com/app/Controllers/Shop.php', 79)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-24 13:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-24 13:58:14 --> ErrorException: Undefined array key "filters"
+in APPPATH/Controllers/Shop.php on line 79.
+ 1 APPPATH/Controllers/Shop.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "filters"', '/home/rnr75/public_html/portal.rnr75.com/app/Controllers/Shop.php', 79)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-24 13:58:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 13:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 13:59:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-24 14:00:44 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8 in /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.`pro...', 0)
+#1 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`pro...')
+#2 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`pro...')
+#3 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`pro...', Array, false)
+#4 /home/rnr75/public_html/portal.rnr75.com/app/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/rnr75/public_html/portal.rnr75.com/app/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories(Array)
+#6 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+#7 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+#8 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/rnr75/public_html/portal.rnr75.com/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-11-24 14:00:44 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN :p.category_id:
+AND `pc`.`category_characteristic_id` IN :pc.category_characteristic_id:
+AND   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', [...], false)
+ 2 APPPATH/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories([...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-11-24 14:00:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN :p.category_id:
+AND `pc`.`category_characteristic_id` IN :pc.category_characteristic_id:
+AND   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', [...], false)
+ 4 APPPATH/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories([...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-11-24 14:00:44 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN :p.category_id:
+AND `pc`.`category_characteristic_id` IN :pc.category_characteristic_id:
+AND   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', [...], false)
+ 5 APPPATH/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories([...])
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-24 14:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-24 14:01:16 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8 in /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.`pro...', 0)
+#1 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`pro...')
+#2 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`pro...')
+#3 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`pro...', Array, false)
+#4 /home/rnr75/public_html/portal.rnr75.com/app/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/rnr75/public_html/portal.rnr75.com/app/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories(Array)
+#6 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+#7 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+#8 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/rnr75/public_html/portal.rnr75.com/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-11-24 14:01:16 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN :p.category_id:
+AND `pc`.`category_characteristic_id` IN :pc.category_characteristic_id:
+AND   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', [...], false)
+ 2 APPPATH/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories([...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-11-24 14:01:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN :p.category_id:
+AND `pc`.`category_characteristic_id` IN :pc.category_characteristic_id:
+AND   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', [...], false)
+ 4 APPPATH/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories([...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-11-24 14:01:16 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN :p.category_id:
+AND `pc`.`category_characteristic_id` IN :pc.category_characteristic_id:
+AND   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', [...], false)
+ 5 APPPATH/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories([...])
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-24 14:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-24 14:01:58 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8 in /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.`pro...', 0)
+#1 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`pro...')
+#2 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`pro...')
+#3 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`pro...', Array, false)
+#4 /home/rnr75/public_html/portal.rnr75.com/app/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/rnr75/public_html/portal.rnr75.com/app/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories(Array)
+#6 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+#7 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+#8 /home/rnr75/public_html/portal.rnr75.com/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/rnr75/public_html/portal.rnr75.com/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-11-24 14:01:58 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN :p.category_id:
+AND `pc`.`category_characteristic_id` IN :pc.category_characteristic_id:
+AND   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', [...], false)
+ 2 APPPATH/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories([...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-11-24 14:01:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN :p.category_id:
+AND `pc`.`category_characteristic_id` IN :pc.category_characteristic_id:
+AND   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', [...], false)
+ 4 APPPATH/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories([...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-11-24 14:01:58 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND   (
+`ps`.`sp_site_id` = '3'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROU...' at line 8
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN (\'315\',\'316\',\'317\')
+AND `pc`.`category_characteristic_id` IN ()
+AND   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `cc`.`category_characteristic_id`, `cc`.`value` AS `characteristic_name`, `pcv`.`product_characteristic_value_id`, `pcv`.`product_characteristic_text`
+FROM `_product_characteristic` `pc`
+INNER JOIN `_product` `p` USING (`product_id`)
+LEFT JOIN `_product_characteristic_value` `pcv` USING (`product_characteristic_value_id`)
+LEFT JOIN `_category_characteristic` `cc` USING (`category_characteristic_id`)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE `p`.`category_id` IN :p.category_id:
+AND `pc`.`category_characteristic_id` IN :pc.category_characteristic_id:
+AND   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+GROUP BY `cc`.`category_characteristic_id`, `pcv`.`product_characteristic_value_id`
+ORDER BY ISNULL(category_char_position), `category_char_position` ASC, ABS(pcv.product_characteristic_text) ASC, `pcv`.`product_characteristic_text` ASC', [...], false)
+ 5 APPPATH/Models/MODEL__filter.php(251): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Shop.php(77): App\Models\MODEL__filter->get_characteristic_filtersBySubcategories([...])
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-24 14:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:06:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:15:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:15:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:20:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:31:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:31:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:31:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:31:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:31:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:43:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:43:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:43:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:43:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:44:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:44:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:44:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:44:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-24 14:45:18 --> Error: Undefined constant "group"
+in APPPATH/Views/themes/bestphone/shop/filter/VIEW__shop-filter-productAttr_1.php on line 81.
+ 1 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include()
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/filter/VIEW__shop-filter-productAttr_1', [], true)
+ 4 APPPATH/Views/themes/bestphone/shop/filter/VIEW__shop-filter.php(51): view('themes/bestphone/shop/filter/VIEW__shop-filter-productAttr_1')
+ 5 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/filter/VIEW__shop-filter.php')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/filter/VIEW__shop-filter', [], true)
+ 8 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(12): view('themes/bestphone/shop/filter/VIEW__shop-filter')
+ 9 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+12 APPPATH/Controllers/Shop.php(211): view('themes/bestphone/shop/VIEW__shop-index', [...])
+13 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-24 14:45:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:49:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:51:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:52:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 14:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:16:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:16:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:18:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:18:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:21:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:21:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:21:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:24:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:24:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:24:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:27:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:33:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:34:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:34:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:36:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:38:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:48:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:50:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:52:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:53:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:55:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:56:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:57:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:58:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 15:59:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:00:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:00:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:02:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:02:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:02:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:02:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:02:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:06:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:06:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:06:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:07:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:07:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:50:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 16:50:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-11-24 19:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

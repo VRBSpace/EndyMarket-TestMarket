@@ -1,0 +1,7 @@
+CRITICAL - 2025-04-20 04:34:52 --> ErrorException: Undefined array key "product_id"
+in APPPATH/Controllers/Checkout.php on line 214.
+ 1 APPPATH/Controllers/Checkout.php(214): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_id"', '/home/bestph615/public_html/portal.bestphone.bg/app/Controllers/Checkout.php', 214)
+ 2 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Checkout->checkout_fastOrder()
+ 3 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(78): CodeIgniter\CodeIgniter->run()

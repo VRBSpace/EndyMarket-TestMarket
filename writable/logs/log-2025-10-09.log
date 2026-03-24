@@ -1,0 +1,1132 @@
+INFO - 2025-10-09 11:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:52:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:54:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:55:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:56:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:57:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:58:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:58:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:58:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:58:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 11:58:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:07:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:07:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:10:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:16:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:20:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:22:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:23:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:23:45 --> ErrorException: Undefined variable $hrefBrand
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 181.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(181): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $hrefBrand', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php', 181)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+ 9 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+10 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+11 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+12 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:24:33 --> ErrorException: Undefined variable $hasBrand
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 182.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(182): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $hasBrand', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php', 182)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+ 9 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+10 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+11 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+12 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:25:02 --> ErrorException: Undefined variable $selectedCatLabel
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 211.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(211): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $selectedCatLabel', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php', 211)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+ 9 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+10 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+11 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+12 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:25:41 --> ErrorException: Undefined variable $esc
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 245.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(245): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $esc', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php', 245)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+ 9 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+10 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+11 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+12 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:26:23 --> ErrorException: Undefined variable $makeUrl
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 261.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(261): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $makeUrl', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php', 261)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+ 9 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+10 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+11 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+12 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:29:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:33:29 --> ErrorException: Undefined variable $brandSel
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 4.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $brandSel', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 4)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(178): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:35:09 --> ErrorException: Undefined variable $brandSel
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 3.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $brandSel', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 3)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(179): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:35:41 --> ErrorException: include(themes/bestphone/shop/VIEW__shop-relationBar-mobile): Failed to open stream: No such file or directory
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 179.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(themes/bestphone/shop/VIEW__shop-relationBar-mobile): Failed to open stream: No such file or directory', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php', 179)
+ 2 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(179): include()
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 4 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 6 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+ 8 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+10 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+11 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+12 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+13 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:35:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:35:53 --> ErrorException: Undefined variable $brandSel
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 3.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $brandSel', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 3)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(179): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:40:43 --> ErrorException: Undefined variable $brandSel
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 3.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $brandSel', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 3)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:41:28 --> ErrorException: Undefined variable $year
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 6.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $year', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 6)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:43:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:43:39 --> ErrorException: Undefined variable $subPath
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 41.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $subPath', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 41)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:44:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:44:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:49:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:50:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:50:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:50:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:52:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:52:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:53:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:53:56 --> ErrorException: Undefined variable $data
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 180.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php', 180)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+ 9 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+10 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+11 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+12 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:56:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:57:34 --> ErrorException: Undefined variable $baseUrl
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 2.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $baseUrl', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 2)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:58:02 --> ErrorException: Undefined variable $clean
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 4.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clean', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 4)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:58:29 --> ErrorException: Undefined variable $clean
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 4.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clean', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 4)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 12:58:47 --> ErrorException: Undefined variable $addSort
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 8.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $addSort', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 8)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 12:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:59:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:59:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:59:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 12:59:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:01:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 13:01:20 --> ErrorException: Undefined variable $esc
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 118.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $esc', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 118)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 13:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:01:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 13:01:58 --> ErrorException: Undefined variable $hasYear
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 55.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $hasYear', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 55)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 13:02:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 13:02:33 --> ErrorException: Undefined variable $hasYear
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 55.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $hasYear', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 55)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 13:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:18:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:22:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:34:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:34:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 13:36:33 --> ErrorException: Undefined variable $data
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 180.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php', 180)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+ 9 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+10 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+11 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+12 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 13:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 13:36:37 --> ErrorException: Undefined variable $data
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 180.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php', 180)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+ 9 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+10 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+11 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+12 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 13:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 13:37:30 --> ParseError: syntax error, unexpected token "}", expecting "," or ";"
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 181.
+ 1 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 3 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 4 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+ 5 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+ 7 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+10 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 13:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:41:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:43:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:44:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:44:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:48:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:49:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:50:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:51:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:51:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:55:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:55:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 13:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:01:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:04:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:06:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:06:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:07:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:11:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:12:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:14:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:16:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:16:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:30:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:30:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:30:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:32:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:32:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:36:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:37:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:42:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:42:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:43:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:43:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:44:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:44:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:51:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 14:51:54 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 51.
+ 1 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include()
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 4 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 5 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 8 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 9 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+12 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+13 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 14:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:52:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 14:53:33 --> TypeError: Cannot access offset of type string on string
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 51.
+ 1 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include()
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 4 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 5 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 8 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+ 9 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+12 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+13 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 14:53:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:55:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 14:55:44 --> ErrorException: Undefined array key 1
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 55.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 55)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 14:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:57:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 14:59:06 --> TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 51.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(51): in_array([...], '138')
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(68): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 14:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 14:59:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:03:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:03:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:03:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:07:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:07:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:08:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:09:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:14:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:15:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:15:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:16:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:16:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:17:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:18:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:18:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:18:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:19:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:19:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:22:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:24:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:40:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:42:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:43:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:43:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:49:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:50:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:51:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:54:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:59:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 15:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:00:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:06:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:07:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:07:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:13:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:13:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:13:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:16:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:16:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:20:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:22:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:24:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:24:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 16:24:57 --> ErrorException: Undefined array key 178
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 50.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 178', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 50)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(78): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 16:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 16:25:01 --> ErrorException: Undefined array key 178
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 50.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 178', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 50)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(78): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 16:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 16:25:01 --> ErrorException: Undefined array key 178
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 50.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 178', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 50)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(78): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 16:25:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 16:25:15 --> ErrorException: Undefined array key 178
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 50.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 178', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 50)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(78): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 16:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 16:25:15 --> ErrorException: Undefined array key 178
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 50.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 178', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 50)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(78): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 16:25:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:25:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:26:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:29:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:29:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:29:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:29:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:29:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 16:29:58 --> ErrorException: Undefined array key 178
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 50.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 178', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 50)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(78): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 16:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 16:29:58 --> ErrorException: Undefined array key 178
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 50.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 178', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 50)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(78): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 16:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-09 16:31:35 --> ErrorException: Undefined array key 178
+in APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php on line 50.
+ 1 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 178', '/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php', 50)
+ 2 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar-mobile.php')
+ 3 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [], true)
+ 5 APPPATH/Views/themes/bestphone/shop/VIEW__shop-relationBar.php(180): view('themes/bestphone/shop/VIEW__shop-relationBar-mobile', [...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php')
+ 7 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-relationBar', [], true)
+ 9 APPPATH/Views/themes/bestphone/shop/VIEW__shop-index.php(78): view('themes/bestphone/shop/VIEW__shop-relationBar')
+10 FCPATH/vendor/codeigniter4/framework/system/View/View.php(228): include('/home/rnr75/public_html/portal.rnr75.com/app/Views/themes/bestphone/shop/VIEW__shop-index.php')
+11 FCPATH/vendor/codeigniter4/framework/system/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/shop/VIEW__shop-index', [], true)
+13 APPPATH/Controllers/Shop.php(248): view('themes/bestphone/shop/VIEW__shop-index', [...])
+14 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+15 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+16 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-10-09 16:31:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:31:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:32:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:32:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:32:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:32:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:37:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:39:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:50:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:51:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:51:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:52:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:53:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:57:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:59:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 16:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:01:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:02:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:03:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:03:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:03:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:23:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:25:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:27:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:28:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:29:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:30:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:32:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:35:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:36:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:36:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:36:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:37:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:37:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:39:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:41:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:41:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:41:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:41:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:41:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:41:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:47:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:53:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:53:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 17:57:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-09 21:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

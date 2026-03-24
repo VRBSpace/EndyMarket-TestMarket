@@ -1,0 +1,670 @@
+[28-Sep-2023 04:12:14 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[28-Sep-2023 04:12:37 Europe/Sofia] PHP Warning:  require(/home/valpersc/public_html/test.valpers.com/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/valpersc/public_html/test.valpers.com/index.php on line 32
+[28-Sep-2023 04:12:37 Europe/Sofia] PHP Fatal error:  Uncaught Error: Failed opening required '/home/valpersc/public_html/test.valpers.com/../app/Config/Paths.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/valpersc/public_html/test.valpers.com/index.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/valpersc/public_html/test.valpers.com/index.php on line 32
+[28-Sep-2023 04:13:07 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[28-Sep-2023 01:14:02 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 01:14:40 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 01:16:03 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 01:18:23 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 01:20:04 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 05:28:46 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 05:43:09 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 05:50:47 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:06:11 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:09:06 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:11:33 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:12:40 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:13:17 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:14:10 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:23:11 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:23:13 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:25:02 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:33:27 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:37:48 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:38:00 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:38:05 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:38:24 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:38:48 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:40:06 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:45:25 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:45:45 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:46:35 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:55:13 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:56:15 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:58:53 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 06:59:07 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 09:28:30 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 12:02:03 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[28-Sep-2023 12:02:10 UTC] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/valpersc/public_html/test.valpers.com/app/Controllers/BaseController.php on line 69
+[29-Sep-2023 13:24:04 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:04 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:04 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:04 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:04 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:04 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:04 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:04 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:04 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:04 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:05 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:05 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 13:24:21 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.29. in /home/valpersc/public_html/test.valpers.com/vendor/composer/platform_check.php on line 24
+[29-Sep-2023 15:22:11 Europe/Sofia] PHP Fatal error:  Uncaught Error: Failed opening required '/home/valpersc/public_html/test.valpers.com//app/Config/Paths.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/valpersc/public_html/test.valpers.com/index.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/valpersc/public_html/test.valpers.com/index.php on line 32
+[06-Oct-2023 12:34:22 Europe/Sofia] PHP Fatal error:  Uncaught Error: Failed opening required '/home/valpersc/public_html/test.valpers.com//app/Config/Paths.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/valpersc/public_html/test.valpers.com/index.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/valpersc/public_html/test.valpers.com/index.php on line 32
+[10-Oct-2023 06:10:44 UTC] PHP Fatal error:  Cannot use App\Models\CenovaListaModel as CenovaListaModel because the name is already in use in /home/valpersc/public_html/test.valpers.com/app/Controllers/Gdpr.php on line 9
+[01-Dec-2023 01:46:49 Europe/Sofia] PHP Fatal error:  Cannot redeclare auto() (previously declared in /home/offeooye/public_html/portal2.offertabg.com/app/Views/layouts/header/VIEW__head.php:4) in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/index.php on line 415
+[01-Dec-2023 12:29:20 Europe/Sofia] PHP Fatal error:  Can't use nullsafe operator in write context in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/CenovaLista.php on line 39
+[08-Dec-2023 21:49:58 Europe/Sofia] PHP Fatal error:  Cannot redeclare url_exists() (previously declared in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php:195) in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 195
+[09-Dec-2023 00:45:59 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:47:32 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:48:57 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:49:56 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:50:06 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:50:22 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:51:34 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:53:01 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:53:20 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:53:34 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:55:16 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:56:00 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 00:59:50 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 01:01:56 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 01:03:01 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 01:04:25 Europe/Sofia] PHP Deprecated:  Optional parameter $cache declared before required parameter $fn is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 652
+[09-Dec-2023 03:10:01 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 70866712 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 323
+[09-Dec-2023 03:38:29 Europe/Sofia] PHP Fatal error:  Cannot redeclare resizeImage() (previously declared in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php:314) in /home/offeooye/public_html/portal2.offertabg.com/app/Views/shop/VIEW__shop-index.php on line 314
+[17-Dec-2023 16:50:36 Europe/Sofia] PHP Fatal error:  Cannot redeclare auto() (previously declared in /home/offeooye/public_html/portal2.offertabg.com/app/Views/layouts/header/VIEW__head.php:5) in /home/offeooye/public_html/portal2.offertabg.com/app/Views/layouts/footer/VIEW__footer.php on line 360
+[17-Dec-2023 16:50:55 Europe/Sofia] PHP Fatal error:  Cannot redeclare auto() (previously declared in /home/offeooye/public_html/portal2.offertabg.com/app/Views/layouts/header/VIEW__head.php:5) in /home/offeooye/public_html/portal2.offertabg.com/app/Views/layouts/footer/VIEW__footer.php on line 360
+[17-Dec-2023 16:50:59 Europe/Sofia] PHP Fatal error:  Cannot redeclare auto() (previously declared in /home/offeooye/public_html/portal2.offertabg.com/app/Views/layouts/header/VIEW__head.php:5) in /home/offeooye/public_html/portal2.offertabg.com/app/Views/layouts/footer/VIEW__footer.php on line 360
+[24-Dec-2023 10:10:20 Europe/Sofia] PHP Fatal error:  Can't use function return value in write context in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/Checkout.php on line 32
+[24-Dec-2023 10:11:33 Europe/Sofia] PHP Fatal error:  Can't use function return value in write context in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/Checkout.php on line 32
+[28-Dec-2023 23:10:08 Europe/Sofia] PHP Fatal error:  Cannot use empty array elements in arrays in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/Shop.php on line 99
+[29-Dec-2023 11:20:33 Europe/Sofia] PHP Fatal error:  Cannot use [] for reading in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/CenovaLista.php on line 37
+[03-Jan-2024 13:57:01 Europe/Sofia] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/Checkout.php on line 36
+[03-Jan-2024 13:58:01 Europe/Sofia] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/Checkout.php on line 36
+[10-Jan-2024 02:52:24 Europe/Sofia] PHP Fatal error:  Uncaught Error: Failed opening required '/home/offeooye/public_html/portal2.offertabg.com//app/Config/Paths.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/offeooye/public_html/portal2.offertabg.com/index.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/index.php on line 32
+[10-Jan-2024 02:58:00 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 02:58:19 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 02:59:35 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 02:59:36 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:01:39 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:02:32 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:02:33 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:02:50 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:02:51 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:03:05 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:03:06 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:03:24 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePrefix in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 162
+[10-Jan-2024 03:03:24 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieDomain in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 163
+[10-Jan-2024 03:03:24 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePath in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 164
+[10-Jan-2024 03:03:24 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieSecure in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 165
+[10-Jan-2024 03:03:24 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieHTTPOnly in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 166
+[10-Jan-2024 03:03:44 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePrefix in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 162
+[10-Jan-2024 03:03:44 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieDomain in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 163
+[10-Jan-2024 03:03:44 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePath in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 164
+[10-Jan-2024 03:03:44 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieSecure in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 165
+[10-Jan-2024 03:03:44 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieHTTPOnly in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 166
+[10-Jan-2024 03:04:25 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePrefix in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 162
+[10-Jan-2024 03:04:25 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieDomain in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 163
+[10-Jan-2024 03:04:25 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePath in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 164
+[10-Jan-2024 03:04:25 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieSecure in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 165
+[10-Jan-2024 03:04:25 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieHTTPOnly in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 166
+[10-Jan-2024 03:04:43 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePrefix in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 162
+[10-Jan-2024 03:04:43 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieDomain in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 163
+[10-Jan-2024 03:04:43 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePath in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 164
+[10-Jan-2024 03:04:43 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieSecure in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 165
+[10-Jan-2024 03:04:43 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieHTTPOnly in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 166
+[10-Jan-2024 03:04:57 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePrefix in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 162
+[10-Jan-2024 03:04:57 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieDomain in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 163
+[10-Jan-2024 03:04:57 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePath in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 164
+[10-Jan-2024 03:04:57 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieSecure in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 165
+[10-Jan-2024 03:04:57 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieHTTPOnly in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 166
+[10-Jan-2024 03:05:09 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePrefix in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 162
+[10-Jan-2024 03:05:09 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieDomain in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 163
+[10-Jan-2024 03:05:09 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookiePath in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 164
+[10-Jan-2024 03:05:09 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieSecure in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 165
+[10-Jan-2024 03:05:09 Europe/Sofia] PHP Warning:  Undefined property: Config\App::$cookieHTTPOnly in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/HTTP/Response.php on line 166
+[10-Jan-2024 03:09:54 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:10:31 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:10:58 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:11:21 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:11:22 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:15:02 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:15:31 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:15:32 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(55): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:19:57 Europe/Sofia] PHP Warning:  require(/home/offeooye/public_html/portal2.offertabg.com/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/offeooye/public_html/portal2.offertabg.com/index.php on line 34
+[10-Jan-2024 03:19:57 Europe/Sofia] PHP Fatal error:  Uncaught Error: Failed opening required '/home/offeooye/public_html/portal2.offertabg.com/../app/Config/Paths.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/offeooye/public_html/portal2.offertabg.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/index.php on line 34
+[10-Jan-2024 03:20:29 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(67): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:21:09 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(66): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:21:09 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(66): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:21:58 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(66): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:22:02 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(66): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:24:31 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(66): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 03:26:52 Europe/Sofia] PHP Fatal error:  Uncaught Error: Failed opening required '/home/offeooye/public_html/portal2.offertabg.com/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/offeooye/public_html/portal2.offertabg.com/index.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/index.php on line 40
+[10-Jan-2024 03:39:41 Europe/Sofia] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CodeIgniter\Debug\Exceptions::__construct(), 1 passed in /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php on line 274 and exactly 3 expected in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php:76
+Stack trace:
+#0 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(274): CodeIgniter\Debug\Exceptions->__construct(Object(Config\Exceptions))
+#1 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions(Object(Config\Exceptions), false)
+#2 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#3 /home/offeooye/public_html/portal2.offertabg.com/system/Config/Services.php(269): CodeIgniter\Config\BaseService::getSharedInstance('exceptions', NULL)
+#4 /home/offeooye/public_html/portal2.offertabg.com/system/Config/BaseService.php(258): CodeIgniter\Config\Services::exceptions()
+#5 /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/CodeIgniter.php(187): CodeIgniter\Config\BaseService::__callStatic('exceptions', Array)
+#6 /home/offeooye/public_html/portal2.offertabg.com/index.php(66): CodeIgniter\CodeIgniter->initialize()
+#7 {main}
+  thrown in /home/offeooye/public_html/portal2.offertabg.com/vendor/codeigniter4/framework/system/Debug/Exceptions.php on line 76
+[10-Jan-2024 14:47:34 Europe/Sofia] PHP Deprecated:  Optional parameter $parent declared before required parameter $categories is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Models/MODEL__Test.php on line 35
+[10-Jan-2024 14:47:54 Europe/Sofia] PHP Deprecated:  Optional parameter $parent_id declared before required parameter $categories is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Models/MODEL__Test.php on line 35
+[10-Jan-2024 15:01:52 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Models/MODEL__Test.php on line 45
+[10-Jan-2024 15:03:00 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Models/MODEL__Test.php on line 45
+[10-Jan-2024 15:03:48 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Models/MODEL__Test.php on line 45
+[10-Jan-2024 15:04:11 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Models/MODEL__Test.php on line 46
+[10-Jan-2024 15:04:23 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Models/MODEL__Test.php on line 46
+[10-Jan-2024 15:06:40 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Models/MODEL__Test.php on line 47
+[27-Feb-2024 14:12:27 Europe/Sofia] PHP Fatal error:  Cannot redeclare auto() (previously declared in /home/offeooye/public_html/portal2.offertabg.com/app/Views/themes/valpers/layouts/header/VIEW__head.php:17) in /home/offeooye/public_html/portal2.offertabg.com/app/Views/themes/valpers/layouts/header/VIEW__head.php on line 17
+[27-Feb-2024 15:57:01 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/theme/Home.php on line 16
+[27-Feb-2024 15:57:11 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/theme/Home.php on line 16
+[27-Feb-2024 16:00:20 Europe/Sofia] PHP Fatal error:  Cannot redeclare auto() (previously declared in /home/offeooye/public_html/portal2.offertabg.com/app/Views/themes/valpers/layouts/header/VIEW__head.php:17) in /home/offeooye/public_html/portal2.offertabg.com/app/Views/themes/valpers/layouts/header/VIEW__head.php on line 17
+[27-Feb-2024 16:01:17 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/theme/Home.php on line 17
+[27-Feb-2024 16:03:47 Europe/Sofia] PHP Fatal error:  Trait "App\Traits\SharedControllerTrait" not found in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/theme/Home.php on line 9
+[27-Feb-2024 16:04:06 Europe/Sofia] PHP Fatal error:  Trait "App\Traits\SharedControllerTrait" not found in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/theme/Home.php on line 9
+[27-Feb-2024 16:05:36 Europe/Sofia] PHP Fatal error:  Trait "App\Traits\SharedControllerTrait" not found in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/theme/Home.php on line 9
+[27-Feb-2024 16:05:47 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/theme/Home.php on line 18
+[27-Feb-2024 17:14:15 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262144 bytes) in /home/offeooye/public_html/portal2.offertabg.com/app/Controllers/theme/Home.php on line 15
+[16-May-2024 19:20:09 Europe/Sofia] PHP Deprecated:  Optional parameter $productPriceLevel declared before required parameter $filters is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Models/MODEL__filter.php on line 76
+[16-May-2024 19:20:34 Europe/Sofia] PHP Deprecated:  Optional parameter $productPriceLevel declared before required parameter $filters is implicitly treated as a required parameter in /home/offeooye/public_html/portal2.offertabg.com/app/Models/MODEL__filter.php on line 76
+[07-Aug-2024 09:26:16 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2832
+[07-Aug-2024 09:26:16 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2834
+[07-Aug-2024 09:26:16 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2837
+[29-Aug-2024 11:33:23 Europe/Sofia] PHP Fatal error:  Cannot use "parent" when current class scope has no parent in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 11
+[29-Aug-2024 11:33:35 Europe/Sofia] PHP Fatal error:  Cannot use "parent" when current class scope has no parent in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 13
+[29-Aug-2024 11:33:36 Europe/Sofia] PHP Fatal error:  Cannot use "parent" when current class scope has no parent in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 13
+[29-Aug-2024 11:34:04 Europe/Sofia] PHP Fatal error:  Cannot use "parent" when current class scope has no parent in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 10
+[29-Aug-2024 11:43:39 Europe/Sofia] PHP Fatal error:  Could not check compatibility between Home::initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger) and App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger), because class RequestInterface is not available in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 9
+[29-Aug-2024 11:43:56 Europe/Sofia] PHP Fatal error:  Could not check compatibility between Home::initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger) and App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger), because class RequestInterface is not available in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 9
+[29-Aug-2024 11:44:15 Europe/Sofia] PHP Fatal error:  Could not check compatibility between Home::initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger) and App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger), because class RequestInterface is not available in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 9
+[29-Aug-2024 11:44:16 Europe/Sofia] PHP Fatal error:  Could not check compatibility between Home::initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger) and App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger), because class RequestInterface is not available in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 9
+[29-Aug-2024 12:21:39 Europe/Sofia] PHP Fatal error:  Cannot declare class App\Modifications\Controllers\Home because the name is already in use in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 9
+[29-Aug-2024 12:56:08 Europe/Sofia] PHP Fatal error:  Cannot make non static method App\Controllers\Home::index() static in class App\Modifications\Controllers\Home in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 13
+[29-Aug-2024 15:25:31 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4096 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/Controllers/Home.php on line 17
+[29-Aug-2024 15:30:33 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 118784 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Log/Handlers/FileHandler.php on line 100
+[29-Aug-2024 15:30:48 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 118784 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Log/Handlers/FileHandler.php on line 100
+[29-Aug-2024 15:52:18 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 118784 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Log/Handlers/FileHandler.php on line 100
+[18-Sep-2024 13:34:36 Europe/Sofia] PHP Fatal error:  Cannot use "parent" when current class scope has no parent in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Controllers/Shop_mdf.php on line 20
+[18-Sep-2024 13:36:08 Europe/Sofia] PHP Fatal error:  Could not check compatibility between App\Modifications\bestphone\Controllers\Shop_mdf::initController(App\Modifications\bestphone\Controllers\RequestInterface $request, App\Modifications\bestphone\Controllers\ResponseInterface $response, App\Modifications\bestphone\Controllers\LoggerInterface $logger) and App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger), because class App\Modifications\bestphone\Controllers\RequestInterface is not available in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Controllers/Shop_mdf.php on line 19
+[18-Sep-2024 13:36:43 Europe/Sofia] PHP Fatal error:  Could not check compatibility between App\Modifications\bestphone\Controllers\Shop_mdf::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, App\Modifications\bestphone\Controllers\LoggerInterface $logger) and App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger), because class App\Modifications\bestphone\Controllers\LoggerInterface is not available in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Controllers/Shop_mdf.php on line 22
+[18-Sep-2024 13:43:48 Europe/Sofia] PHP Fatal error:  Could not check compatibility between App\Modifications\bestphone\Controllers\Shop_mdf::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, App\Modifications\bestphone\Controllers\LoggerInterface $logger) and App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger), because class App\Modifications\bestphone\Controllers\LoggerInterface is not available in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Controllers/Shop_mdf.php on line 21
+[18-Sep-2024 13:44:07 Europe/Sofia] PHP Fatal error:  Could not check compatibility between App\Modifications\bestphone\Controllers\Shop_mdf::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, App\Modifications\bestphone\Controllers\LoggerInterface $logger) and App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger), because class App\Modifications\bestphone\Controllers\LoggerInterface is not available in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Controllers/Shop_mdf.php on line 21
+[18-Sep-2024 13:44:45 Europe/Sofia] PHP Fatal error:  Declaration of App\Modifications\bestphone\Controllers\Shop_mdf::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response) must be compatible with App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger) in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Controllers/Shop_mdf.php on line 21
+[18-Sep-2024 16:24:05 Europe/Sofia] PHP Fatal error:  Cannot redeclare auto() (previously declared in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/layouts/header/VIEW__head.php:25) in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/layouts/header/VIEW__head.php on line 25
+[18-Sep-2024 16:27:34 Europe/Sofia] PHP Fatal error:  Cannot redeclare auto() (previously declared in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/layouts/header/VIEW__head.php:25) in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/layouts/header/VIEW__head.php on line 25
+[18-Sep-2024 16:28:39 Europe/Sofia] PHP Fatal error:  Cannot redeclare auto() (previously declared in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/layouts/header/VIEW__head.php:25) in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/layouts/header/VIEW__head.php on line 25
+[18-Sep-2024 16:33:24 Europe/Sofia] PHP Fatal error:  Cannot redeclare auto() (previously declared in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/layouts/header/VIEW__head.php:25) in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/layouts/header/VIEW__head.php on line 25
+[18-Sep-2024 16:34:37 Europe/Sofia] PHP Fatal error:  Cannot redeclare get_logo() (previously declared in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/layouts/header/VIEW__head.php:40) in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/layouts/header/VIEW__head.php on line 40
+[18-Sep-2024 16:35:19 Europe/Sofia] PHP Fatal error:  Cannot declare class JShrink\Minifier, because the name is already in use in /home/infobest/public_html/portal.info.bestphone.bg/Minifier.php on line 32
+[18-Sep-2024 17:55:29 Europe/Sofia] PHP Fatal error:  Cannot declare class App\Models\MODEL__filter, because the name is already in use in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Models/MODELmdf__filter.php on line 7
+[19-Sep-2024 02:18:28 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 135168 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Log/Handlers/FileHandler.php on line 100
+[19-Sep-2024 02:18:52 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 135168 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Log/Handlers/FileHandler.php on line 100
+[19-Sep-2024 02:19:32 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 135168 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Log/Handlers/FileHandler.php on line 100
+[19-Sep-2024 02:20:01 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 135168 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Log/Handlers/FileHandler.php on line 100
+[19-Sep-2024 02:21:02 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 184320 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Log/Handlers/FileHandler.php on line 100
+[01-Oct-2024 20:54:39 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2832
+[01-Oct-2024 20:54:39 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2834
+[01-Oct-2024 20:54:39 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2837
+[02-Oct-2024 00:17:23 Europe/Sofia] PHP Fatal error:  Cannot use App\Models\MODEL__category as MODEL__category because the name is already in use in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Controllers/Home_mdf.php on line 11
+[02-Oct-2024 00:38:10 Europe/Sofia] PHP Fatal error:  Declaration of App\Modifications\bestphone\Controllers\Home_mdf::initController() must be compatible with App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger) in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Controllers/Home_mdf.php on line 21
+[02-Oct-2024 00:42:59 Europe/Sofia] PHP Fatal error:  Cannot redeclare url_exists() (previously declared in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Views/home/layouts/section/VIEW__mdf_home-sectionTabed.php:3) in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/home/layouts/section/VIEW__home-sectionTabed.php on line 10
+[02-Oct-2024 00:43:49 Europe/Sofia] PHP Fatal error:  Cannot redeclare url_exists() (previously declared in /home/infobest/public_html/portal.info.bestphone.bg/app/Modifications/bestphone/Views/home/layouts/section/VIEW__mdf_home-sectionTabed.php:3) in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/themes/bestphone/home/layouts/section/VIEW__home-sectionTabed.php on line 10
+[02-Oct-2024 00:45:25 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 110592 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Log/Handlers/FileHandler.php on line 100
+[03-Oct-2024 14:41:07 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2832
+[03-Oct-2024 14:41:07 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2834
+[03-Oct-2024 14:41:07 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2837
+[15-Oct-2024 13:20:49 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2832
+[15-Oct-2024 13:20:49 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2834
+[15-Oct-2024 13:20:49 Europe/Sofia] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home/infobest/public_html/portal.info.bestphone.bg/app/ThirdParty/dompdf/src/Css/Style.php on line 2837
+[01-Nov-2024 00:47:36 Europe/Sofia] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/infobest/public_html/portal.info.bestphone.bg/vendor/composer/platform_check.php on line 24
+[01-Nov-2024 00:52:45 Europe/Sofia] PHP Fatal error:  Uncaught Error: Failed opening required '/home/infobest/public_html/portal.info.bestphone.bg/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/infobest/public_html/portal.info.bestphone.bg/index.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/index.php on line 40
+[01-Nov-2024 00:53:46 Europe/Sofia] PHP Fatal error:  Uncaught Error: Failed opening required '/home/infobest/public_html/portal.info.bestphone.bg/app/Config/Paths.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/infobest/public_html/portal.info.bestphone.bg/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/index.php on line 34
+[01-Nov-2024 01:00:27 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:00:28 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:00:29 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:00:30 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:00:30 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:00:31 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:00:39 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:00:40 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:00:42 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:01:19 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:01:27 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:01:32 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:01:44 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[01-Nov-2024 01:01:45 Europe/Sofia] PHP Fatal error:  Uncaught ErrorException: file_get_contents(/home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/debug.css): Failed to open stream: No such file or directory in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php:15
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/infobest/...', 15)
+#1 /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php(15): file_get_contents('/home/infobest/...')
+#2 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(258): include('/home/infobest/...')
+#3 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/BaseExceptionHandler.php(261): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#4 /home/infobest/public_html/portal.info.bestphone.bg/system/Debug/ExceptionHandler.php(112): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/home/infobest/...')
+#5 /home/infobest/public_html/portal.info.bestphone.bg/vendor/codeigniter4/framework/system/Debug/Exceptions.php(157): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#6 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#7 {main}
+  thrown in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 15
+[19-Nov-2024 13:57:48 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 157290496 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 101
+[19-Nov-2024 13:57:58 Europe/Sofia] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 157290496 bytes) in /home/infobest/public_html/portal.info.bestphone.bg/app/Views/errors/html/error_exception.php on line 101
+[18-Jul-2025 13:44:13 Europe/Sofia] PHP Fatal error:  Uncaught mysqli_sql_exception: Connection timed out in /home/kukabgeu/public_html/portal.kukabg.eu/index.php:8
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(8): mysqli->__construct('localhost:3308', 'kukabgeu_portal', '#a(Im[Nf@L#f', 'kukabgeu_portal')
+#1 {main}
+  thrown in /home/kukabgeu/public_html/portal.kukabg.eu/index.php on line 8
+[18-Jul-2025 13:44:44 Europe/Sofia] PHP Fatal error:  Uncaught mysqli_sql_exception: Connection timed out in /home/kukabgeu/public_html/portal.kukabg.eu/index.php:8
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(8): mysqli->__construct('localhost:3308', 'kukabgeu_portal', '#a(Im[Nf@L#f', 'kukabgeu_portal')
+#1 {main}
+  thrown in /home/kukabgeu/public_html/portal.kukabg.eu/index.php on line 8
+[08-Aug-2025 22:19:37 Europe/Sofia] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/kukabgeu/public_html/portal.kukabg.eu/app/Views/themes/bestphone/shop/VIEW__shop-relationBar.php on line 75
+[11-Aug-2025 17:35:09 Europe/Sofia] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/kukabgeu/public_html/portal.kukabg.eu/app/Views/themes/bestphone/shop/VIEW__single-product.php on line 47
+[11-Aug-2025 17:35:27 Europe/Sofia] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/kukabgeu/public_html/portal.kukabg.eu/app/Views/themes/bestphone/shop/VIEW__single-product.php on line 47
+[09-Sep-2025 12:19:18 Europe/Sofia] PHP Fatal error:  Cannot use "self" when no class scope is active in /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php on line 67

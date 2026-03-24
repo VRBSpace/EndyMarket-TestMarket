@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jstree basic demos</title>
+	<style>
+	
+	.demo { overflow:auto; border:1px solid silver; min-height:100px; }
+	</style>
+	<link rel="stylesheet" href="css/style.min.css" />
+</head>
+<body>
+	<h1>HTML demo</h1>
+	<a class="btn btn-sm btn-success" id="addRootNode" style="margin-bottom: 10px;" href="javascript:;"><span class="fa fa-plus" style="margin-right: 10px;"></span>Add category</a>
+	
+	<button type="button" class="btn btn-warning btn-sm" onclick="demo_rename();"><i class="glyphicon glyphicon-pencil"></i> Rename</button>
+	
+	<button type="button" class="btn btn-danger btn-sm" onclick="demo_delete();"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+	
+	
+	<button type="button" class="btn btn-danger btn-sm" onclick="demo_all();"><i class="glyphicon glyphicon-remove"></i> All</button>
+	
+	<button type="button" class="btn btn-danger btn-sm" onclick="demo_closeAll();"><i class="glyphicon glyphicon-remove"></i> Close All</button>
+	
+	<input type="text" id="plugins4_q" value="" class="input" style="margin:0em auto 1em auto; display:block; padding:4px; border-radius:4px; border:1px solid silver;">
+	
+	<div id="html" class="demo">
+		<ul>
+			<li id="root" data-jstree='{ "opened" : true, "type":"root"}'>Root node
+				<ul>
+					<li id="77777777777">Child node 1</li>
+					<li>Child node 2
+					
+					
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/jstree.min1.js"></script>
+	
+	<script>
+	
+	
+	
+	// html demo
+	$('#html').jstree({
+  "core" : {
+    "animation" : 0,
+	'force_text' : true,
+    "check_callback" : true,
+
+    "themes" : { "stripes" : true },
+
+  },
+  "types" : {
+    "#" : {
+      "max_children" : 1,
+      "max_depth" : 3,
+      "valid_children" : ["root"]
+    },
+    "root" : {
+      "icon" : "---------",
+      "valid_children" : ["default"]
+    },
+    "default" : {
+      "valid_children" : ["default"]
+    }
+  },
+  "plugins" : [
+    "contextmenu", "changed", "search",
+    "state", "types", "wholerow","sort","unique"
+  ]
+}).on('rename_node.jstree', function (e, data) {
+					alert('rename'+data.text)
+				
+					//$.get('?operation=rename_node', { 'id' : data.node.id, 'text' : data.text })
+						//.done(function (d) {
+							//data.instance.set_id(data.node, d.id);
+						//})
+						
+				}).on('delete_node.jstree', function (e, data) {
+					alert('delete'+data.node.id)
+				
+					//$.get('?operation=rename_node', { 'id' : data.node.id, 'text' : data.text })
+						//.done(function (d) {
+							//data.instance.set_id(data.node, d.id);
+						//})
+						
+				})
+
+$('#plugins4_q').keyup(function () {
+      var v = $('#plugins4_q').val();
+      $('#html').jstree(true).search(v);
+   })
+	
+function demo_rename() {
+	var ref = $('#html').jstree(true),
+		sel = ref.get_selected();
+	if(!sel.length) { return false; }
+	sel = sel[0];
+	
+	if(sel !='root'){
+		ref.edit(sel);
+	}
+
+};
+
+function demo_all() {
+	$('#html').jstree('open_all');
+};
+
+function demo_closeAll() {
+	$('#html').jstree('close_all');
+};
+
+function demo_delete() {
+	var ref = $('#html').jstree(true),
+		sel = ref.get_selected();
+	if(!sel.length) { return false; }
+	
+	if(sel[0] !='root'){
+		ref.delete_node(sel);
+	}
+	
+};
+						
+$('#addRootNode').click(function () {
+
+		var ref = $('#html').jstree(true),
+		sel = ref.get_selected();
+	if(!sel.length) { return false; }
+	sel = sel[0];
+	//sel = ref.create_node(sel, "first",{,"type":"default"});
+	
+	
+	ref.create_node(sel, null, "first", function (data) {
+			this.edit(data);
+		
+		});
+		
+	
+	
+		
+});
+
+
+
+	</script>
+</body>
+</html>

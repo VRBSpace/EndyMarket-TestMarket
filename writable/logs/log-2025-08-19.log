@@ -1,0 +1,632 @@
+INFO - 2025-08-19 08:27:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-19 08:27:19 --> mysqli_sql_exception: Unknown column 'pmv.model_year' in 'SELECT' in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `pl`.*, ...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, ...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, ...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, ...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-08-19 08:27:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 2 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-19 08:27:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 4 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-19 08:27:19 --> [Caused by] mysqli_sql_exception: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 5 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-08-19 08:36:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-19 08:36:59 --> mysqli_sql_exception: Unknown column 'pmv.model_year' in 'SELECT' in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `pl`.*, ...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, ...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, ...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, ...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-08-19 08:36:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 2 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-19 08:36:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 4 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-19 08:36:59 --> [Caused by] mysqli_sql_exception: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 5 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-08-19 12:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-19 12:04:51 --> mysqli_sql_exception: Unknown column 'pmv.model_year' in 'SELECT' in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `pl`.*, ...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, ...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, ...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, ...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-08-19 12:04:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 2 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-19 12:04:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 4 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-19 12:04:51 --> [Caused by] mysqli_sql_exception: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 5 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-08-19 17:04:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-19 17:04:52 --> mysqli_sql_exception: Unknown column 'pmv.model_year' in 'SELECT' in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `pl`.*, ...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, ...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, ...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, ...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-08-19 17:04:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 2 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-19 17:04:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 4 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-19 17:04:52 --> [Caused by] mysqli_sql_exception: Unknown column 'pmv.model_year' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `pl`.*, `b`.`brandTxt`, `b`.`brand_id`, `pmv`.`model_year`, GROUP_CONCAT(DISTINCT p.product_id) AS productIds, `pm`.`model`, `pm`.`product_model_id`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, count(pm.model) as count_additional_models
+FROM `_product` `p`
+INNER JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN (p.model_id, p.model2_id, p.model3_id) AND `pm2`.`product_model_id` != `pm`.`product_model_id`
+LEFT JOIN `_product_model_var` `pmv` ON `pm`.`product_model_id`=`pmv`.`product_model_id`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `pm`.`model` IS NOT NULL
+GROUP BY `pm`.`model`
+ORDER BY `pm`.`model` ASC', [...], false)
+ 5 APPPATH/Models/MODEL__filter.php(132): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(53): App\Models\MODEL__filter->get__brandsModels()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Home->index()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()

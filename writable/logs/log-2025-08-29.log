@@ -1,0 +1,292 @@
+INFO - 2025-08-29 09:54:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:55:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 09:55:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:00:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:01:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:07:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:07:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-29 11:07:56 --> mysqli_sql_exception: Unknown column 'p.oem_code' in 'WHERE' in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.*, `...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*, `...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*, `...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php(208): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Shop.php(344): App\Models\MODEL__product->get__all_product(Array)
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->searchProducts()
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-08-29 11:07:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.oem_code' in 'WHERE'
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+LEFT JOIN `_product_model_var` `pmv` ON `p`.`model_var_id_year`=`pmv`.`product_model_var_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+AND   (
+`p`.`product_name` LIKE :p.product_name: ESCAPE \'!\'
+OR  `p`.`oem_code` LIKE :p.oem_code: ESCAPE \'!\'
+OR  `p`.`upc_code` LIKE :p.upc_code: ESCAPE \'!\'
+OR  `p`.`ean_code` LIKE :p.ean_code: ESCAPE \'!\'
+OR  `p`.`kod_dostavchik` LIKE :p.kod_dostavchik: ESCAPE \'!\'
+ )
+AND  `p`.`product_name` LIKE :p.product_name.1: ESCAPE \'!\'
+GROUP BY `p`.`product_id`', [...], false)
+ 2 APPPATH/Models/MODEL__product.php(208): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Shop.php(344): App\Models\MODEL__product->get__all_product([...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->searchProducts()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-29 11:07:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.oem_code' in 'WHERE'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+LEFT JOIN `_product_model_var` `pmv` ON `p`.`model_var_id_year`=`pmv`.`product_model_var_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+AND   (
+`p`.`product_name` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`oem_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`upc_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`ean_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`kod_dostavchik` LIKE \'%12%\' ESCAPE \'!\'
+ )
+AND  `p`.`product_name` LIKE \'%12%\' ESCAPE \'!\'
+GROUP BY `p`.`product_id`')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+LEFT JOIN `_product_model_var` `pmv` ON `p`.`model_var_id_year`=`pmv`.`product_model_var_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+AND   (
+`p`.`product_name` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`oem_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`upc_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`ean_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`kod_dostavchik` LIKE \'%12%\' ESCAPE \'!\'
+ )
+AND  `p`.`product_name` LIKE \'%12%\' ESCAPE \'!\'
+GROUP BY `p`.`product_id`')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+LEFT JOIN `_product_model_var` `pmv` ON `p`.`model_var_id_year`=`pmv`.`product_model_var_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+AND   (
+`p`.`product_name` LIKE :p.product_name: ESCAPE \'!\'
+OR  `p`.`oem_code` LIKE :p.oem_code: ESCAPE \'!\'
+OR  `p`.`upc_code` LIKE :p.upc_code: ESCAPE \'!\'
+OR  `p`.`ean_code` LIKE :p.ean_code: ESCAPE \'!\'
+OR  `p`.`kod_dostavchik` LIKE :p.kod_dostavchik: ESCAPE \'!\'
+ )
+AND  `p`.`product_name` LIKE :p.product_name.1: ESCAPE \'!\'
+GROUP BY `p`.`product_id`', [...], false)
+ 4 APPPATH/Models/MODEL__product.php(208): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Shop.php(344): App\Models\MODEL__product->get__all_product([...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->searchProducts()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-08-29 11:07:56 --> [Caused by] mysqli_sql_exception: Unknown column 'p.oem_code' in 'WHERE'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+LEFT JOIN `_product_model_var` `pmv` ON `p`.`model_var_id_year`=`pmv`.`product_model_var_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+AND   (
+`p`.`product_name` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`oem_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`upc_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`ean_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`kod_dostavchik` LIKE \'%12%\' ESCAPE \'!\'
+ )
+AND  `p`.`product_name` LIKE \'%12%\' ESCAPE \'!\'
+GROUP BY `p`.`product_id`', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+LEFT JOIN `_product_model_var` `pmv` ON `p`.`model_var_id_year`=`pmv`.`product_model_var_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+AND   (
+`p`.`product_name` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`oem_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`upc_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`ean_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`kod_dostavchik` LIKE \'%12%\' ESCAPE \'!\'
+ )
+AND  `p`.`product_name` LIKE \'%12%\' ESCAPE \'!\'
+GROUP BY `p`.`product_id`')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+LEFT JOIN `_product_model_var` `pmv` ON `p`.`model_var_id_year`=`pmv`.`product_model_var_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+AND   (
+`p`.`product_name` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`oem_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`upc_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`ean_code` LIKE \'%12%\' ESCAPE \'!\'
+OR  `p`.`kod_dostavchik` LIKE \'%12%\' ESCAPE \'!\'
+ )
+AND  `p`.`product_name` LIKE \'%12%\' ESCAPE \'!\'
+GROUP BY `p`.`product_id`')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*, `b`.*, `pl`.*, `pm`.`model`, GROUP_CONCAT(DISTINCT pm2.model) AS additional_models
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+LEFT JOIN `_product_model_var` `pmv` ON `p`.`model_var_id_year`=`pmv`.`product_model_var_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+AND   (
+`p`.`product_name` LIKE :p.product_name: ESCAPE \'!\'
+OR  `p`.`oem_code` LIKE :p.oem_code: ESCAPE \'!\'
+OR  `p`.`upc_code` LIKE :p.upc_code: ESCAPE \'!\'
+OR  `p`.`ean_code` LIKE :p.ean_code: ESCAPE \'!\'
+OR  `p`.`kod_dostavchik` LIKE :p.kod_dostavchik: ESCAPE \'!\'
+ )
+AND  `p`.`product_name` LIKE :p.product_name.1: ESCAPE \'!\'
+GROUP BY `p`.`product_id`', [...], false)
+ 5 APPPATH/Models/MODEL__product.php(208): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Shop.php(344): App\Models\MODEL__product->get__all_product([...])
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->searchProducts()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-08-29 11:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:08:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:10:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:11:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 11:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 12:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:05:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 16:06:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-29 20:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,0 +1,581 @@
+INFO - 2025-09-11 11:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 11:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:22:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-11 15:22:18 --> mysqli_sql_exception: Unknown column 'p.is_promo' in 'SELECT' in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.`pro...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`pro...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`pro...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`pro...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php(302): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-09-11 15:22:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.is_promo' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`is_promo`, `p`.`cenaPromo`, `p`.`zavishena_zena`, `p`.`is_promoKl`, `p`.`cenaPromoKl`, `p`.`zavishenaKl_zena`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+WHERE `p`.`product_id` IN :p.product_id:
+ORDER BY FIELD(p.product_id,952,954)', [...], false)
+ 2 APPPATH/Models/MODEL__product.php(302): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-09-11 15:22:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.is_promo' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`is_promo`, `p`.`cenaPromo`, `p`.`zavishena_zena`, `p`.`is_promoKl`, `p`.`cenaPromoKl`, `p`.`zavishenaKl_zena`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+WHERE `p`.`product_id` IN (952,954)
+ORDER BY FIELD(p.product_id,952,954)')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`is_promo`, `p`.`cenaPromo`, `p`.`zavishena_zena`, `p`.`is_promoKl`, `p`.`cenaPromoKl`, `p`.`zavishenaKl_zena`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+WHERE `p`.`product_id` IN (952,954)
+ORDER BY FIELD(p.product_id,952,954)')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`is_promo`, `p`.`cenaPromo`, `p`.`zavishena_zena`, `p`.`is_promoKl`, `p`.`cenaPromoKl`, `p`.`zavishenaKl_zena`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+WHERE `p`.`product_id` IN :p.product_id:
+ORDER BY FIELD(p.product_id,952,954)', [...], false)
+ 4 APPPATH/Models/MODEL__product.php(302): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-09-11 15:22:18 --> [Caused by] mysqli_sql_exception: Unknown column 'p.is_promo' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`is_promo`, `p`.`cenaPromo`, `p`.`zavishena_zena`, `p`.`is_promoKl`, `p`.`cenaPromoKl`, `p`.`zavishenaKl_zena`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+WHERE `p`.`product_id` IN (952,954)
+ORDER BY FIELD(p.product_id,952,954)', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`is_promo`, `p`.`cenaPromo`, `p`.`zavishena_zena`, `p`.`is_promoKl`, `p`.`cenaPromoKl`, `p`.`zavishenaKl_zena`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+WHERE `p`.`product_id` IN (952,954)
+ORDER BY FIELD(p.product_id,952,954)')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`is_promo`, `p`.`cenaPromo`, `p`.`zavishena_zena`, `p`.`is_promoKl`, `p`.`cenaPromoKl`, `p`.`zavishenaKl_zena`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+WHERE `p`.`product_id` IN (952,954)
+ORDER BY FIELD(p.product_id,952,954)')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`is_promo`, `p`.`cenaPromo`, `p`.`zavishena_zena`, `p`.`is_promoKl`, `p`.`cenaPromoKl`, `p`.`zavishenaKl_zena`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+WHERE `p`.`product_id` IN :p.product_id:
+ORDER BY FIELD(p.product_id,952,954)', [...], false)
+ 5 APPPATH/Models/MODEL__product.php(302): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-09-11 15:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-11 15:22:31 --> mysqli_sql_exception: Column 'product_id' in SELECT is ambiguous in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-09-11 15:22:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_id' in SELECT is ambiguous
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN :product_id:', [...], false)
+ 2 APPPATH/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-09-11 15:22:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_id' in SELECT is ambiguous
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN :product_id:', [...], false)
+ 4 APPPATH/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-09-11 15:22:31 --> [Caused by] mysqli_sql_exception: Column 'product_id' in SELECT is ambiguous
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN :product_id:', [...], false)
+ 5 APPPATH/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-09-11 15:22:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-11 15:22:32 --> mysqli_sql_exception: Column 'product_id' in SELECT is ambiguous in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-09-11 15:22:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_id' in SELECT is ambiguous
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN :product_id:', [...], false)
+ 2 APPPATH/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-09-11 15:22:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_id' in SELECT is ambiguous
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN :product_id:', [...], false)
+ 4 APPPATH/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-09-11 15:22:32 --> [Caused by] mysqli_sql_exception: Column 'product_id' in SELECT is ambiguous
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN :product_id:', [...], false)
+ 5 APPPATH/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-09-11 15:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-11 15:22:53 --> mysqli_sql_exception: Column 'product_id' in SELECT is ambiguous in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `product...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-09-11 15:22:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_id' in SELECT is ambiguous
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN :product_id:', [...], false)
+ 2 APPPATH/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-09-11 15:22:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'product_id' in SELECT is ambiguous
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN :product_id:', [...], false)
+ 4 APPPATH/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-09-11 15:22:53 --> [Caused by] mysqli_sql_exception: Column 'product_id' in SELECT is ambiguous
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN (\'952\',\'954\')')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `product_id`, `product_name`, `image`
+FROM `_product`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+WHERE `product_id` IN :product_id:', [...], false)
+ 5 APPPATH/Models/MODEL__product.php(262): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-09-11 15:23:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-11 15:40:04 --> mysqli_sql_exception: Unknown column 'p.klientIds_to_cenaIndiv' in 'SELECT' in /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.`pro...', 0)
+#1 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`pro...')
+#2 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`pro...')
+#3 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`pro...', Array, false)
+#4 /home/kukabgeu/public_html/portal.kukabg.eu/app/Models/MODEL__product.php(316): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/kukabgeu/public_html/portal.kukabg.eu/app/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+#6 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+#7 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+#8 /home/kukabgeu/public_html/portal.kukabg.eu/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/kukabgeu/public_html/portal.kukabg.eu/index.php(91): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2025-09-11 15:40:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.klientIds_to_cenaIndiv' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`, `pl`.`is_promo` AS `is_promo`, `pl`.`cenaPromo` AS `cenaPromo`, `pl`.`zavishena_zena` AS `zavishena_zena`, `pl`.`is_promoKl` AS `is_promoKl`, `pl`.`cenaPromoKl` AS `cenaPromoKl`, `pl`.`zavishenaKl_zena` AS `zavishenaKl_zena`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id` = `p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `p`.`product_id` IN :p.product_id:
+GROUP BY `p`.`product_id`
+ORDER BY FIELD(p.product_id,952,954)', [...], false)
+ 2 APPPATH/Models/MODEL__product.php(316): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-09-11 15:40:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.klientIds_to_cenaIndiv' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`, `pl`.`is_promo` AS `is_promo`, `pl`.`cenaPromo` AS `cenaPromo`, `pl`.`zavishena_zena` AS `zavishena_zena`, `pl`.`is_promoKl` AS `is_promoKl`, `pl`.`cenaPromoKl` AS `cenaPromoKl`, `pl`.`zavishenaKl_zena` AS `zavishenaKl_zena`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id` = `p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `p`.`product_id` IN (952,954)
+GROUP BY `p`.`product_id`
+ORDER BY FIELD(p.product_id,952,954)')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`, `pl`.`is_promo` AS `is_promo`, `pl`.`cenaPromo` AS `cenaPromo`, `pl`.`zavishena_zena` AS `zavishena_zena`, `pl`.`is_promoKl` AS `is_promoKl`, `pl`.`cenaPromoKl` AS `cenaPromoKl`, `pl`.`zavishenaKl_zena` AS `zavishenaKl_zena`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id` = `p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `p`.`product_id` IN (952,954)
+GROUP BY `p`.`product_id`
+ORDER BY FIELD(p.product_id,952,954)')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`, `pl`.`is_promo` AS `is_promo`, `pl`.`cenaPromo` AS `cenaPromo`, `pl`.`zavishena_zena` AS `zavishena_zena`, `pl`.`is_promoKl` AS `is_promoKl`, `pl`.`cenaPromoKl` AS `cenaPromoKl`, `pl`.`zavishenaKl_zena` AS `zavishenaKl_zena`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id` = `p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `p`.`product_id` IN :p.product_id:
+GROUP BY `p`.`product_id`
+ORDER BY FIELD(p.product_id,952,954)', [...], false)
+ 4 APPPATH/Models/MODEL__product.php(316): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-09-11 15:40:04 --> [Caused by] mysqli_sql_exception: Unknown column 'p.klientIds_to_cenaIndiv' in 'SELECT'
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`, `pl`.`is_promo` AS `is_promo`, `pl`.`cenaPromo` AS `cenaPromo`, `pl`.`zavishena_zena` AS `zavishena_zena`, `pl`.`is_promoKl` AS `is_promoKl`, `pl`.`cenaPromoKl` AS `cenaPromoKl`, `pl`.`zavishenaKl_zena` AS `zavishenaKl_zena`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id` = `p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `p`.`product_id` IN (952,954)
+GROUP BY `p`.`product_id`
+ORDER BY FIELD(p.product_id,952,954)', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`, `pl`.`is_promo` AS `is_promo`, `pl`.`cenaPromo` AS `cenaPromo`, `pl`.`zavishena_zena` AS `zavishena_zena`, `pl`.`is_promoKl` AS `is_promoKl`, `pl`.`cenaPromoKl` AS `cenaPromoKl`, `pl`.`zavishenaKl_zena` AS `zavishenaKl_zena`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id` = `p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `p`.`product_id` IN (952,954)
+GROUP BY `p`.`product_id`
+ORDER BY FIELD(p.product_id,952,954)')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`, `pl`.`is_promo` AS `is_promo`, `pl`.`cenaPromo` AS `cenaPromo`, `pl`.`zavishena_zena` AS `zavishena_zena`, `pl`.`is_promoKl` AS `is_promoKl`, `pl`.`cenaPromoKl` AS `cenaPromoKl`, `pl`.`zavishenaKl_zena` AS `zavishenaKl_zena`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id` = `p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `p`.`product_id` IN (952,954)
+GROUP BY `p`.`product_id`
+ORDER BY FIELD(p.product_id,952,954)')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`product_id`, `p`.`product_name`, `p`.`image`, `p`.`nalichnost`, `p`.`badge_index`, `p`.`klientIds_to_cenaIndiv`, `p`.`cenaIndiv`, `pl`.`cenaKKC` AS `cenaKKC`, `pl`.`is_promo` AS `is_promo`, `pl`.`cenaPromo` AS `cenaPromo`, `pl`.`zavishena_zena` AS `zavishena_zena`, `pl`.`is_promoKl` AS `is_promoKl`, `pl`.`cenaPromoKl` AS `cenaPromoKl`, `pl`.`zavishenaKl_zena` AS `zavishenaKl_zena`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id` = `p`.`product_id`
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id` = `p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `p`.`product_id` IN :p.product_id:
+GROUP BY `p`.`product_id`
+ORDER BY FIELD(p.product_id,952,954)', [...], false)
+ 5 APPPATH/Models/MODEL__product.php(316): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Shop.php(224): App\Models\MODEL__product->get__relatedProducts('["952","954"]')
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->get_single_product('952')
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-09-11 15:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:43:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:43:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:43:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:43:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:43:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:43:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:44:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:44:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:45:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:45:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:45:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:46:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:57:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:57:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:57:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:57:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 15:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:09:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:10:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:15:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:15:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:15:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:18:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:19:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:19:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:19:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:19:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:19:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:19:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:21:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:22:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:22:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:23:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:26:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:27:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:27:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:28:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:28:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:28:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:28:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:28:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 16:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 17:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 17:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 17:24:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 17:24:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-11 17:24:22 --> CodeIgniter\View\Exceptions\ViewException: Невалиден файл: themes/bestphone/pages/VIEW__assets.php
+in FCPATH/vendor/codeigniter4/framework/system/Exceptions/FrameworkException.php on line 39.
+ 1 FCPATH/vendor/codeigniter4/framework/system/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('themes/bestphone/pages/VIEW__assets.php')
+ 2 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/pages/VIEW__assets', [], true)
+ 3 APPPATH/Controllers/Pages.php(39): view('themes/bestphone/pages/VIEW__assets', [...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Pages->index('assets', 'js', 'theme', 'electro', 'pagePreloader.js')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-09-11 17:24:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-11 17:24:23 --> CodeIgniter\View\Exceptions\ViewException: Невалиден файл: themes/bestphone/pages/VIEW__assets.php
+in FCPATH/vendor/codeigniter4/framework/system/Exceptions/FrameworkException.php on line 39.
+ 1 FCPATH/vendor/codeigniter4/framework/system/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('themes/bestphone/pages/VIEW__assets.php')
+ 2 APPPATH/Common.php(31): CodeIgniter\View\View->render('themes/bestphone/pages/VIEW__assets', [], true)
+ 3 APPPATH/Controllers/Pages.php(39): view('themes/bestphone/pages/VIEW__assets', [...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Pages->index('assets', 'js', 'theme', 'electro', 'pagePreloader.js')
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(91): CodeIgniter\CodeIgniter->run()
+INFO - 2025-09-11 17:24:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-11 17:24:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,0 +1,184 @@
+CRITICAL - 2025-05-08 05:56:48 --> CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php on line 647.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `p`.`product_id`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `p`.`brand_id` = :p.brand_id:
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+) CI_count_all_results', [...], false)
+ 2 APPPATH/Models/MODEL__global.php(97): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH/Controllers/Shop.php(132): App\Models\MODEL__global->count__all_product([...])
+ 4 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 5 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(78): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-05-08 05:56:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 311.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `p`.`product_id`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `p`.`brand_id` = \'166\'
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+) CI_count_all_results')
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `p`.`product_id`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `p`.`brand_id` = \'166\'
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+) CI_count_all_results')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `p`.`product_id`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `p`.`brand_id` = :p.brand_id:
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+) CI_count_all_results', [...], false)
+ 4 APPPATH/Models/MODEL__global.php(97): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH/Controllers/Shop.php(132): App\Models\MODEL__global->count__all_product([...])
+ 6 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(78): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-05-08 05:56:48 --> [Caused by] mysqli_sql_exception: MySQL server has gone away
+in FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php on line 306.
+ 1 FCPATH/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `p`.`product_id`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `p`.`brand_id` = \'166\'
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+) CI_count_all_results', 0)
+ 2 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `p`.`product_id`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `p`.`brand_id` = \'166\'
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+) CI_count_all_results')
+ 3 FCPATH/vendor/codeigniter4/framework/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `p`.`product_id`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = \'3\'
+AND `ps`.`visibility_type` IN (0,1)
+ )
+AND `p`.`brand_id` = \'166\'
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+) CI_count_all_results')
+ 4 FCPATH/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1697): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM (
+SELECT `p`.`product_id`
+FROM `_product` `p`
+LEFT JOIN `_product_priceLevel` `pl` ON `pl`.`product_id`=`p`.`product_id`
+LEFT JOIN `_brand` `b` USING (`brand_id`)
+LEFT JOIN `_product_model` `pm` ON `pm`.`product_model_id` IN ( p.model_id,model2_id, p.model3_id)
+LEFT JOIN `_product_model` `pm2` ON `pm2`.`product_model_id` IN ( p.model2_id, p.model3_id)
+INNER JOIN `_product_sites` `ps` ON `ps`.`product_id`=`p`.`product_id`
+WHERE   (
+`ps`.`sp_site_id` = :ps.sp_site_id:
+AND `ps`.`visibility_type` IN :ps.visibility_type:
+ )
+AND `p`.`brand_id` = :p.brand_id:
+AND   (
+`pl`.`cenaKKC` IS NOT NULL
+OR `pl`.`zavishena_zena` != "" and `pl`.`is_promo` = 1
+ )
+GROUP BY `p`.`product_id`
+) CI_count_all_results', [...], false)
+ 5 APPPATH/Models/MODEL__global.php(97): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH/Controllers/Shop.php(132): App\Models\MODEL__global->count__all_product([...])
+ 7 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Shop->index()
+ 8 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 9 FCPATH/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(78): CodeIgniter\CodeIgniter->run()

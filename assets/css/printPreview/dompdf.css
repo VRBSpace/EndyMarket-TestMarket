@@ -1,0 +1,161 @@
+*{ font-family: DejaVu Sans,sans-serif !important;}
+
+@page { 
+    margin-left: 0.4cm;
+    margin-right:0.4cm;
+    margin-top: 0cm;
+    margin-bottom: 1cm;
+    width: 100%;
+}
+
+
+body {
+    margin-left: 0.4cm;
+    margin-right: 0.4cm;
+    margin-top: 0.2cm; 
+    width: 100%;
+}
+.hide{
+    display: none;
+}
+#shablon_header{
+    margin-bottom: 30px !IMPORTANT;
+}
+
+.css-img{
+    max-width: 8em !IMPORTANT;
+    height: auto;
+}
+
+#headerImg{
+   width: 100% !IMPORTANT;
+    height: auto;
+}
+.h3 {
+    font-size: 1.75rem;
+}
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+.text-break {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+}
+.text-white {
+    color: #ffffff !important;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+#hdtbl_products{
+    display: none;
+}
+
+table#nashaFirma td{
+    text-align: center
+}
+
+table#customerData,
+table#customerData td{
+    border:0;
+}
+
+table.css-product{
+    margin-top: 30px;
+}
+table.css-product tr{
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+table.css-product, 
+.css-product th,
+.css-product td {
+    border: 1px solid black;
+}
+
+table{
+    border-collapse: collapse; 
+    width:95% !important;
+}
+
+table thead th{
+    font-size:12px !IMPORTANT;
+    font-weight: bold;
+    padding-left:2% !IMPORTANT;
+}
+
+table:not(.css-product),
+table:not(.css-product) td
+{
+    border:0px !important;
+}
+
+
+
+/* ///////////////////////////////////// */
+/* =========== TBODY ============ */                
+/* ///////////////////////////////////// */
+table tbody td{
+    font-size:12px !IMPORTANT;
+    padding-left:2% !IMPORTANT;
+}
+
+
+/* ///////////////////////////////////// */
+/* =========== TFOOT ============ */                
+/* ///////////////////////////////////// */
+
+table tfoot {
+    font-size:12px !IMPORTANT;
+    text-align:right;
+    display: table-row-group;
+
+}
+
+.akrobatExtraBold{
+    font-family: 'AkrobatExtraBold',Arial,sans-serif;
+}
+.akrobatBold{
+    font-family: 'AkrobatBold',Arial,sans-serif;
+}
+
+.d-flex{display:flex;}
+.d-inline-block{display:inline-block;}
+.m-auto { margin: auto !important;}
+.text-center{text-align: center;}
+.align-top{vertical-align: top !important;}
+.p-0{padding:0}
+.p-2{padding:1em !important;}
+.mb-1, .my-1 {
+    margin-bottom: 0.25rem !important;
+}
+.w-100{width: 100% !important;}
+.w-50{width: 50% !important;}
+.w-30{width: 30% !important;}
+.w-25{width: 25% !important;}
+.w-20{width: 20% !important;}
+.w-15{width: 15% !important;}
+.w-11{width: 11% !important;}
+.w-10{width: 10% !important;}
+.w-8{width: 8% !important;}
+.w-7{width: 7% !important;}
+.w-6{width: 6% !important;}
+.w-5{width: 5% !important;}
+.w-4{width: 4% !important;}
+.w-3{ width: 3% !important;}
+.w-2{ width: 2% !important;}
+.w-1{ width: 1%  !important;}
+.mw-50 {max-width: 50% !important;}
+.mw-90 {max-width: 90% !important;}
+.mw-100 { max-width: 100% !important;}
+
+

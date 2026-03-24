@@ -1,0 +1,30 @@
+
+#cart-table thead th{
+    border-bottom: 1px solid #bababa;
+    font-weight: bold;
+}
+
+#cart-table tfoot tr:nth-child(1){
+    border-top: 1px solid #bababa;
+}
+#cart-table tfoot td{
+    font-weight: bold;
+    color: #747474;
+}
+
+#cart-table tbody td,
+#cart-table tfoot td{
+    padding: 2px;
+}
+
+#cart-table tbody tr:not(.notAutoNum) {
+    counter-increment: row-num;
+}
+#cart-table tbody tr:not(.notAutoNum) td:nth-child(2)::after {
+    content: counter(row-num);
+    display: block;
+}
+
+.css-tbl-deliveryObekt td{
+    padding: 2px !Important;
+}

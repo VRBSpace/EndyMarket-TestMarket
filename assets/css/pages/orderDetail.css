@@ -1,0 +1,27 @@
+
+.css-cart-table thead th{
+    border-bottom: 1px solid #bababa;
+    font-weight: bold;
+}
+
+.css-cart-table tfoot tr:nth-child(1) td{
+    border-top: 1px solid #bababa;
+}
+
+.css-cart-table tfoot td{
+    font-weight: bold;
+    color: #747474;
+}
+
+.css-cart-table tbody td,
+.css-cart-table tfoot td{
+    padding: 2px;
+}
+
+.css-cart-table tbody:not(.notAutoNum) tr {
+    counter-increment: row-num;
+}
+.css-cart-table tbody:not(.notAutoNum) tr td:nth-child(1)::after {
+    content: counter(row-num);
+    display: block;
+}

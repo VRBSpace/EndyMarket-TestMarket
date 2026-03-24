@@ -1,0 +1,44 @@
+/* Лек, бърз прелоадер */
+#page-preloader{
+    position:fixed; inset:0; 
+    z-index:9999;
+    display:flex; 
+    align-items:center; 
+    justify-content:center;
+    background:rgba(255,255,255,.85);
+    opacity:0; visibility:hidden;
+    transition:opacity .12s linear, visibility 0s linear .12s;
+    flex-direction: column;   
+    gap:.75rem;               
+}
+
+@media (prefers-color-scheme: dark){ 
+    #page-preloader{ background:rgba(0,0,0,.35) } 
+}
+
+#page-preloader.is-active{
+    opacity:1; 
+    visibility:visible; 
+    transition:opacity .12s linear;
+}
+
+body.preloader-open{ overflow:hidden }
+
+.spinner{ 
+    width:48px; 
+    height:48px;
+    border-radius:50%;
+    border:4px solid #e5e7eb; 
+    border-top-color:#0d6efd; 
+    animation:spin .9s linear infinite
+}
+
+@keyframes spin{ to{ transform:rotate(360deg) } }
+
+.preloader-text{
+    margin:0; 
+    font-size:1rem; 
+    color:#333 
+}
+
+@media (prefers-color-scheme: dark){ .preloader-text{ color:#f3f4f6 } }
