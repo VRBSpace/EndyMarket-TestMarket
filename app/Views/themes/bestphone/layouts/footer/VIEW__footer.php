@@ -36,6 +36,7 @@
                             <ul class="list-group1 fw-300 list-group-flush list-group-borderless mb-0 list-group-transparent list-unstyled">
                                 <li><a class="list-group-item list-group-item-action" href="<?= route_to('Pages-about') ?>">За нас</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="<?= route_to('Pages-privacyData') ?>">Политика за защита на личните данни</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="<?= route_to('Pages-privacySafe') ?>">Начини за плащане и доставка</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="<?= route_to('Pages-cookiePolicy') ?>">Политика за бисквитки</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="<?= route_to('Pages-uslovia') ?>">Общи правила и условия</a></li>
                             </ul>

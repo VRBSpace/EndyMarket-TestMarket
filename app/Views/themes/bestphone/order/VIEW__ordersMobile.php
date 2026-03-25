@@ -110,9 +110,10 @@
                             ?></div>
 
                         <div><strong>Плащане:&nbsp;</strong><?=
-                            match ($order['payment_method']) {
+                          match ($order['payment_method']) {
                                 'N' => 'в брой',
                                 'B' => 'банков превод',
+                                'C' => 'с карта',
                                 default => ''
                             }
                             ?>

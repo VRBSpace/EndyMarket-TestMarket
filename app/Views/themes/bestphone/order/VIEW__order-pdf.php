@@ -117,11 +117,12 @@
 
             <div class="bg-white border border-color-1 rounded p-3 mb-4">
                 <h3 class="section-title">Метод на плащане</h3>
-                <div class="mb-4">
+             <div class="mb-4">
                     <?=
                     match ($orderData -> payment_method) {
                         'N' => 'в брой',
                         'B' => 'банков превод',
+                        'C' => 'с карта',
                         default => ''
                     }
                     ?>

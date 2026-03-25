@@ -70,6 +70,9 @@ if (!ISMOBILE) {
 
     <input id="cash" class="js-payment_method mb-2" type="radio" name="name" value="N" checked>
     <label for="cash">В брой</label>
+    <br>
+    <input id="card" class="js-payment_method mb-2" type="radio" name="name" value="C">
+    <label for="card">Плащане с карта</label>
 </div>
 
 <div class="mb-2">

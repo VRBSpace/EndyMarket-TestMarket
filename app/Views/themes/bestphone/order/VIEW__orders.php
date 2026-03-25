@@ -120,8 +120,9 @@ if (ISMOBILE) {
 
                             <td><?=
                                 match ($order['payment_method']) {
-                                    'N' => 'в брой',
+                                   'N' => 'в брой',
                                     'B' => 'банков превод',
+                                    'C' => 'с карта',
                                     default => ''
                                 }
                                 ?>

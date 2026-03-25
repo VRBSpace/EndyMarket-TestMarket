@@ -61,6 +61,7 @@ $routes -> group('Dilar', function ($r) {
 $routes -> get('/about', 'Pages::index/about', ['as' => 'Pages-about']);
 $routes -> get('/contact', 'Pages::index/contact', ['as' => 'Pages-contact']);
 $routes -> get('/privacy-data', 'Pages::index/privacyData', ['as' => 'Pages-privacyData']);
+$routes -> get('/plashtane-i-dostavka', 'Pages::index/privacySafe', ['as' => 'Pages-privacySafe']);
 $routes -> get('/terms', 'Pages::index/uslovia', ['as' => 'Pages-uslovia']);
 $routes -> get('/return-policy', 'Pages::index/return', ['as' => 'Pages-return']);
 $routes -> get('/warranty', 'Pages::index/waranty', ['as' => 'Pages-waranty']);

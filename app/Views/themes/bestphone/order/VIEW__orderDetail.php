@@ -121,6 +121,7 @@
                 match ($orderData -> payment_method) {
                     'N' => 'в брой',
                     'B' => 'банков превод',
+                 'C' => 'с карта',
                     default => ''
                 }
                 ?>

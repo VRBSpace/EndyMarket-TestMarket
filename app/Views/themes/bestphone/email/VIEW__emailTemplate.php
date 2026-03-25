@@ -44,7 +44,7 @@
                     </tr>
                 </thead>
 
-                <tbody>
+              <tbody>
                     <tr>
                         <td style="font-size: 12px;border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">
                             <b>Поръчка №: </b><?php echo $orderId ?? '' ?><br>
@@ -54,6 +54,7 @@
                             echo match ($orderData['payment_method']) {
                                 'N' => 'в брой',
                                 'B' => 'банков превод',
+                                'C' => 'с карта',
                                 default => ''
                             }
                             ?><br>
