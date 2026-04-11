@@ -60,10 +60,21 @@ $(function(){ window.initProductPlugins(document); });
                 e.preventDefault();
                 var form = $(this);
                 var isAgree = $('#is_agree:checked');
+                var isPrivacyAgree = $('#is_privacy_agree:checked');
 
                 if (!isAgree.is(':checked')) {
                     Lp.sweetAlert({
                         'text': 'Отметнете Съгласяване с общите правила и условия.',
+                        'icon': 'warning',
+                        'showConfirmButton': true,
+                    });
+
+                    return false;
+                }
+
+                if (!isPrivacyAgree.is(':checked')) {
+                    Lp.sweetAlert({
+                        'text': 'Отметнете съгласяване с политиката за поверителност.',
                         'icon': 'warning',
                         'showConfirmButton': true,
                     });

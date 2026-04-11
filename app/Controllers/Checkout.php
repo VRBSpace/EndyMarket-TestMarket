@@ -250,11 +250,27 @@ class Checkout extends BaseController {
         $jsonData  = $this -> request -> getPost();
         $qty       = (int) ($jsonData['qty'] ?? 1);
         $productId = $jsonData['product_id'];
+        $isAgree   = (int) ($jsonData['is_agree'] ?? 0);
+        $isPrivacyAgree = (int) ($jsonData['is_privacy_agree'] ?? 0);
 
         if (!$productId) {
             return $this -> response -> setJSON([
                         'success'    => false,
                         'errMessage' => 'Невалидно ID на продукт!'
+            ]);
+        }
+
+        if ($isAgree !== 1) {
+            return $this -> response -> setJSON([
+                        'success'    => false,
+                        'errMessage' => 'Необходимо е съгласие с общите правила и условия.'
+            ]);
+        }
+
+        if ($isPrivacyAgree !== 1) {
+            return $this -> response -> setJSON([
+                        'success'    => false,
+                        'errMessage' => 'Необходимо е съгласие с политиката за поверителност.'
             ]);
         }
 

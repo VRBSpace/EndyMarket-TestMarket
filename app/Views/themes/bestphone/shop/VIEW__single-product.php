@@ -760,12 +760,17 @@ if (!empty($variationItems)):
 
                                                 <div class="">
                                                     <h6>Коментар към поръчката (не е задължително)</h6>
-                                                    <input class="form-control fast-order-input" type="text" name="belezka" autocomplete="off">
+                                                   <input class="form-control fast-order-input" type="text" name="belezka" autocomplete="off">
                                                 </div>
 
                                                 <div class="mt-3">
                                                     <input id="is_agree" name="is_agree" type="checkbox" value="1">
                                                     <a href="<?= route_to('Pages-uslovia') ?>" target="_blank" class="text-red">Съгласяване с общите правила и условия</a>
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <input id="is_privacy_agree" name="is_privacy_agree" type="checkbox" value="1">
+                                                    <a href="https://portal.testmarketbg.com/privacy-data" target="_blank" rel="noopener noreferrer" class="text-red">Съгласяване с политика за поверителност</a>
                                                 </div>
 
                                              <div class="mt-4">

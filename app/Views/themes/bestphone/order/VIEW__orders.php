@@ -24,7 +24,7 @@ if (ISMOBILE) {
         <div class="col-12">
             <div class="bg-white border border-color-1 rounded p-3">
                 <div class="table-responsive">
-                    <table id="table-orders" class="table table-hover table-sm mb-0">
+                    <table id="table-orders" class="table table-hover table-sm mb-0 text-center">
                         <thead class="bg-red">
                     <tr>
                         <th class="col-1 py-0"> 
