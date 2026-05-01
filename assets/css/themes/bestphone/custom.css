@@ -1683,6 +1683,48 @@ li.breadcrumb-item {
   margin-bottom: 0 !important;
 }
 
+.new-products-slider .input-group.prodcut-add-cart {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  overflow: visible;
+}
+
+.new-products-slider .css-add-to-cart-quantity {
+  flex: 0 0 78px;
+  width: 78px !important;
+  min-width: 78px;
+  max-width: 78px;
+  padding: 0 8px 0 6px !important;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.new-products-slider .css-add-to-cart-quantity .js-quantity {
+  width: 100%;
+  justify-content: center;
+}
+
+.new-products-slider .css-add-to-cart-quantity .css-add-to-cart-quantity-input {
+  width: 20px;
+  max-width: 20px;
+}
+
+.new-products-slider .css-add-to-cart-quantity::after {
+  display: none;
+}
+
+.new-products-slider .css-btn-add-cart {
+  flex: 1 1 auto;
+  width: auto !important;
+  min-width: 0;
+  padding: 0 12px 0 16px;
+  position: relative;
+  z-index: 1;
+  border-left: 1px solid var(--red-theme) !important;
+}
+
 /* arrows: keep position steady, color on hover */
 .new-products-slider .u-slick__arrow-normal {
   color: #333;

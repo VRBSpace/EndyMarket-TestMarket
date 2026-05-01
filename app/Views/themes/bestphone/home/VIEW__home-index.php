@@ -92,7 +92,7 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                             <div class="<?= ISMOBILE ? '' : 'd-none' ?> w-100 d-xl-block prodcut-add-cart">
         <?php if ($product['nalichnost'] > 0 && $_price > 0): ?>
                                     <div class=" input-group mb-1 prodcut-add-cart">
-                                        <div class="css-add-to-cart-quantity col height-40 py-2 px-3">
+                                        <div class="css-add-to-cart-quantity col">
                                             <div class="js-quantity d-flex align-items-center">
                                                 <div class="">
                                                     <input class="js-result text-dark  css-add-to-cart-quantity-input form-control h-auto border-0 rounded p-0 shadow-none text-center" type="text" value="1" autocomplete="off">

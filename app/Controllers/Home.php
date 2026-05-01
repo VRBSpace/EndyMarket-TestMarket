@@ -42,10 +42,10 @@ class Home extends BaseController {
             ['key' => 'furniture', 'title' => 'Мебели', 'categoryRootId' => 773, 'categoryId' => 773, 'offerId' => 17],
             ['key' => 'flooring', 'title' => 'Подови настилки', 'categoryRootId' => 775, 'categoryId' => 775, 'offerId' => 18],
             ['key' => 'souvenirs', 'title' => 'Сувенири и декорация', 'categoryRootId' => 778, 'categoryId' => 778, 'offerId' => 19],
-            ['key' => 'tableware', 'title' => 'Съдове за хранене', 'categoryRootId' => 186, 'categoryId' => 186, 'offerId' => null],
+            ['key' => 'tableware', 'title' => 'Съдове за хранене', 'categoryRootId' => 186, 'categoryId' => 186, 'offerId' => 9],
         ];
 
-        $cacheKey = 'home_index_' . $productPriceLevel;
+        $cacheKey = $this -> buildHomeCacheKey($productPriceLevel, $categorySections);
         $homeData = service('cache') -> get($cacheKey);
 
         if ($homeData === null) {
@@ -212,6 +212,45 @@ class Home extends BaseController {
 
     private function parseOfferProductIds(string $productsIdText): array {
         return array_values(array_filter(array_map('intval', preg_split('/[^0-9]+/', $productsIdText))));
+    }
+
+    private function buildHomeCacheKey(string $productPriceLevel, array $categorySections): string {
+        $offerIds = [8, 10];
+        foreach ($categorySections as $_section) {
+            $offerId = (int) ($_section['offerId'] ?? 0);
+            if ($offerId > 0) {
+                $offerIds[] = $offerId;
+            }
+        }
+
+        $offerSignature = $this -> getOfferSignature(array_values(array_unique($offerIds)));
+
+        return 'home_index_' . md5(json_encode([
+            'priceLevel'       => $productPriceLevel,
+            'categorySections' => $categorySections,
+            'offerSignature'   => $offerSignature,
+        ]));
+    }
+
+    private function getOfferSignature(array $offerIds): string {
+        if (empty($offerIds)) {
+            return 'no_offers';
+        }
+
+        $rows = db_connect()
+            -> table('_ofer_special')
+            -> select('id, productsID')
+            -> whereIn('id', $offerIds)
+            -> orderBy('id', 'ASC')
+            -> get()
+            -> getResultArray();
+
+        $signatureParts = [];
+        foreach ($rows as $row) {
+            $signatureParts[] = (int) $row['id'] . ':' . trim((string) ($row['productsID'] ?? ''));
+        }
+
+        return md5(implode('|', $signatureParts));
     }
 
     private function buildHomeCategoryBannerItems(array $banerBlock1Images): array {
