@@ -52,7 +52,7 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                         </div>
 
                         <a class="d-block text-center img-fancybox1" href="<?= site_url('product/' . $product['product_id']) ?>">
-                            <img class="lazy img-fluid product-image-height1 h-100 w-100" src="<?= route_to('ResizeImage-thumb') ?>?img=<?= $product['image'] ?>" onerror="this.onerror=null;this.src='<?= $_ENV['app.noImage'] ?>';" alt="...">
+                            <img class="lazy img-fluid product-image-height1 h-100 w-100" src="<?= route_to('ResizeImage-thumb') ?>?img=<?= $product['image'] ?>" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='<?= $_ENV['app.noImage'] ?>';" alt="...">
                         </a>
                         <button
                             type="button"
@@ -168,45 +168,16 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
         // if (ISMOBILE) {
         //     return;
         // }
-        $_sort      = $settings_portal['func']['sort'] ?? '';
         ?>
 
         <div class="container d-flex flex-column gap-3">
             <div class="d-flex align-items-center justify-content-between">
-                <?php
-
-                // събиране на всички банери, филтрирани по сесия, и взимане на 3..10 (пропускаме първите 2)
-                $banerItems = [];
-                if (!empty($banerBlock1_images)) {
-                    $banerBlock1_images = array_column($banerBlock1_images, null, 'key');
-
-                    foreach ($banerBlock1_images as $k => $b) {
-                        // Винаги използваме публичните category банери (като за нерегистрирани)
-                        if ($k === 'home_banerBlock1Dilar') {
-                            continue;
-                        }
-                        if (!empty($b['text'])) {
-                            $_json = json_decode($b['text']);
-                            if (is_array($_json)) {
-                                foreach ($_json as $image) {
-                                    $_imgSrc      = ($_ENV['app.imagePortalDir'] ?? '') . ($image -> img ?? '');
-                                    $_link        = !empty($image -> url) ? $image -> url . ($_sort ?? '') : '#';
-                                    $banerItems[] = ['src' => $_imgSrc, 'link' => $_link];
-                                }
-                            }
-                        }
-                    }
-                }
-                // вземаме от трети до десети
-                $banerItems = array_slice($banerItems, 3, 8);
-                ?>
-
-<?php if (!empty($banerItems)): ?>
+<?php if (!empty($categoryBannerItems ?? [])): ?>
                     <div class="category-banners-scroller <?= ISMOBILE ? 'mt-3' : '' ?>">
-    <?php foreach ($banerItems as $_b): ?>
+    <?php foreach (($categoryBannerItems ?? []) as $_b): ?>
                             <div class="category-banner-item">
                                 <div class="category-banner-thumb position-relative">
-                                    <img class="img-fluid rounded-8 w-100 h-100" src="<?= $_b['src'] ?>" alt="" style="object-fit: cover;">
+                                    <img class="img-fluid rounded-8 w-100 h-100" src="<?= $_b['src'] ?>" loading="lazy" decoding="async" alt="" style="object-fit: cover;">
                                     <a href="<?= $_b['link'] ?>" class="position-absolute w-100 h-100" style="top:0;left:0;"></a>
                                 </div>
                             </div>
@@ -225,8 +196,6 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                 <h2 class="fw-bold h4 mb-0 text-dark heading-slider <?= ISMOBILE ? 'font-size-16' : '' ?>">Намалени продукти</h2>
             </div>
             <div id="js-promo-products-grid" class="tab-pane fade pt-2 show active" role="tabpanel" aria-labelledby="pills-promo-example1-tab" data-target-group="groups">
-<?php $discountProducts = array_slice($sale_products ?? [], 0, 15); ?>
-
                 <div
                     class="js-slick-carousel u-slick new-products-slider"
                     data-arrows-classes="d-none d-xl-block u-slick__arrow-normal u-slick__arrow-centered--y rounded-circle text-black font-size-30 z-index-2"
@@ -334,8 +303,6 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                 <h2 class="fw-bold h4 mb-0 text-dark heading-slider <?= ISMOBILE ? 'font-size-16' : '' ?>">Нови продукти</h2>
             </div>
             <div id="js-products-grid" class="tab-pane fade pt-2 show active" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
-<?php $latestProducts = array_slice($latest_products ?? [], 0, 10); ?>
-
                 <div
                     class="js-slick-carousel u-slick new-products-slider"
                     data-arrows-classes="d-none d-xl-block u-slick__arrow-normal u-slick__arrow-centered--y rounded-circle text-black font-size-30 z-index-2"
@@ -371,7 +338,7 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
     <?php endif; ?>
                 </div>
                 <div class="tab-pane fade pt-2 show active" role="tabpanel" data-target-group="groups">
-    <?php $_items = array_slice($categoryProducts[$_section['key']] ?? [], 0, 15); ?>
+    <?php $_items = $categorySectionItems[$_section['key']] ?? []; ?>
 
                     <div
                         class="js-slick-carousel u-slick new-products-slider"

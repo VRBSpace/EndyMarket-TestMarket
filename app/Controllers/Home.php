@@ -11,6 +11,8 @@ use App\Models\MODEL__setings;
 
 class Home extends BaseController {
 
+    private const HOME_CACHE_TTL = 600;
+
     public function __construct() {
         parent::__construct();
 
@@ -26,76 +28,8 @@ class Home extends BaseController {
     }
 
     public function index() {
-        // $new_products = [];
-        // $new_productsArg = [];
-        
-        // $new_productsArg = [
-        //     // 'categoryId'        => $categoryId,
-        //     // 'categoryRootId'    => $categoryRootId,
-        //     // 'searchName'        => $searchName,
-        //     // 'promo'             => $promo,
-        //     // 'sort'              => $sort,
-        //     // 'to'                => $f_priceRange[1] ?? null,
-        //     // 'from'              => $f_priceRange[0] ?? null,
-        //     // 'page'              => $page,
-        //     // 'nalichnost'        => $f_isInstock,
-        //     // 'dilarUrlId'        => $dilarUrlId,
-        //     // 'brandTxt'          => $brandTxt ?? null,
-        //     // 'models'            => $f_models ?? null,
-        //     // 'subCategoryIds'    => $f_subCatIds,
-        //     // 'brandId'           => $brandId ?? null,
-        //     // 'productPriceLevel' => $productPriceLevel,
-        //     // 'offset'            => $offset,
-        //     'perPage'           => 12
-        // ];
-     
-        $brands         = $this -> MODEL__brand -> get__brands();
-        $product_models = $this -> MODEL__filter -> get__brandsModels();
-        $sales_products = $this -> MODEL__product -> getProductByType('is_onsale');
-
         // На начална страница всички виждат публичната (гост) версия
         $productPriceLevel = 'cenaKKC';
-        $latest_products = [];
-
-        // Взимаме подреден списък с ID от оферта _ofer_special.id = 8
-        $specialOfferId = 8;
-        $specialRow     = db_connect() -> table('_ofer_special') -> where('id', $specialOfferId) -> get() -> getRowArray();
-        $specialIds     = array_values(array_filter(array_map('intval', preg_split('/[^0-9]+/', $specialRow['productsID'] ?? ''))));
-
-        if (!empty($specialIds)) {
-            $latest_products = $this -> MODEL__product -> get__all_product([
-                'productIds'        => $specialIds,
-                'productPriceLevel' => $productPriceLevel,
-                'sort'              => 'FIELD(p.product_id,' . implode(',', $specialIds) . ')',
-                'perPage'           => count($specialIds),
-                'offset'            => 0
-            ]);
-        }
-
-        // Получаване на промо продукти (по badge)
-        $promo_products = $this -> MODEL__product -> get__all_product([
-            'perPage' => 15,
-            'promo-badge' => true,
-            'sort' => 'p.product_id DESC',
-            'productPriceLevel' => $productPriceLevel,
-            'offset' => 0
-        ]);
-
-        // Получаване на намалени продукти от ценова листа _ofer_special.id = 10
-        $sale_products = [];
-        $promoOfferId  = 10;
-        $promoRow      = db_connect() -> table('_ofer_special') -> where('id', $promoOfferId) -> get() -> getRowArray();
-        $promoIds      = array_values(array_filter(array_map('intval', preg_split('/[^0-9]+/', $promoRow['productsID'] ?? ''))));
-
-        if (!empty($promoIds)) {
-            $sale_products = $this -> MODEL__product -> get__all_product([
-                'productIds'        => $promoIds,
-                'productPriceLevel' => $productPriceLevel,
-                'sort'              => 'FIELD(p.product_id,' . implode(',', $promoIds) . ')',
-                'perPage'           => count($promoIds),
-                'offset'            => 0
-            ]);
-        }
 
         // Допълнителни категории
         $categorySections = [
@@ -111,66 +45,28 @@ class Home extends BaseController {
             ['key' => 'tableware', 'title' => 'Съдове за хранене', 'categoryRootId' => 186, 'categoryId' => 186, 'offerId' => null],
         ];
 
-        // събиране на целите клонове за всяка секция (родител + всички подкатегории)
-        $allCategories = $this -> MODEL__category -> getCategories();
-        $byParent      = [];
-        foreach ($allCategories as $_cat) {
-            $byParent[$_cat['parent_id']][] = $_cat;
+        $cacheKey = 'home_index_' . $productPriceLevel;
+        $homeData = service('cache') -> get($cacheKey);
+
+        if ($homeData === null) {
+            $homeData = $this -> buildHomePageData($productPriceLevel, $categorySections);
+            service('cache') -> save($cacheKey, $homeData, self::HOME_CACHE_TTL);
         }
-
-        $categoryProducts = [];
-        foreach ($categorySections as $_section) {
-            $offerId = (int) ($_section['offerId'] ?? 0);
-
-            if ($offerId > 0) {
-                $offerRow = db_connect() -> table('_ofer_special') -> where('id', $offerId) -> get() -> getRowArray();
-                $offerIds = array_values(array_filter(array_map('intval', preg_split('/[^0-9]+/', $offerRow['productsID'] ?? ''))));
-
-                if (!empty($offerIds)) {
-                    $categoryProducts[$_section['key']] = $this -> MODEL__product -> get__all_product([
-                        'productIds'        => $offerIds,
-                        'productPriceLevel' => $productPriceLevel,
-                        'sort'              => 'FIELD(p.product_id,' . implode(',', $offerIds) . ')',
-                        'perPage'           => count($offerIds),
-                        'offset'            => 0
-                    ]);
-                    continue;
-                }
-            }
-
-            $branchIds = $this -> collectCategoryBranchIds($_section['categoryId'], $byParent);
-            $categoryProducts[$_section['key']] = $this -> MODEL__product -> get__all_product([
-                'perPage' => 15,
-                'subCategoryIds' => $branchIds, // включва родителя и наследниците
-                'categoryId' => null, // да не ограничаваме само до един id
-                'sort' => 'p.product_id DESC',
-                'productPriceLevel' => $productPriceLevel,
-                'offset' => 0
-            ]);
-        }
-
-        $productModelsTree  = $this -> buildModelByBrand($brands, $product_models);
-        $slideshow_images   = $this -> MODEL__setings -> get__slideshow_images();
-        $banerBlock1_images = $this -> MODEL__setings -> get__banerBlock1_images();
 
         $data               = [
             'title'              => '',
             'addGlobalJS'        => $this -> addGlobalJS(),
             'addJS'              => $this -> addJS(),
             'addCSS'             => $this -> addCSS(),
-            'latest_products'    => $latest_products,
-            'promo_products'     => $promo_products,
-            'sale_products'      => $sale_products,
             'categorySections'   => $categorySections,
-            'categoryProducts'   => $categoryProducts,
-            'sales_products'     => $sales_products,
-            'productModelsTree'  => array_column($productModelsTree, null, 'brand_id'),
-            'slideshow_images'   => $slideshow_images ?? [],
-            'banerBlock1_images' => $banerBlock1_images ?? [],
             '_sizeTitleProduct'  => 'font-size: 14px;', // Добавяме променливата за стилизиране на заглавията
             // views
             'views'              => $this -> get_views(),
         ];
+
+        foreach ($homeData as $key => $val) {
+            $data[$key] = $val;
+        }
 
         foreach ($this -> global() as $key => $val) {
             $data[$key] = $val;
@@ -218,5 +114,134 @@ class Home extends BaseController {
         ];
 
         return array_merge($plugins, $global, $default, $modals);
+    }
+
+    private function buildHomePageData(string $productPriceLevel, array $categorySections): array {
+        $brands         = $this -> MODEL__brand -> get__brands();
+        $product_models = $this -> MODEL__filter -> get__brandsModels();
+
+        $offerIds = [8, 10];
+        foreach ($categorySections as $_section) {
+            $offerId = (int) ($_section['offerId'] ?? 0);
+            if ($offerId > 0) {
+                $offerIds[] = $offerId;
+            }
+        }
+
+        $offerProductsMap = $this -> getOfferProductsMap(array_values(array_unique($offerIds)), $productPriceLevel);
+
+        $latest_products = $offerProductsMap[8] ?? [];
+        $sale_products   = $offerProductsMap[10] ?? [];
+
+        $allCategories = $this -> MODEL__category -> getCategories();
+        $byParent      = [];
+        foreach ($allCategories as $_cat) {
+            $byParent[$_cat['parent_id']][] = $_cat;
+        }
+
+        $categoryProducts     = [];
+        $categorySectionItems = [];
+        foreach ($categorySections as $_section) {
+            $sectionKey = $_section['key'];
+            $offerId    = (int) ($_section['offerId'] ?? 0);
+
+            if ($offerId > 0 && !empty($offerProductsMap[$offerId])) {
+                $categoryProducts[$sectionKey] = $offerProductsMap[$offerId];
+            } else {
+                $branchIds = $this -> collectCategoryBranchIds($_section['categoryId'], $byParent);
+                $categoryProducts[$sectionKey] = $this -> MODEL__product -> get__all_product([
+                    'perPage'           => 15,
+                    'subCategoryIds'    => $branchIds,
+                    'categoryId'        => null,
+                    'sort'              => 'p.product_id DESC',
+                    'productPriceLevel' => $productPriceLevel,
+                    'offset'            => 0
+                ]);
+            }
+
+            $categorySectionItems[$sectionKey] = array_slice($categoryProducts[$sectionKey] ?? [], 0, 15);
+        }
+
+        $banerBlock1_images = $this -> MODEL__setings -> get__banerBlock1_images();
+
+        return [
+            'latest_products'     => $latest_products,
+            'latestProducts'      => array_slice($latest_products, 0, 10),
+            'sale_products'       => $sale_products,
+            'discountProducts'    => array_slice($sale_products, 0, 15),
+            'categoryProducts'    => $categoryProducts,
+            'categorySectionItems'=> $categorySectionItems,
+            'productModelsTree'   => array_column($this -> buildModelByBrand($brands, $product_models), null, 'brand_id'),
+            'slideshow_images'    => $this -> MODEL__setings -> get__slideshow_images() ?? [],
+            'banerBlock1_images'  => $banerBlock1_images ?? [],
+            'categoryBannerItems' => $this -> buildHomeCategoryBannerItems($banerBlock1_images ?? []),
+        ];
+    }
+
+    private function getOfferProductsMap(array $offerIds, string $productPriceLevel): array {
+        if (empty($offerIds)) {
+            return [];
+        }
+
+        $rows = db_connect()
+            -> table('_ofer_special')
+            -> select('id, productsID')
+            -> whereIn('id', $offerIds)
+            -> get()
+            -> getResultArray();
+
+        $productsMap = [];
+        foreach ($rows as $row) {
+            $ids = $this -> parseOfferProductIds($row['productsID'] ?? '');
+            if (empty($ids)) {
+                $productsMap[(int) $row['id']] = [];
+                continue;
+            }
+
+            $productsMap[(int) $row['id']] = $this -> MODEL__product -> get__all_product([
+                'productIds'        => $ids,
+                'productPriceLevel' => $productPriceLevel,
+                'sort'              => 'FIELD(p.product_id,' . implode(',', $ids) . ')',
+                'perPage'           => count($ids),
+                'offset'            => 0
+            ]);
+        }
+
+        return $productsMap;
+    }
+
+    private function parseOfferProductIds(string $productsIdText): array {
+        return array_values(array_filter(array_map('intval', preg_split('/[^0-9]+/', $productsIdText))));
+    }
+
+    private function buildHomeCategoryBannerItems(array $banerBlock1Images): array {
+        $portalSettings = $this -> get_portalSettings();
+        $funcSettings   = json_decode($portalSettings['func']['text'] ?? '[]', true);
+        $sort           = !empty($funcSettings['sort']) ? '&sort=' . str_replace('price', 'cenaKKC', $funcSettings['sort']) : '';
+        $banerItems = [];
+
+        if (!empty($banerBlock1Images)) {
+            $indexed = array_column($banerBlock1Images, null, 'key');
+
+            foreach ($indexed as $key => $banner) {
+                if ($key === 'home_banerBlock1Dilar' || empty($banner['text'])) {
+                    continue;
+                }
+
+                $_json = json_decode($banner['text']);
+                if (!is_array($_json)) {
+                    continue;
+                }
+
+                foreach ($_json as $image) {
+                    $banerItems[] = [
+                        'src'  => ($_ENV['app.imagePortalDir'] ?? '') . ($image -> img ?? ''),
+                        'link' => !empty($image -> url) ? $image -> url . $sort : '#',
+                    ];
+                }
+            }
+        }
+
+        return array_slice($banerItems, 3, 8);
     }
 }
