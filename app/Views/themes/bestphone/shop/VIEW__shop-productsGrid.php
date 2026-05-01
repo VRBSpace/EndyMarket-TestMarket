@@ -26,6 +26,9 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
         $_price = $_basePrice;
     }
 
+    $_displayBasePrice = $_basePrice;
+    $_displayPrice = $_price;
+
     ob_start(); ?>
     <div class="js-product-item css-product-item product-item mb-4 h-100" data-id="<?= $product['product_id'] ?>">
         <div class="product-item__outer w-100">
@@ -69,20 +72,16 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                         <div class="prodcut-price d-flex">
                             <?php if ($_percent !== null): ?>
                                 <div class="css-old-price text-gray font-size-15 mr-2">
-                                    <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-12">.$1</sup>', number_format($_basePrice, 2)) ?>
+                                    <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-12">.$1</sup>', number_format($_displayBasePrice, 2)) ?>
                                     <small><?= get_valuta() ?></small>
                                     <!-- <small class="discount">- <?= $_percent ?? '' ?> %</small> -->
                                 </div>
                             <?php endif ?>
 
                             <div class="text-center font-size-16 text-red fw-bold <?= ($_percent !== null) ? 'text-danger' : '' ?>">
-                                <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-14">.$1</sup>', number_format($_price, 2)) ?>
+                                <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-14">.$1</sup>', number_format($_displayPrice, 2)) ?>
                                 <small class="fw-bold"><?= get_valuta() ?></small>
-                                <div class="ml-3 text-center font-size-16 text-gray-100 fw-bold <?= ($_percent !== null) ? 'text-danger' : '' ?>">
-                                    <div class="col p-0">
-                                        <?= priceToEur($_price) ?>
-                                    </div>
-                                </div>
+                                <span class="font-size-13 text-gray-100 fw-500"> <?= '/ ' . priceToEur2($_displayPrice) ?></span>
                             </div>
                         </div>
                     </div>

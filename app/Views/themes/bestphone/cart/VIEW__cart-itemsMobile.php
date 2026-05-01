@@ -4,23 +4,32 @@
     <h3 class="text-center mb-2">Вашата количка</h3>
 
     <?php
+
     $_userId = session() -> has('user_id');
 
     $_settingsOrder = $settings_portal['order']['order'] ?? [];
 
     // Граници за безплатна доставка
-    $_totalFreeDostLimit = (float) ($_settingsOrder[$_userId ? 'freeDostavkaPrice' : 'freeDostavkaKlPrice'] ?? 0);
+    $_totalFreeDostLimit = (float) ($_settingsOrder['freeDostavkaPrice'] ?? 0);
 
-    $_freeDostRange = (float) ($_settingsOrder[$_userId ? 'freeDostavkaLeftPrice' : 'freeDostavkaKlLeftPrice'] ?? 0);
+    $_freeDostRange = (float) ($_settingsOrder['freeDostavkaLeftPrice'] ?? 0);
 
-    // Обща сума в количката
-    $_totalPrice = (float) ($cartSession['cart_all_products_info']['price'] ?? 0);
+    // Обща сума в количката с ДДС - смятаме я от редовете в количката.
+    $_grandTotalPrice  = (float) array_sum(array_map(
+                            static fn($item) => (float) ($item['total_price'] ?? 0),
+                            $cartSessionProductsList ?? []
+                    ));
+    $_totalPrice       = $_grandTotalPrice;
+    $_sesionTotalPrice = $_grandTotalPrice;
 
-    // Колко остава до безплатна доставка
+    $_subtotalPrice = $_grandTotalPrice / 1.2;
+    $_ddsPrice      = $_grandTotalPrice - $_subtotalPrice;
+
+    // freeDostavkaPrice вече се третира като праг в основната валута на сайта
     $_amountLeft = $_totalFreeDostLimit - $_totalPrice;
 
     // Етикет за ДДС
-    $_ddsLabel = $_userId ? 'БЕЗ ДДС' : 'С ДДС';
+    $_ddsLabel = !empty($settingsJson -> prices_with_dds) ? 'с ДДС' : 'без ДДС';
 
     // Определяне дали да се показва блока (показваме ако сумата е над 0 и оставащата сума е в зададения диапазон)
     $_showBlock = $_totalFreeDostLimit > 0 && $_amountLeft > 0 && $_amountLeft <= $_freeDostRange;
@@ -34,13 +43,13 @@
 
         <table id="cart-table" class="js-printTable w-100">
             <tbody>
-                <?php foreach ($cartSessionProductsList as $cartProduct): ?>
+<?php foreach ($cartSessionProductsList as $cartProduct): ?>
                     <tr class="js-product-item" data-product-id="<?= $cartProduct['product_info'] -> product_id ?>">
                         <td class="border-0 p-0 pb-2">
                             <div class="border rounded-0 bg-white">
                                 <div class="d-flex align-items-start justify-content-between p-2 border-bottom">
                                     <a class="text-gray-90 pr-2 css-cart-mobile-title" href="<?= site_url('product/' . $cartProduct['product_info'] -> product_id) ?>">
-                                        <?= $cartProduct['product_info'] -> product_name ?>
+    <?= $cartProduct['product_info'] -> product_name ?>
                                     </a>
                                     <a href="#" class="js-remove-from-cart btn btn-sm css-btn-red-outline rounded-circle css-cart-mobile-remove" data-route="<?= route_to('Cart-removeFromCart') ?>" data-product-id="<?= $cartProduct['product_info'] -> product_id ?>" aria-label="Премахни продукт">
                                         <i class="fa fa-times"></i>
@@ -84,7 +93,7 @@
                             </div>
                         </td>
                     </tr>
-                <?php endforeach ?>
+<?php endforeach ?>
                 <tr class="notAutoNum">
                     <td class="text-right pb-2">
                         <a class="js-empty-cart text-red font-size-13" href="<?= route_to('Cart-emptyCart') ?>">
@@ -98,34 +107,33 @@
                 <tr>
                     <td class="px-2 pt-2"><h5 class="mb-1 text-white">Поръчка</h5></td>
                 </tr>
-                <?php if ($_userId): ?>
-                    <tr id="js-total_bez_dds">
-                        <td>
-                            <div class="d-flex justify-content-between px-2">
-                                <div class="text-white">Сума без ДДС:</div> 
-                                <div class="suma text-right text-white">
-                                    <?= number_format($cartSession['cart_all_products_info']['price'], 2) ?> <?= get_valuta() ?>
-                                    <small><br> <?= priceToEur2($cartSession['cart_all_products_info']['price']) ?></small>
-                                </div>
+                <tr id="js-total_bez_dds">
+                    <td>
+                        <div class="d-flex justify-content-between px-2">
+                            <div class="text-white">Сума без ДДС:</div> 
+                            <div class="suma text-right text-white">
+<?= number_format($_subtotalPrice, 2) ?> <?= get_valuta() ?>
+                                <small><br>(<?= priceToEur2($_subtotalPrice) ?>)</small>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </td>
+                </tr>
 
-                    <tr id="js-dds">
-                        <td>
-                            <div class="d-flex justify-content-between px-2">
-                                <div class="text-white">ДДС:</div> 
-                                <div class="suma text-right text-white">
-                                    <?= number_format($cartSession['cart_all_products_info']['price'] * 0.2, 2) ?> <?= get_valuta() ?>
-                                    <small><br> <?= priceToEur2($cartSession['cart_all_products_info']['price'] * 0.2) ?></small> 
-                                </div>
-                            </div> 
-                        </td>
-                    </tr> 
-                <?php endif ?>
+                <tr id="js-dds">
+                    <td>
+                        <div class="d-flex justify-content-between px-2">
+                            <div class="text-white">ДДС:</div> 
+                            <div class="suma text-right text-white">
+<?= number_format($_ddsPrice, 2) ?> <?= get_valuta() ?>
+                                <small><br>(<?= priceToEur2($_ddsPrice) ?>)</small> 
+                            </div>
+                        </div> 
+                    </td>
+                </tr>
 
                 <!-- транспортни разходи -->
                 <?php
+
                 $_deliveryPrice = $settings_portal['order']['order']['deliveryPrice'] ?? 0;
 
                 if (!empty($_deliveryPrice) && $_amountLeft > 0):
@@ -135,15 +143,15 @@
                             <div class="d-flex justify-content-between px-2">
                                 <div class="text-white">Доставка:</div> 
                                 <div class="text-right text-white">
-                                    <?= number_format($_deliveryPrice, 2) ?> <?= get_valuta() ?>
-                                    <small><br> <?= priceToEur2($_deliveryPrice) ?></small> 
+    <?= number_format($_deliveryPrice, 2) ?> <?= get_valuta() ?>
+                                    <small><br>(<?= priceToEur2($_deliveryPrice) ?>)</small> 
                                     <input id="deliveryPrice" type="hidden" value="<?= number_format($_deliveryPrice, 2) ?>">
                                 </div>
                             </div>  
                         </td>
                     </tr>
 
-                 <?php elseif (!empty($_totalFreeDostLimit) && !empty($_freeDostRange) && $_amountLeft <= 0): ?>
+<?php elseif (!empty($_totalFreeDostLimit) && $_amountLeft <= 0): ?>
                     <tr>
                         <td>
                             <div class="d-flex justify-content-between px-2">
@@ -153,15 +161,15 @@
                             </div>  
                         </td>
                     </tr>
-                <?php endif ?>
+<?php endif ?>
 
                 <tr id="js-total_s_dds">
                     <td>
                         <div class="d-flex justify-content-between px-2 pb-2">
                             <div class="text-white">Тотал с ДДС:</div> 
                             <div class="suma text-right text-white">
-                                <?= number_format(($cartSession['cart_all_products_info']['price'] * ($_userId ? 1.2 : 1)), 2) ?> <?= get_valuta() ?>
-                                <small><br> <?= priceToEur2($cartSession['cart_all_products_info']['price'] * ($_userId ? 1.2 : 1)) ?></small>
+<?= number_format($_grandTotalPrice, 2) ?> <?= get_valuta() ?>
+                                <small><br>(<?= priceToEur2($_grandTotalPrice) ?>)</small>
                             </div>
                         </div>  
                     </td>

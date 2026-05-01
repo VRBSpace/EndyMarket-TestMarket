@@ -7,12 +7,20 @@ use CodeIgniter\Router\RouteCollection;
  * Route Definitions
  * --------------------------------------------------------------------
  */
+$routes -> add('saveCoocie', 'Coocie::save');
 
+$routes -> post('cart/checkout2', 'Cart::checkout');
+$routes -> post('cart/checkout_card', 'Cart::checkout_card');
+
+$routes -> get('payment/success', 'Payment::success');
+$routes -> get('payment/fail', 'Payment::fail');
+//---------------------------------------------------------------------------------------
 $routes -> group('ApiQurier', function ($r) {
     $c = 'ApiQurier';
 
     $r -> add('econt_action', "$c::econt_action", ['as' => 'ApiQurier-econt_action']);
     $r -> add('speedy_action', "$c::speedy_action", ['as' => 'ApiQurier-speedy_action']);
+    $r -> add('calculateDostavka/(:segment)', "$c::api_calculateDostavka/$1", ['as' => 'ApiQurier-calculateDostavka']);
 });
 
 // We get a performance increase by specifying the default
@@ -21,6 +29,8 @@ $routes -> group('ApiQurier', function ($r) {
 $routes -> add('/login', 'Account::login');
 $routes -> match(['get', 'post'], '/register', 'Account::register', ['as' => 'Account-register']);
 $routes -> get('/logout', 'Account::logout');
+$routes -> match(['get', 'post'], '/forgot-password', 'Account::forgotPassword', ['as' => 'Account-forgotPassword']);
+$routes -> match(['get', 'post'], '/reset-password/(:segment)', 'Account::resetPassword/$1', ['as' => 'Account-resetPassword']);
 
 $routes -> group('CronJobs', ['namespace' => 'App\Controllers\cronJobs'], function ($r) {
     $c = 'CronJobs';
@@ -44,6 +54,8 @@ $routes -> group('Account', function ($r) {
 
     $r -> get('', "$c::index", ['as' => 'Account-index']);
     $r -> add('register', "$c::register");
+    $r -> match(['get', 'post'], 'forgot-password', "$c::forgotPassword", ['as' => 'Account-forgotPasswordInner']);
+    $r -> match(['get', 'post'], 'reset-password/(:segment)', "$c::resetPassword/$1", ['as' => 'Account-resetPasswordInner']);
     $r -> add('change-password', "$c::changePassword", ['as' => 'Account-changePassword']);
     $r -> add('change-customerData', "$c::changeCustomerData", ['as' => 'Account-changeCustomerData']);
     $r -> add('change-deliveryData', "$c::changeDeliveryData", ['as' => 'Account-changeDeliveryData']);

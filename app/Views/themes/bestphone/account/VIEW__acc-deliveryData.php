@@ -1,6 +1,6 @@
 <?php $_klientObektJson = json_decode($customerData?->klient_obekt_json) ?>
 
-<form id="form-deliveryData" class="js-validate table-form d-flex row justify-content-center" data-route="<?= route_to('Account-changeDeliveryData') ?>" method="post">
+<form id="form-deliveryData" class="js-validate table-form d-flex row justify-content-center" data-route="<?= route_to('Account-changeDeliveryData') ?>" data-skip-preloader method="post">
 
     <?php
     $i                = 0;

@@ -491,27 +491,31 @@ loadPlugins = {
     },
 
     'calculateCartTotals': function (arg) {
-        var total = 0, totalQty = 0;
-        var ddsPercent = DDS; // 20%
-        var deliveryPrice = Number($(arg.table).find('tfoot tr#deliveryRow #deliveryPrice').val()) || 0;
+        var totalWithDds = 0, totalQty = 0;
 
-        $(arg.table).find('tbody tr').each(function () {
+        $(arg.table).find('tbody tr.js-product-item').each(function () {
             var tr = $(this);
-            var zena_prodava = tr.find('.js-zenaProdava');
-            var qty = tr.find('.js-result').val();
-            var sum = parseFloat(zena_prodava.text()) * Number(qty);
+            var zenaProdavaText = tr.find('.js-zenaProdava').first().text().trim();
+            var qty = Number(tr.find('.js-result').first().val());
+            var price = parseFloat(zenaProdavaText);
+
+            if (!isFinite(price) || !isFinite(qty) || qty <= 0) {
+                return;
+            }
+
+            var sum = price * qty;
             var euro0 = '<br>(' + Lp.toFixed(sum * EURORATE) + ' лв.)';
 
-            total += sum;
-            totalQty += Number(qty);
+            totalWithDds += sum;
+            totalQty += qty;
 
-            // изчисляване на надценка
+            // Редовите цени в количката са крайни цени с ДДС.
             tr.find('td.js-total, .js-total').html(Lp.toFixed(sum) + ' ' + VALUTASIGN + ( EURORATE != 1 ? euro0 : '' )); // тотал
         });
 
-        var totalWithoutDds = Lp.toFixed(total);
-        var totalDds = Lp.toFixed(total * ddsPercent);
-        var totalWithDds = Lp.toFixed(total + ( total * ddsPercent ) + deliveryPrice);
+        var totalWithoutDds = Lp.toFixed(totalWithDds / 1.2);
+        var totalDds = Lp.toFixed(totalWithDds - totalWithoutDds);
+        totalWithDds = Lp.toFixed(totalWithDds);
         var euro1 = '<br>(' + Lp.toFixed(totalWithoutDds * EURORATE) + ' лв.' + ')';
         var euro2 = '<br>(' + Lp.toFixed(totalDds * EURORATE) + ' лв.' + ')';
         var euro3 = '<br>(' + Lp.toFixed(totalWithDds * EURORATE) + ' лв.' + ')';
@@ -520,7 +524,7 @@ loadPlugins = {
         $(arg.table).find('tfoot tr#js-dds').find('td.suma,.suma').html(totalDds + ' ' + VALUTASIGN + ( EURORATE != 1 ? euro2 : '' ));
         $(arg.table).find('tfoot tr#js-total_s_dds').find('td.suma, .suma').html(totalWithDds + ' ' + VALUTASIGN + ( EURORATE != 1 ? euro3 : '' ));
 
-        return {'totalQty': totalQty, 'totalPrice': totalWithoutDds};
+        return {'totalQty': totalQty, 'totalPrice': totalWithDds};
     },
 
     // филтър в thead таблицата

@@ -7,9 +7,6 @@ use App\Models\MODEL__product;
 use App\Models\UserModel;
 use App\Models\MODEL__account;
 use App\Models\KlientModel;
-use CodeIgniter\HTTP\RequestInterface;
-use CodeIgniter\HTTP\ResponseInterface;
-use Psr\Log\LoggerInterface;
 
 class Cart extends BaseController {
 
@@ -19,27 +16,15 @@ class Cart extends BaseController {
         // ако потребителя няма профил не може да продължи.
         $this -> sessionAccountId = $this -> getSessionAccount();
 
+        if (empty($this -> sessionAccountId) && !url_is('*Cart*')) {
+            // header('Location: ' . route_to('Account-index'));
+            //  exit;
+        }
+
         $this -> userModel      = new UserModel();
         $this -> cartSession    = $this -> getSessionProperty();
         $this -> MODEL__account = new MODEL__account();
-    }
 
-    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger) {
-        parent::initController($request, $response, $logger);
-
-        $currentPath = strtolower(trim($this -> request -> getUri() -> getPath(), '/'));
-        $currentPath = preg_replace('#^index\.php/#', '', $currentPath);
-        $requiresAuthCartAction = (bool) preg_match(
-            '#(^|/)cart/(get_klientobekt|set_klientobekt|xls_export)$#i',
-            $currentPath
-        );
-
-        // Количката и поръчката трябва да са достъпни за нерегистрирани потребители.
-        // Вход изискваме само за действия, които използват профилни клиентски данни.
-        if (empty($this -> sessionAccountId) && $requiresAuthCartAction) {
-            header('Location: ' . route_to('Account-index'));
-            exit;
-        }
     }
 
     public function index() {
@@ -50,7 +35,7 @@ class Cart extends BaseController {
         $customerData = $this -> MODEL__account -> get__klient($user_id);
 
         $data = [
-            'title'            => 'Valpers',
+            'title'            => 'title',
             'addGlobalJS'      => $this -> addGlobalJS(),
             'addJS'            => $this -> addJS(),
             'addCSS'           => $this -> addCSS(),
@@ -68,6 +53,7 @@ class Cart extends BaseController {
         }
 
         return view("{$this -> theme}/cart/VIEW__cart", $data);
+
     }
 
     public function addToCart() {
@@ -129,6 +115,7 @@ class Cart extends BaseController {
         }
 
         return $this -> response -> setJSON($response);
+
     }
 
     public function change_qty() {
@@ -173,6 +160,7 @@ class Cart extends BaseController {
         }
 
         return $this -> response -> setJSON($response);
+
     }
 
     // изчиства цялата количка
@@ -186,6 +174,7 @@ class Cart extends BaseController {
         }
 
         return json_encode('');
+
     }
 
     public function removeFromCart() {
@@ -228,6 +217,7 @@ class Cart extends BaseController {
         }
 
         return $this -> response -> setJSON($response);
+
     }
 
     // избор на обект за доставка 
@@ -242,6 +232,7 @@ class Cart extends BaseController {
         ];
 
         return $this -> response -> setJSON($data);
+
     }
 
     // kogato е  избран обект за доставка от модал ф.
@@ -258,6 +249,7 @@ class Cart extends BaseController {
         ];
 
         return $this -> response -> setJSON($data);
+
     }
 
     // създаване на незавършена поръчка с флаг N
@@ -310,6 +302,7 @@ class Cart extends BaseController {
         $this -> setSessionProperty($cartSession);
 
         return;
+
     }
 
     public function xls_export() {
@@ -355,6 +348,7 @@ class Cart extends BaseController {
         );
 
         return (json_encode($response));
+
     }
 
     // зареждане на css файлове в footer на html страноцата
@@ -366,6 +360,7 @@ class Cart extends BaseController {
             "$page/global",
             "$page/cart",
         ];
+
     }
 
     // зареждане на js файлове в footer на html страноцата
@@ -382,5 +377,233 @@ class Cart extends BaseController {
         $modals = [];
 
         return array_merge($plugins, $global, $default, $modals);
+
     }
+
+    // плащане с карта
+    public function checkout_card() {
+        $cartSession = $this -> getSessionProperty();
+
+        if (empty($cartSession['products'])) {
+            return redirect() -> to('/');
+        }
+
+        $MODEL__order = new \App\Models\MODEL__order();
+        $post         = $this -> request -> getPost();
+
+        $user_id        = session('user_id');
+        $klientData     = [];
+        $cartGrandPrice = 0;
+
+        if ($user_id) {
+            $MODEL__klient = new \App\Models\KlientModel();
+            $klient        = $MODEL__klient -> getKlientIdbyUserId($user_id);
+            $klientData    = $klient ?? [];
+        }
+
+        $deliveryData = $post['delivery_json'] ?? [];
+
+        if ($user_id) {
+            $contactName = trim((string) ($klient['klient_mol'] ?? ''));
+
+            if ($contactName === '') {
+                $contactName = trim((string) ($klient['klient_name'] ?? ''));
+            }
+
+            if (empty($deliveryData['email']) && !empty($klientData['email'])) {
+                $deliveryData['email'] = $klientData['email'];
+            }
+            if (empty($deliveryData['lice_zaKont']) && !empty($contactName)) {
+                $deliveryData['lice_zaKont'] = $contactName;
+            }
+            if (empty($deliveryData['tel']) && !empty($klientData['klient_tel'])) {
+                $deliveryData['tel'] = $klientData['klient_tel'];
+            }
+        }
+
+        if (isset($post['tel']) && empty($deliveryData['tel'])) {
+            $deliveryData['tel'] = $post['tel'];
+        }
+
+        $belezka = $post['belezka'] ?? '';
+
+        $simpleProductJson = [];
+        foreach ($cartSession['products'] as $product) {
+
+            if (empty($product['product_id'])) {
+                continue;
+            }
+
+            $qty   = $product['quantity'] ?? 0;
+            $price = $product['item_price'] ?? 0;
+
+            $simpleProductJson[$product['product_id']] = [
+                'qty'   => $qty,
+                'price' => $price
+            ];
+
+            $cartGrandPrice += $qty * $price;
+        }
+
+        $paymentMethodValue = $post['name'] ?? null;
+        $dbPaymentMethod    = $paymentMethodValue;
+
+        $orderData = [
+            'klient_id'          => $user_id,
+            'delivery_json'      => json_encode($deliveryData, JSON_UNESCAPED_UNICODE),
+            'total_price'        => $cartGrandPrice,
+            'payment_method'     => $dbPaymentMethod,
+            'product_json'       => json_encode($simpleProductJson, JSON_UNESCAPED_UNICODE),
+            'delivery_method'    => 'curier',
+            'is_accepted_policy' => 1,
+            'date_added'         => date('Y-m-d H:i:s'),
+            'date_update'        => date('Y-m-d H:i:s'),
+            'last_activity'      => date('Y-m-d H:i:s'),
+            'belezka'            => $belezka,
+        ];
+
+        $orderId = $MODEL__order -> insertData($orderData);
+
+        if (!$orderId) {
+            die('Неуспешна поръчка');
+        }
+
+        $this -> setSessionProperty([]);
+
+        if ($this -> customConfig -> isEnable_uncompleteOrder && session('user_id')) {
+            $this -> set_uncompleteOrder($cartSession, $isEmpty = true);
+        }
+
+        if ($paymentMethodValue === 'D') {
+            $amount = (int) round(((float) ($orderData['total_price'] ?? 0)) * 100);
+
+            $dskData = [
+                'userName'    => 'aleksandarjelin-api',
+                'password'    => 'ieyyf-N1',
+                'orderNumber' => $orderId . '_' . time(),
+                'amount'      => $amount,
+                'currency'    => 978, // евро,
+                'returnUrl'   => base_url('payment/success?orderId=' . $orderId),
+                'failUrl'     => base_url('payment/fail?orderId=' . $orderId),
+                'description' => 'Order #' . $orderId,
+                'ip'          => service('request') -> getIPAddress(),
+            ];
+
+            $ch = curl_init("https://uat.dskbank.bg/payment/rest/register.do");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($dskData));
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+            $response = curl_exec($ch);
+            curl_close($ch);
+
+            $result = json_decode($response, true);
+
+            if (!isset($result['formUrl'])) {
+                die('Грешка при комуникация с банката');
+            }
+
+            return redirect() -> to($result['formUrl']);
+        }
+        return redirect() -> to('/') -> with('success', 'Поръчката е успешна!');
+
+    }
+
+    public function checkout() {
+        $cartSession    = $this -> getSessionProperty();
+        $cartGrandPrice = 0;
+
+        if (empty($cartSession['products'])) {
+            return redirect() -> to('/');
+        }
+
+        $MODEL__order = new \App\Models\MODEL__order();
+        $post         = $this -> request -> getPost();
+
+        $simpleProductJson = [];
+        foreach ($cartSession['products'] as $product) {
+
+            if (empty($product['product_id'])) {
+                continue;
+            }
+
+            $qty   = $product['quantity'] ?? 0;
+            $price = $product['item_price'] ?? 0;
+
+            $simpleProductJson[$product['product_id']] = [
+                'qty'   => $qty,
+                'price' => $price
+            ];
+
+            $cartGrandPrice += $qty * $price;
+        }
+
+
+        $deliveryData        = $post['delivery_json'] ?? [];
+        $deliveryData['tel'] = $post['tel'] ?? '';
+
+        $orderData = [
+            'klient_id'          => session('user_id') ?? null,
+            'orderTip'           => 'K',
+            'delivery_json'      => json_encode($deliveryData, JSON_UNESCAPED_UNICODE),
+            'total_price'        => $cartGrandPrice,
+            'payment_method'     => 'D',
+            'product_json'       => json_encode($simpleProductJson, JSON_UNESCAPED_UNICODE),
+            'delivery_method'    => $post['delivery_json']['izborKurier'] ?? 'curier',
+            'is_accepted_policy' => 1,
+            'date_added'         => date('Y-m-d H:i:s'),
+            'date_update'        => date('Y-m-d H:i:s'),
+            'last_activity'      => date('Y-m-d H:i:s'),
+            'belezka'            => $post['belezka'] ?? null,
+        ];
+
+        $orderId = $MODEL__order -> insertData($orderData);
+
+        if (!$orderId) {
+            die('Неуспешна поръчка');
+        }
+
+
+        $this -> setSessionProperty([]);
+
+        if ($this -> customConfig -> isEnable_uncompleteOrder && session('user_id')) {
+            $this -> set_uncompleteOrder($cartSession, $isEmpty = true);
+        }
+
+        $amount = (int) round(((float) ($orderData['total_price'] ?? 0)) * 100);
+
+        $dskData = [
+            'userName'    => 'aleksandarjelin-api',
+            'password'    => 'ieyyf-N1',
+            'orderNumber' => $orderId . '_' . time(),
+            'amount'      => $amount,
+            'currency'    => 978, // евро
+            'returnUrl'   => base_url('payment/success?orderId=' . $orderId),
+            'failUrl'     => base_url('payment/fail?orderId=' . $orderId),
+            'description' => 'Order #' . $orderId,
+            'ip'          => service('request') -> getIPAddress(),
+        ];
+
+        $ch = curl_init("https://uat.dskbank.bg/payment/rest/register.do");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($dskData));
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        $result = json_decode($response, true);
+
+        if (!isset($result['formUrl'])) {
+            die('Грешка при комуникация с банката');
+        }
+
+        return redirect() -> to($result['formUrl']);
+
+    }
+
 }

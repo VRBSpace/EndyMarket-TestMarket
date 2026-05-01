@@ -28,8 +28,11 @@
             // EVENTS
             $(document)
                     .on('keyup', '#js-grad', Lp.debounce(this.event.autocomplete_city, 500))
+                    .on('input', '#js-grad, #js-ofis, input[name="delivery_json[quarter]"], input[name="delivery_json[street]"], input[name="delivery_json[street_num]"], input[name="delivery_json[other]"]', Lp.debounce(this.event.request_deliveryEstimate, 500))
                     .on('keyup', '#js-ofis', this.event.filter_ofice)
-                    .on('change', '.js-deliveryMethod', this.event.choose_deliveryMethod);
+                    .on('change', '.js-deliveryMethod', this.event.choose_deliveryMethod)
+                    .on('change', '.js-delivery-source, #js-deliveryMethod', this.event.request_deliveryEstimate)
+                    .on('cart:deliveryObjectChanged cart:cartUpdated', this.event.request_deliveryEstimate);
 
 
             //BTN
@@ -110,13 +113,15 @@
 
                         data = typeof data === 'string' ? JSON.parse(data) : data;
 
-                        if (!data.result || !data.result.cities || data.result.cities.length === 0) {
+                        let cities = data.result && data.result.cities ? data.result.cities : (data.sites || []);
+
+                        if (!cities.length) {
                             autocompleteContainer.html('Няма намерени населени места.');
                             return false;
                         }
 
-                        autocompleteHtml = `<ul>${data.result.cities.map(city => {
-                            let myObj = {'id': city.id, 'postCode': city.postCode, 'name': city.name};
+                        autocompleteHtml = `<ul>${cities.map(city => {
+                            let myObj = {'id': city.id, 'postCode': city.postCode || '', 'name': city.name};
                             return `<li data-info='${JSON.stringify(myObj)}'>${city.name}</li>`;
                         }).join('')}</ul>`;
 
@@ -128,6 +133,7 @@
                             _this.val(info.name).attr('data-city-id', info.id);
                             autocompleteContainer.empty(); // Clear autocomplete list after selection
                             postCode.val(info.postCode);
+                            self.event.request_deliveryEstimate();
                         });
 
                         // Clear autocomplete on input blur
@@ -168,8 +174,112 @@
                     toOfis.add(toDoor).find(':input').val('');
                     gradAndOfis.attr('data-route', route).attr('data-kurier', name).data('route', route).data('kurier', name);
                     autocompleteContainer.empty();
+                    self.event.request_deliveryEstimate();
                 }
             },
+
+            'request_deliveryEstimate': function () {
+                let estimateBox = $('#js-deliveryEstimate');
+                let estimatePrice = $('#js-deliveryEstimatePrice');
+                let deliveryMode = $('#js-deliveryMethod').val() || 'curier';
+                let source = $('.js-delivery-source:checked').val() || 'custom';
+                let payload = {};
+                let courierMethod = '';
+
+                if (!estimateBox.length) {
+                    return false;
+                }
+
+                if (deliveryMode !== 'curier') {
+                    estimateBox.addClass('hide');
+                    estimatePrice.text('');
+                    return false;
+                }
+
+                if (source === 'object') {
+                    let meta = $('#js-existingDeliveryMeta');
+
+                    if (!meta.length) {
+                        estimateBox.addClass('hide');
+                        estimatePrice.text('');
+                        return false;
+                    }
+
+                    courierMethod = meta.data('izbor-kurier');
+                    payload = {
+                        izborKurier: courierMethod,
+                        grad: meta.data('grad') || '',
+                        postCode: meta.data('post-code') || '',
+                        ofis: meta.data('ofis') || '',
+                        quarter: meta.data('quarter') || '',
+                        street: meta.data('street') || '',
+                        street_num: meta.data('street-num') || '',
+                        other: meta.data('other') || ''
+                    };
+                } else {
+                    let selectedMethod = $('input[name="delivery_json[izborKurier]"]:checked');
+
+                    if (!selectedMethod.length) {
+                        estimateBox.addClass('hide');
+                        estimatePrice.text('');
+                        return false;
+                    }
+
+                    courierMethod = selectedMethod.val();
+                    payload = {
+                        izborKurier: courierMethod,
+                        grad: $('#js-grad').val() || '',
+                        postCode: $('#js-postCode').val() || '',
+                        ofis: $('#js-ofis').val() || '',
+                        quarter: $('input[name="delivery_json[quarter]"]').val() || '',
+                        street: $('input[name="delivery_json[street]"]').val() || '',
+                        street_num: $('input[name="delivery_json[street_num]"]').val() || '',
+                        other: $('input[name="delivery_json[other]"]').val() || ''
+                    };
+                }
+
+                if (!payload.grad) {
+                    estimateBox.addClass('hide');
+                    estimatePrice.text('');
+                    return false;
+                }
+
+                if ((courierMethod.indexOf('_office') > -1 || courierMethod.indexOf('_machina') > -1) && !payload.ofis) {
+                    estimateBox.addClass('hide');
+                    estimatePrice.text('');
+                    return false;
+                }
+
+                if (courierMethod.indexOf('_door') > -1 && !payload.street_num) {
+                    estimateBox.addClass('hide');
+                    estimatePrice.text('');
+                    return false;
+                }
+
+                estimateBox.removeClass('hide');
+                estimatePrice.text('изчислява се...');
+
+                $.ajax({
+                    url: estimateBox.data('route') + '/' + courierMethod,
+                    type: 'POST',
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    data: JSON.stringify(payload),
+                    success: function (data) {
+                        if (data.error || !data.totalPrice) {
+                            estimateBox.addClass('hide');
+                            estimatePrice.text('');
+                            return false;
+                        }
+
+                        estimatePrice.text(data.totalPrice + ' лв.');
+                    },
+                    error: function () {
+                        estimateBox.addClass('hide');
+                        estimatePrice.text('');
+                    }
+                });
+            }
         },
 
         'btn': {
@@ -213,7 +323,7 @@
                         }
 
                         autocompleteHtml = `<ul>${data.offices.map(obj => {
-                            let myObj = {id: obj.id, address: obj.address, name: obj.name};
+                            let myObj = {id: obj.id, code: obj.code || '', address: obj.address, name: obj.name};
                             return `<li data-info='${JSON.stringify(myObj)}' value='${obj.id}'>
                             <div class="fw-bold">${obj.name}</div>
                             <small>${obj.address.fullAddressString || obj.address.fullAddress}</small>
@@ -244,6 +354,7 @@
 
                             autoResize.call(textarea[0]);
                             autocompleteContainer.empty(); // Clear autocomplete list
+                            self.event.request_deliveryEstimate();
                         });
 
                         // Clear autocomplete on input blur

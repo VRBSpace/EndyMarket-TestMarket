@@ -55,4 +55,10 @@ if (!function_exists('priceToEur')) {
         };
     }
 
+    function priceDual($price) {
+        $price = (float) $price;
+
+        return sprintf('%.2f', $price) . ' ' . get_valuta() . '<br>(' . priceToEur2($price) . ')';
+    }
+
 }

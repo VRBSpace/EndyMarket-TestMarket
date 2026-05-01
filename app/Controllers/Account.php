@@ -9,6 +9,7 @@ use App\Models\MODEL__account;
 class Account extends BaseController {
 
     private const PASSWORD_POLICY_MESSAGE = 'Паролата трябва да е минимум 8 символа и да съдържа малка буква, главна буква, цифра и специален символ.';
+    private const RESET_PASSWORD_TTL = 3600;
 
     public function __construct() {
         parent::__construct();
@@ -119,7 +120,7 @@ class Account extends BaseController {
 
         $existsInUser = (bool) $db -> table('users_site') -> where('email_login', $email) -> countAllResults();
         $existsInKlient = (bool) $db -> table('_klient') -> where('email', $email) -> countAllResults();
-
+  
         if ($existsInUser || $existsInKlient) {
             return redirect() -> back() -> withInput() -> with('error', 'Вече съществува регистрация с този email.');
         }
@@ -128,47 +129,38 @@ class Account extends BaseController {
 
         try {
             $db -> transBegin();
+ 
+            // Подготовка на данните за първата таблица _klient
+            $clientData = [
+                'zenaNivo'    => 'Цена Кл',
+                'klient_name' => $username,
+                'klient_mol'  => trim($fullName),
+                'klient_tel'  => trim((string)$phone) ?: null,
+                'email'       => $email,
+                'isActive'    => 'Y',
+            ];
 
-            $maxUserRow = $db -> table('users_site')
-                    -> selectMax('id', 'max_id')
-                    -> get()
-                    -> getRowArray();
-            $userId     = (int) ($maxUserRow['max_id'] ?? 0) + 1;
-
-            if ($userId <= 0) {
-                throw new \RuntimeException('Неуспешно генериране на id за потребител.');
+            if (!$db->table('_klient')->insert($clientData)) {
+                throw new \RuntimeException('Грешка при създаване на клиентски профил.');
             }
+        
+            $userId = $db->insertID();
 
-            $isUserInserted = $db -> table('users_site') -> insert([
-                'id'                  => $userId,
-                'username'            => $username,
-                'email_login'         => $email,
-                'password'            => password_hash($password, PASSWORD_DEFAULT),
-                'is_password_changed' => 1,
-                'active'              => 1,
-                'bulstat'             => null,
-            ]);
-
-            if (!$isUserInserted) {
-                $dbError = $db -> error();
+            // Подготовка на данните за втората таблица users_site
+                $userData = [
+                    'id'                  => $userId,
+                    'username'            => $username,
+                    'email_login'         => $email,
+                    'password'            => password_hash($password, PASSWORD_DEFAULT),
+                    'is_password_changed' => 1,
+                    'active'              => 1,
+                    'bulstat'             => null,
+                ];
+            
+                if (!$db->table('users_site')->insert($userData)) {
+                   $dbError = $db -> error();
                 throw new \RuntimeException('users_site: ' . ($dbError['message'] ?? 'неуспешен insert'));
-            }
-
-            $isKlientInserted = $db -> table('_klient') -> insert([
-                'klient_id'       => $userId,
-                'gensoft_firm_id' => $userId,
-                'zenaNivo'        => 'Цена Кл',
-                'klient_name'     => $fullName,
-                'klient_tel'      => $phone,
-                'email'           => $email,
-                'bulstat'         => null,
-                'isActive'        => 'Y',
-            ]);
-
-            if (!$isKlientInserted) {
-                $dbError = $db -> error();
-                throw new \RuntimeException('_klient: ' . ($dbError['message'] ?? 'неуспешен insert'));
-            }
+                }
 
             if ($db -> transStatus() === false) {
                 throw new \RuntimeException('Неуспешно записване в базата.');
@@ -195,6 +187,86 @@ class Account extends BaseController {
         // clear session 
         $this -> setSessionProperty([]);
         return redirect() -> to('/');
+    }
+
+    public function forgotPassword() {
+        if ($this -> request -> getMethod() !== 'post') {
+            return view("{$this -> theme}/account/VIEW__acc-forgotPassword", $this -> getAccountPageData());
+        }
+
+        $email = strtolower(trim((string) $this -> request -> getPost('email')));
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return redirect() -> back() -> withInput() -> with('error', 'Моля въведете валиден email адрес.');
+        }
+
+        $user = $this -> userModel
+                -> where('email_login', $email)
+                -> where('active', 1)
+                -> first();
+
+        if ($user) {
+            $token = bin2hex(random_bytes(32));
+            $cacheKey = $this -> getResetPasswordCacheKey($token);
+            $cachePayload = [
+                'user_id'    => (int) $user['id'],
+                'email'      => $email,
+                'created_at' => time(),
+            ];
+
+            service('cache') -> save($cacheKey, $cachePayload, self::RESET_PASSWORD_TTL);
+
+            $resetLink = site_url('/reset-password/' . $token);
+            $message = view("{$this -> theme}/email/VIEW__emailResetPassword", [
+                'resetLink' => $resetLink,
+                'user'      => $user,
+                'ttlMinutes'=> (int) floor(self::RESET_PASSWORD_TTL / 60),
+            ]);
+
+            $this -> sendEmail($email, 'Възстановяване на парола', $message);
+        }
+
+        return redirect() -> to(route_to('Account-forgotPassword')) -> with('message', 'Ако има профил с този email, изпратихме линк за смяна на паролата.');
+    }
+
+    public function resetPassword(string $token = '') {
+        $resetData = $this -> getResetPasswordData($token);
+
+        if ($this -> request -> getMethod() !== 'post') {
+            if (!$resetData) {
+                return redirect() -> to(route_to('Account-forgotPassword')) -> with('error', 'Линкът за смяна на парола е невалиден или е изтекъл.');
+            }
+
+            $data = $this -> getAccountPageData();
+            $data['token'] = $token;
+
+            return view("{$this -> theme}/account/VIEW__acc-resetPassword", $data);
+        }
+
+        if (!$resetData) {
+            return redirect() -> to(route_to('Account-forgotPassword')) -> with('error', 'Линкът за смяна на парола е невалиден или е изтекъл.');
+        }
+
+        $password = trim((string) $this -> request -> getPost('password'));
+        $passwordConfirm = trim((string) $this -> request -> getPost('password_confirm'));
+
+        if (!$this -> isPasswordStrong($password)) {
+            return redirect() -> back() -> withInput() -> with('error', self::PASSWORD_POLICY_MESSAGE);
+        }
+
+        if ($password !== $passwordConfirm) {
+            return redirect() -> back() -> withInput() -> with('error', 'Паролите не съвпадат.');
+        }
+
+        $response = $this -> userModel -> updateUserPassword($resetData['user_id'], $password, $resetData['email']);
+
+        if (is_array($response) && isset($response['err'])) {
+            return redirect() -> back() -> withInput() -> with('error', $response['err']);
+        }
+
+        service('cache') -> delete($this -> getResetPasswordCacheKey($token));
+
+        return redirect() -> to(route_to('Account-index')) -> with('message', 'Паролата е сменена успешно. Можете да влезете с новата парола.');
     }
 
     public function changePassword() {
@@ -236,6 +308,38 @@ class Account extends BaseController {
 
     private function isPasswordStrong(string $password): bool {
         return (bool) preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/', $password);
+    }
+
+    private function getResetPasswordCacheKey(string $token): string {
+        return 'reset_password_' . hash('sha256', $token);
+    }
+
+    private function getResetPasswordData(string $token): ?array {
+        $token = trim($token);
+
+        if ($token === '') {
+            return null;
+        }
+
+        $payload = service('cache') -> get($this -> getResetPasswordCacheKey($token));
+
+        return is_array($payload) ? $payload : null;
+    }
+
+    private function getAccountPageData(): array {
+        $data = [
+            'title'       => '',
+            'addGlobalJS' => $this -> addGlobalJS(),
+            'addCSS'      => $this -> addCSS(),
+            'addJS'       => $this -> addJS(),
+            'views'       => $this -> get_views(),
+        ];
+
+        foreach ($this -> global() as $key => $val) {
+            $data[$key] = $val;
+        }
+
+        return $data;
     }
 
     public function changeCustomerData() {

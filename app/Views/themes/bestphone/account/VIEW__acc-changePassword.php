@@ -1,5 +1,5 @@
 
-<form id="form-changePassword" class="js-validate" data-route="<?= route_to('Account-changePassword') ?>" method="post">
+<form id="form-changePassword" class="js-validate" data-route="<?= route_to('Account-changePassword') ?>" data-skip-preloader method="post">
     <!-- Login -->
     <div id="login" data-target-group="idForm">
         <!-- Title -->

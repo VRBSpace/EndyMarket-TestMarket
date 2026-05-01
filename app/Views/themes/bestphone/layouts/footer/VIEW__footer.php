@@ -1,9 +1,13 @@
-<?php $_companyData = $settings_portal['companyData'] ?? ''; ?> <!-- in basecontroller  -->
+<?php
+
+$_companyData   = $settings_portal['companyData'] ?? '';
+$cookieSettings = $settings_portal['coocie'] ?? '';
+?> 
+
+<style><?php echo file_get_contents('assets/css/layouts/footer.css') ?> </style>
+
 <!-- ========== FOOTER ========== -->
 <footer style="background-color: #f3f3f3;">
-
-
-
     <!-- Footer-top-social -->
     <div class="container social-media-icons py-3 d-flex justify-content-left position-relative" style="z-index: 2;">
         <a href="https://www.facebook.com/profile.php?id=61556565086507" target="_blank" class="orange-theme mx-2"><i class="fab fa-facebook-f"></i></a>
@@ -19,7 +23,7 @@
                 <div class="col-lg-4">
                     <div class="mb-3">
                         <a href="/" class="d-inline-block">
-                            <?php $logo         = get_logo() ?>
+                            <?php $logo           = get_logo() ?>
                             <img src="<?= !empty($logo) ? $_ENV['app.imagePortalDir'] . $logo : '' ?>" alt="" style="width: 100%;">
                         </a>
                     </div>
@@ -31,7 +35,7 @@
                 <!-- Middle Column: Information and Customer Service Links -->
                 <div class="col-lg-5">
                     <div class="row">
-                       <div class="col-12 col-md mb-4 mb-md-0 <?= ISMOBILE ? 'p-0' : '' ?>">
+                        <div class="col-12 col-md mb-4 mb-md-0 <?= ISMOBILE ? 'p-0' : '' ?>">
                             <h6 class="mb-3 fw-500">ИНФОРМАЦИЯ</h6>
                             <ul class="list-group1 fw-300 list-group-flush list-group-borderless mb-0 list-group-transparent list-unstyled">
                                 <li><a class="list-group-item list-group-item-action" href="<?= route_to('Pages-about') ?>">За нас</a></li>
@@ -117,7 +121,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.7/htmx.min.js" integrity="sha512-IisGoumHahmfNIhP4wUV3OhgQZaaDBuD6IG4XlyjT77IUkwreZL3T3afO4xXuDanSalZ57Un+UlAbarQjNZCTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
- <script src="https://cdn.jsdelivr.net/npm/htmx-ext-preload@2.1.2" integrity="sha384-PRIcY6hH1Y5784C76/Y8SqLyTanY9rnI3B8F3+hKZFNED55hsEqMJyqWhp95lgfk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/htmx-ext-preload@2.1.2" integrity="sha384-PRIcY6hH1Y5784C76/Y8SqLyTanY9rnI3B8F3+hKZFNED55hsEqMJyqWhp95lgfk" crossorigin="anonymous"></script>
 
 <!-- --- ЗАРЕЖДАНЕ НА CSS ОТ CONTROLLER --- -->
 <?php if (isset($addCSS) && is_array($addCSS)) { ?>
@@ -128,6 +132,7 @@
 
 <!-- --- ЗАРЕЖДАНЕ НА ГЛОБАЛНИ JS ОТ BASE CONTROLLER --- -->
 <?php
+
 if (isset($addGlobalJS) && is_array($addGlobalJS)) {
     foreach ($addGlobalJS as $js) {
         $minifiedCode[] = \JShrink\Minifier::minify(file_get_contents('assets/' . $js . '.js'));
@@ -157,427 +162,373 @@ if (isset($addGlobalJS) && is_array($addGlobalJS)) {
 
 <script>
     const ISMOBILE = '<?= ISMOBILE ?>';
+
+    $('#js-searchproduct-item').on('click', function (event) {
+        $('#css-searchBoxEffect').addClass('open');
+    }).blur(function () {
+        $('#css-searchBoxEffect').removeClass('open');
+    });
 </script> 
-
-<!-- preloader за прежареждане на стриница и при заявки ajax-->
-<script src="assets/js/theme/electro/pagePreloader.js"></script>
-
-</body>
-</html>
 
 <!-- =========================================
      COOKIE CONSENT ULTRA v4 — FULL
 ========================================= -->
+<?php
 
-<div id="ucBar">
+/**
+ * Подготовка на скриптовете и правилата за блокиране
+ */
+$scriptsToLoad    = [];
+$cookieBlockRules = [];
+$seenHosts        = [];
 
-  <div class="uc-wrap">
+foreach (($cookieSettings['tools'] ?? []) as $tool) {
+    $rawCode = $tool['code'] ?? '';
+    // Използваме ID на категорията като ключ (напр. "1" или "2")
+    $catId   = (string) ($tool['category_id'] ?? '');
 
-    <div class="uc-text">
-      <h3>Поверителност и бисквитки</h3>
-      <p>
-        Използваме бисквитки за осигуряване на функционалност,
-        анализ на трафика и персонализиране на съдържание и реклами.
-        Можеш да приемеш всички или да управляваш предпочитанията си.
-      </p>
+    if (!$rawCode || !$catId)
+        continue;
+
+    // Ггрупираме скриптовете по ID на категория
+    $scriptsToLoad[$catId][] = $rawCode;
+
+    // Извличане на хост за автоматично блокиране на външни скриптове
+    if (preg_match('/src=["\'](?:https?:)?\/\/([^"\'>\/]+)/i', $rawCode, $m)) {
+        $host = $m[1];
+        if (!isset($seenHosts[$host . $catId])) {
+            $cookieBlockRules[]        = [
+                'pattern'  => preg_quote($host, '/'),
+                'category' => $catId
+            ];
+            $seenHosts[$host . $catId] = true;
+        }
+    }
+}
+?>
+
+<div id="ucBar" style="display:none">
+    <div class="uc-wrap">
+        <div class="uc-text">
+            <h3><?= $cookieSettings['bar_title'] ?? 'Поверителност' ?></h3>
+            <p><?= nl2br($cookieSettings['bar_text'] ?? '') ?></p>
+            <?php if (!empty($cookieSettings['show_policy'])): ?>
+                <a href="<?= $cookieSettings['policy_url'] ?>" target="_blank" style="color:#a6a6ba;">Виж политиката</a>
+            <?php endif; ?>
+        </div>
+        <div class="uc-actions">
+            <button class="uc-btn primary" onclick="ucAction('all')">Приемам всичко</button>
+
+            <?php if (!empty($cookieSettings['show_policy'])): ?>
+                <button class="uc-btn ghost" onclick="ucAction('decline')">Отказ</button>
+            <?php endif; ?>
+
+
+            <button class="uc-btn dark" onclick="ucOpenSettings()">Персонализиране</button>
+        </div>
     </div>
-
-    <div class="uc-actions">
-
-      <button class="uc-btn primary"
-              onclick="ucAcceptAll()">
-        Приемам
-      </button>
-
-      <button class="uc-btn ghost"
-              onclick="ucDecline()">
-        Отказ
-      </button>
-
-      <button class="uc-btn dark"
-              onclick="ucOpenSettings()">
-        Персонализиране
-      </button>
-
-    </div>
-
-  </div>
 </div>
 
-
-
-<!-- SETTINGS OVERLAY -->
-<div id="ucOverlay">
-
-  <div class="uc-panel">
-
-    <div class="uc-panel-head">
-      <h3>Настройки за бисквитки</h3>
-      <button onclick="ucCloseSettings()">✕</button>
-    </div>
-
-
-    <!-- NECESSARY -->
-    <div class="uc-cat">
-
-      <div class="uc-row">
-        <label class="uc-switch">
-          <input type="checkbox" checked disabled>
-          <span></span>
-        </label>
-
-        <div>
-          <strong>Задължителни бисквитки</strong>
-          <small>Винаги активни</small>
+<div id="ucOverlay" style="display:none">
+    <div class="uc-panel">
+        <div class="uc-panel-head">
+            <h3>Настройки за бисквитки</h3>
+            <button class="uc-btn primary" onclick="ucAction('custom')">Запази избора</button>
+            <button type="button" class="close-btn" onclick="ucCloseSettings()">✕</button>
         </div>
-      </div>
 
-      <p>
-        Тези бисквитки са строго необходими за функционирането на
-        уебсайта и не могат да бъдат деактивирани. Те се използват
-        за основни функции като сигурност, управление на сесии,
-        вход в профили и техническа стабилност на платформата.
-      </p>
+        <div class="uc-body">
+            <?php foreach (($cookieSettings['categories'] ?? []) as $cat): ?>
+                <?php
 
-    </div>
+                $isNecessary  = !empty($cat['is_required']);
+                // Динамично извличане на инструментите за тази категория
+                $currentCatId = $cat['id'] ?? '';
 
+                $relatedTools = array_filter($cookieSettings['decl'] ?? [], function ($t) use ($currentCatId) {
+                    return ($t['category_id'] ?? '') === $currentCatId && !empty($t['name']);
+                });
+                ?>
+                <div class="uc-cat">
+                    <div class="uc-row">
+                        <label class="uc-switch">
+                            <input type="checkbox" 
+                                   data-code="<?= $cat['id'] ?>" 
+                                   <?= $isNecessary ? 'checked disabled' : '' ?>>
+                            <span></span>
+                        </label>
+                        <strong><?= $cat['title'] ?></strong>
+                    </div>
+                    <p><?= $cat['description'] ?></p>
 
-    <!-- ANALYTICS -->
-    <div class="uc-cat">
+                    <?php if (!empty($relatedTools)): ?>
+                        <?php $collapseId = 'relatedTools_' . uniqid(); ?>
 
-      <div class="uc-row">
-        <label class="uc-switch">
-          <input type="checkbox" id="ucAnalytics">
-          <span></span>
-        </label>
+                        <div class="dynamic-cookies-badges mt-2" style="margin-left: 45px;">
+                            <a class="btn btn-sm btn-outline-light"
+                               data-toggle="collapse"
+                               href="#<?= $collapseId ?>"
+                               role="button" >
+                                Повече информация (<?= count($relatedTools) ?>)
+                            </a>
 
-        <div>
-          <strong>Аналитични бисквитки</strong>
-          <small>Статистика и измерване</small>
+                            <div class="collapse mt-3" id="<?= $collapseId ?>">
+                                <div style="display:flex; flex-direction:column; gap:10px;">
+                                    <?php foreach ($relatedTools as $tool): ?>
+                                        <div class="row" style="border:1px solid #3f3f3f; border-radius:8px; padding:10px 12px;background:rgba(255,255,255,0.03);">
+                                            <div class="mb-1 pr-2">
+                                                <span
+                                                    class="badge badge-outline-secondary"
+                                                    style="border:1px solid #666; color:#fff;font-size:12px;padding:6px 10px; " >
+                                                        <?= $tool['name'] ?? '' ?>
+                                                </span>
+                                            </div>
+
+                                            <?php if (!empty($tool['desc'])): ?>
+                                                <div style=" font-size:13px; line-height:1.45;color:#cfcfcf;">
+                                                    <?= $tool['desc'] ?>
+                                                </div>
+                                            <?php else: ?>
+                                                <div style="font-size:12px; color:#8f8f8f;font-style:italic;">
+                                                    Няма описание
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
         </div>
-      </div>
-
-      <p>
-        Аналитичните бисквитки събират информация за начина,
-        по който посетителите използват сайта — страници,
-        време на престой, източници на трафик и поведение.
-        Данните се използват за подобрение на услугите.
-      </p>
-
     </div>
-
-
-    <!-- MARKETING -->
-    <div class="uc-cat">
-
-      <div class="uc-row">
-        <label class="uc-switch">
-          <input type="checkbox" id="ucMarketing">
-          <span></span>
-        </label>
-
-        <div>
-          <strong>Маркетинг бисквитки</strong>
-          <small>Реклама и ремаркетинг</small>
-        </div>
-      </div>
-
-      <p>
-        Маркетинг бисквитките позволяват показване на
-        персонализирани реклами и измерване ефективността
-        на кампании чрез платформи като Google Ads и Meta.
-      </p>
-
-    </div>
-
-
-    <div class="uc-panel-actions">
-      <button class="uc-btn primary"
-              onclick="ucSaveCustom()">
-        Запази избора
-      </button>
-    </div>
-
-  </div>
 </div>
-
-
-
-<style>
-
-/* =========================================
-   PRIMARY COLOR
-========================================= */
-:root{
-  --primary-color:#ee0000;
-}
-
-
-/* =========================================
-   BOTTOM BAR
-========================================= */
-#ucBar{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:rgba(20,20,20,.95);
-  backdrop-filter:blur(14px);
-  box-shadow:0 -6px 30px rgba(0,0,0,.4);
-  z-index:9998;
-  font-family:Inter,Arial,sans-serif;
-}
-
-.uc-wrap{
-  max-width:1300px;
-  margin:auto;
-  padding:18px 24px;
-  display:flex;
-  gap:20px;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-}
-
-.uc-text h3{
-  color:#fff;
-  margin:0 0 4px;
-  font-size:16px;
-}
-
-.uc-text p{
-  color:#bbb;
-  font-size:13px;
-  max-width:620px;
-}
-
-
-/* =========================================
-   BUTTONS
-========================================= */
-.uc-actions{
-  display:flex;
-  gap:10px;
-}
-
-.uc-btn{
-  padding:8px 14px;
-  font-size:12px;
-  border-radius:10px;
-  border:none;
-  cursor:pointer;
-  font-weight:600;
-  transition:.25s;
-}
-
-.uc-btn.primary{
-  background:var(--primary-color) !important;
-  color:#fff;
-}
-
-.uc-btn.primary:hover{
-  box-shadow:0 4px 18px rgba(238,0,0,.45);
-  transform:translateY(-1px);
-}
-
-.uc-btn.ghost{
-  background:transparent;
-  border:1px solid #555;
-  color:#ddd;
-}
-
-.uc-btn.dark{
-  background:#2a2a2a;
-  color:#fff;
-}
-
-
-/* =========================================
-   OVERLAY
-========================================= */
-#ucOverlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  backdrop-filter:blur(6px);
-  display:none;
-  align-items:flex-end;
-  z-index:9999;
-}
-
-.uc-panel{
-  width:100%;
-  background:#111;
-  padding:26px;
-  border-radius:18px 18px 0 0;
-  animation:ucSlide .45s ease;
-}
-
-@keyframes ucSlide{
-  from{transform:translateY(100%);}
-  to{transform:translateY(0);}
-}
-
-.uc-panel-head{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:18px;
-}
-
-.uc-panel-head h3{color:#fff;margin:0;}
-
-.uc-panel-head button{
-  background:none;
-  border:none;
-  color:#fff;
-  font-size:18px;
-  cursor:pointer;
-}
-
-
-/* =========================================
-   CATEGORY
-========================================= */
-.uc-cat{
-  padding:14px 0;
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.uc-row{
-  display:flex;
-  gap:12px;
-  align-items:center;
-}
-
-.uc-cat strong{color:#fff;}
-.uc-cat small{color:#888;font-size:12px;}
-
-.uc-cat p{
-  color:#aaa;
-  font-size:13px;
-  margin:8px 0 0 52px;
-}
-
-
-/* =========================================
-   SWITCH
-========================================= */
-.uc-switch{
-  position:relative;
-  width:46px;
-  height:24px;
-}
-
-.uc-switch input{opacity:0;width:0;height:0;}
-
-.uc-switch span{
-  position:absolute;
-  inset:0;
-  background:#444;
-  border-radius:50px;
-}
-
-.uc-switch span:before{
-  content:"";
-  position:absolute;
-  width:18px;
-  height:18px;
-  left:3px;
-  bottom:3px;
-  background:#fff;
-  border-radius:50%;
-  transition:.3s;
-}
-
-.uc-switch input:checked + span{
-  background:var(--primary-color) !important;
-}
-
-#js-searchproduct-item{
-    z-index:999999999999999999999999;
-}
-
-.uc-switch input:checked + span:before{
-  transform:translateX(22px);
-}
-
-.uc-panel-actions{margin-top:20px;}
-
-</style>
-
-
 
 <script>
-const UC_KEY="uc_v4";
+// Данни от PHP
+    window.DYNAMIC_SCRIPTS = <?= json_encode($scriptsToLoad, JSON_UNESCAPED_UNICODE) ?>;
+    window.RAW_RULES = <?= json_encode($cookieBlockRules, JSON_UNESCAPED_UNICODE) ?>;
+    window.UC_POLICY_VERSION = <?= json_encode((string) ($cookieSettings['policy_version'] ?? '1.0'), JSON_UNESCAPED_UNICODE) ?>;
 
-/* INIT */
-document.addEventListener("DOMContentLoaded",()=>{
+    (($, window, document) => {
+        'use strict';
 
- const saved=localStorage.getItem(UC_KEY);
+        const CURRENT_POLICY_VERSION = String(window.UC_POLICY_VERSION || '1.0').trim();
+        const UC_KEY = `uc_v_${CURRENT_POLICY_VERSION}`;
 
- if(saved){
-   const consent=JSON.parse(saved);
-   document.getElementById("ucBar").style.display="none";
-   ucApply(consent);
- }
-});
+        const UI = {
+            get bar() {
+                return $('#ucBar');
+            },
+            get overlay() {
+                return $('#ucOverlay');
+            },
+            get inputs() {
+                return $('.uc-cat input');
+            }
+        };
+
+        const RULES = (window.RAW_RULES || []).map(r => ({
+                regex: new RegExp(r.pattern, 'i'),
+                category: String(r.category)
+            }));
+
+        const ConsentManager = {
+            // Вземане на състоянието от localStorage
+            get: function () {
+                try {
+                    const saved = localStorage.getItem(UC_KEY);
+                    if (saved)
+                        return JSON.parse(saved);
+                } catch (e) {
+                }
+
+                // Първоначално състояние (дефолт)
+                const data = {};
+                UI.inputs.each(function () {
+                    const id = String($(this).data('code'));
+                    if (id)
+                        data[id] = !!$(this).prop('disabled');
+                });
+                return data;
+            },
+
+            // Запис на избора
+            save: function (type) {
+                const data = {};
+
+                UI.inputs.each(function () {
+                    const $input = $(this);
+                    const id = String($input.data('code'));
+                    // Намираме заглавието на категорията от съседния елемент <strong>
+                    const title = $input.closest('.uc-cat').find('strong').text().trim();
+
+                    if (!id)
+                        return;
+
+                    let status = false;
+                    if ($input.prop('disabled')) {
+                        status = true; // За "Необходими"
+                    } else if (type === 'all') {
+                        status = true;
+                    } else if (type === 'decline') {
+                        status = false;
+                    } else {
+                        status = $input.is(':checked');
+                    }
+
+                    // ЗАПИСВАМЕ ОБЕКТ СЪС СТАТУС И ОПИСАНИЕ
+                    data[id] = {
+                        status: status,
+                        title: title
+                    };
+                });
+
+                localStorage.setItem(UC_KEY, JSON.stringify(data));
+
+                // Изпращане към PHP за запис в лог/база (опционално)
+                fetch('/saveCoocie', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    body: `consent=${encodeURIComponent(JSON.stringify(data))}&timestamp=${Date.now()}`
+                }).finally(() => window.location.reload());
+            },
+
+            // Инжектиране на разрешените скриптове
+            injectScripts: function (consent) {
+                const groups = window.DYNAMIC_SCRIPTS || {};
+                Object.keys(groups).forEach(id => {
+
+                    if (consent[id] && consent[id].status === true) {
+                        groups[id].forEach(html => this.executeScript(html));
+                        delete window.DYNAMIC_SCRIPTS[id];
+                    }
+                });
+            },
+
+            executeScript: function (html) {
+                const div = document.createElement('div');
+                div.innerHTML = html.trim();
+
+                Array.from(div.querySelectorAll('script')).forEach(oldScript => {
+                    const newScript = document.createElement('script');
+
+                    // Копираме атрибутите и махаме text/plain блокажа
+                    Array.from(oldScript.attributes).forEach(attr => {
+                        if (attr.name.toLowerCase() === 'type')
+                            return;
+                        newScript.setAttribute(attr.name, attr.value);
+                    });
+
+                    newScript.type = 'text/javascript';
+                    if (oldScript.src)
+                        newScript.src = oldScript.src;
+                    if (oldScript.textContent)
+                        newScript.textContent = oldScript.textContent;
+
+                    document.body.appendChild(newScript);
+                });
+            }
+        };
+
+        const Security = {
+            shouldBlock: (src, consent) => {
+                if (!src)
+                    return false;
+                const match = RULES.find(r => r.regex.test(src));
+                return match ? consent[match.category] === false : false;
+            },
+
+            init: function (consent) {
+                this.patchCreateElement(consent);
+                this.patchNodeMethods(consent);
+
+                // Блокираме статични скриптове, които вече са в HTML
+                document.querySelectorAll('script[src]').forEach(s => {
+                    const src = s.getAttribute('src');
+                    if (this.shouldBlock(src, consent)) {
+                        s.type = 'text/plain';
+                        s.setAttribute('data-blocked-src', src);
+                        s.removeAttribute('src');
+                    }
+                });
+            },
+
+            patchCreateElement: function (consent) {
+                const original = document.createElement;
+                document.createElement = function (name) {
+                    const el = original.call(document, name);
+                    if (name.toLowerCase() === 'script') {
+                        const setter = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src').set;
+                        Object.defineProperty(el, 'src', {
+                            set: function (val) {
+                                if (Security.shouldBlock(val, consent)) {
+                                    el.type = 'text/plain';
+                                    el.setAttribute('data-blocked-src', val);
+                                    return;
+                                }
+                                setter.call(this, val);
+                            },
+                            get: function () {
+                                return this.getAttribute('src');
+                            }
+                        });
+                    }
+                    return el;
+                };
+            },
+
+            patchNodeMethods: function (consent) {
+                const patch = (proto, method) => {
+                    const orig = proto[method];
+                    proto[method] = function (node) {
+                        if (node?.tagName?.toLowerCase( ) === 'script') {
+                            const src = node.src || node.getAttribute('src');
+                            if (Security.shouldBlock(src, consent)) {
+                                node.type = 'text/plain';
+                            }
+                        }
+                        return orig.apply(this, arguments);
+                    };
+                };
+                patch(Node.prototype, 'appendChild');
+                patch(Node.prototype, 'insertBefore');
+            }
+        };
+
+        // Глобални функции за бутоните
+        window.ucOpenSettings = () => UI.overlay.css('display', 'flex');
+        window.ucCloseSettings = () => UI.overlay.hide();
+        window.ucAction = (type) => ConsentManager.save(type);
+
+        // Старт
+        $(() => {
+            const consent = ConsentManager.get();
 
 
-function ucOpenSettings(){
- document.getElementById("ucOverlay").style.display="flex";
-}
+            // 1. Прилагаме състоянието към чекбоксовете
+            UI.inputs.each(function () {
+                const id = $(this).data('code');
+                if (id && !$(this).prop('disabled')) {
+                    $(this).prop('checked', !!consent[id]);
+                }
+            });
 
-function ucCloseSettings(){
- document.getElementById("ucOverlay").style.display="none";
-}
+            // 2. Активираме защитата
+            Security.init(consent);
 
+            // 3. Пускаме разрешените скриптове
+            ConsentManager.injectScripts(consent);
 
-function ucAcceptAll(){
- ucSave({necessary:true,analytics:true,marketing:true});
-}
+            // 4. Показваме лентата, ако няма запис в localStorage
+            if (!localStorage.getItem(UC_KEY)) {
+                UI.bar.fadeIn();
+            }
+        });
 
-function ucDecline(){
- ucSave({necessary:true,analytics:false,marketing:false});
-}
-
-function ucSaveCustom(){
- ucSave({
-  necessary:true,
-  analytics:
-   document.getElementById("ucAnalytics").checked,
-  marketing:
-   document.getElementById("ucMarketing").checked
- });
-}
-
-
-function ucSave(consent){
-
- localStorage.setItem(UC_KEY,
-  JSON.stringify(consent));
-
- document.getElementById("ucBar").style.display="none";
- document.getElementById("ucOverlay").style.display="none";
-
- ucApply(consent);
-}
-
-
-function ucApply(consent){
-
- if(consent.marketing) loadMarketing();
-}
-
-$('#js-searchproduct-item').on('click', function (event) {
-    $('#css-searchBoxEffect').addClass('open');
-}).blur(function () {
-    $('#css-searchBoxEffect').removeClass('open');
-});
-
-function loadMarketing(){
-
- if(window.mkLoaded) return;
- window.mkLoaded=true;
-}
-
+    })(jQuery, window, document);
 </script>
+
+</body>
+</html>

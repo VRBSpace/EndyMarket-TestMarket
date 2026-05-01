@@ -2,8 +2,9 @@
 $_sort     = $settings_portal['func']['sort'] ?? '';
 $urlParams = $_GET;
 $isMainCategoryPage = $isMainCategoryPage ?? false;
+$isPromoPage = $isPromoPage ?? false;
 
-$_clearFiltersUrl = current_url();
+$_clearFiltersUrl = $isPromoPage ? current_url() . '?promo=1' : current_url();
 ?>
 <style>
     .treeview *,
@@ -25,7 +26,9 @@ $_clearFiltersUrl = current_url();
     <!-- ------------- -->
 
     <!-- наличност филтър-->
-    <?= view($views['filter-nalichnost']) ?>
+    <?php if (!$isPromoPage): ?>
+        <?= view($views['filter-nalichnost']) ?>
+    <?php endif ?>
     <!-- ------------- -->
 
     <!-- производител филтър-->
@@ -37,19 +40,19 @@ $_clearFiltersUrl = current_url();
     <!-- край производител филтър -->
 
     <!-- модели в  главна категория филтър-->
-    <?php if (isset($_GET['categoryId']) || isset($_GET['searchName'])) { ?>
+    <?php if (!$isPromoPage && (isset($_GET['categoryId']) || isset($_GET['searchName']))) { ?>
         <?= view($views['filter-modelByCategory']) ?>
     <?php } ?>
     <!-- ------------- -->
 
     <!-- главна категория и модел филтър-->
-    <?php if (isset($_GET['catToModel'])) { ?>
+    <?php if (!$isPromoPage && isset($_GET['catToModel'])) { ?>
         <?= view($views['filter-rootCategory']) ?>
     <?php } ?>
     <!-- ------------- -->
 
     <!-- Филтър по атрибути -->
-    <?php if (!$isMainCategoryPage): ?>
+    <?php if (!$isPromoPage && !$isMainCategoryPage): ?>
         <div class="filter-block">
             <?= view($views['filter-productAttr_1']) ?>
         </div>

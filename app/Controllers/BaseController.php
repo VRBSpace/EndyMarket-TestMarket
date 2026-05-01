@@ -86,6 +86,7 @@ abstract class BaseController extends Controller {
         }
 
         $this -> auto_update_session_product_inCart();
+
     }
 
 //    protected function render_template($page = null, $data = []) {
@@ -105,6 +106,7 @@ abstract class BaseController extends Controller {
         parent::initController($request, $response, $logger);
         // Preload any models, libraries, etc, here.
         // E.g.: $this->session = \Config\Services::session();
+
     }
 
     protected function setDefaultTheme(string $theme) {
@@ -117,16 +119,19 @@ abstract class BaseController extends Controller {
             // Handle invalid theme
             throw new \RuntimeException('Invalid theme: ' . $theme);
         }
+
     }
 
     public static function get_logo() {
         $MODEL__setings = new MODEL__setings();
 
         return $MODEL__setings -> get__logo();
+
     }
 
     // глобални данни
     protected function global(): array {
+        $settings = service('settings') -> get('App.general')[0] ?? [];
 
         $MODEL__category    = new MODEL__category();
         $MODEL__cenovaLista = new MODEL__cenovaLista();
@@ -172,7 +177,13 @@ abstract class BaseController extends Controller {
             }
         }
 
+        // $dds = isset($settings['dds']) ? ($settings['dds'] / 100) + 1 : 1.2;
+        $settingsJson = json_decode($settings ?? '{}');
+        $dds          = !empty($settingsJson -> dds) ? ($settingsJson -> dds / 100) + 1 : 1.2;
+
         return [
+            'settingsJson'               => $settingsJson,
+            'dds'                        => $dds,
             'ISMOBILE'                   => isMobile(),
             'setingGeneral'              => setingGlob('App.general'),
             'cartSession'                => $cartSession,
@@ -184,6 +195,7 @@ abstract class BaseController extends Controller {
             'totalShopProducts'          => $totalShopProducts,
             'settings_portal'            => $decoded,
         ];
+
     }
 
     // генериране на масив с марки и продуктови модели 
@@ -206,6 +218,7 @@ abstract class BaseController extends Controller {
         }
 
         return $tree;
+
     }
 
     protected function buildCategoryTree($parent_id = null, $categories = null) {
@@ -225,6 +238,7 @@ abstract class BaseController extends Controller {
         }
 
         return $tree;
+
     }
 
     //определяне на id до подкатегориите от последната вложена подкатегория
@@ -244,41 +258,43 @@ abstract class BaseController extends Controller {
             }
         }
         return null;
+
     }
-public function findLeafIds(int $parentId, array $categories): array
-{
-    $leafIds = [];
 
-    $findStart = function ($nodes) use (&$findStart, $parentId, &$leafIds) {
-        foreach ($nodes as $node) {
-            if ($node['category_id'] == $parentId) {
-                // намерихме стартовата подкатегория -> обхождаме надолу
-                $traverse = function ($cat) use (&$traverse, &$leafIds) {
-                    if (empty($cat['children'])) {
-                        $leafIds[] = $cat['category_id'];
-                    } else {
-                        foreach ($cat['children'] as $child) {
-                            $traverse($child);
+    public function findLeafIds(int $parentId, array $categories): array {
+        $leafIds = [];
+
+        $findStart = function ($nodes) use (&$findStart, $parentId, &$leafIds) {
+            foreach ($nodes as $node) {
+                if ($node['category_id'] == $parentId) {
+                    // намерихме стартовата подкатегория -> обхождаме надолу
+                    $traverse = function ($cat) use (&$traverse, &$leafIds) {
+                        if (empty($cat['children'])) {
+                            $leafIds[] = $cat['category_id'];
+                        } else {
+                            foreach ($cat['children'] as $child) {
+                                $traverse($child);
+                            }
                         }
-                    }
-                };
+                    };
 
-                $traverse($node);
-                return true;
-            }
-
-            if (!empty($node['children'])) {
-                if ($findStart($node['children'])) {
+                    $traverse($node);
                     return true;
                 }
-            }
-        }
-        return false;
-    };
 
-    $findStart($categories);
-    return $leafIds;
-}
+                if (!empty($node['children'])) {
+                    if ($findStart($node['children'])) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        };
+
+        $findStart($categories);
+        return $leafIds;
+
+    }
 
     /**
      * Връща списък с id-та на всички категории в даден клон (родител + деца в дълбочина).
@@ -293,13 +309,14 @@ public function findLeafIds(int $parentId, array $categories): array
             $ids = array_merge($ids, $this -> collectCategoryBranchIds($child['category_id'], $byParent));
         }
         return $ids;
-    }
 
+    }
 
     protected function getSessionAccount() {
         $accountSession = session() -> get('user_id') ?? [];
 
         return $accountSession;
+
     }
 
     protected function getSessionProperty() {
@@ -317,11 +334,13 @@ public function findLeafIds(int $parentId, array $categories): array
 
 
         return $cartSession;
+
     }
 
     protected function setSessionProperty($cartSession) {
         session() -> set('cartSession', $cartSession);
         return;
+
     }
 
     protected function getProductPriceLevel() {
@@ -339,6 +358,7 @@ public function findLeafIds(int $parentId, array $categories): array
         }
 
         return $productPriceLevel;
+
     }
 
     protected function getResolvedProductPriceLevel($rawLevel = null): string {
@@ -365,6 +385,7 @@ public function findLeafIds(int $parentId, array $categories): array
         }
 
         return $fallback;
+
     }
 
     protected function getProductRightPrice($productId, $productPriceLevel) {
@@ -397,6 +418,7 @@ public function findLeafIds(int $parentId, array $categories): array
         $promoPrice   = calculatePromoPrice($basePrice, $promoPercent);
 
         return $promoPrice ?? $basePrice;
+
     }
 
     // проверка дали view файла е наличен в текущата директория на темата
@@ -412,6 +434,7 @@ public function findLeafIds(int $parentId, array $categories): array
         }
 
         return $file;
+
     }
 
     // извл на настройките на портала
@@ -421,6 +444,7 @@ public function findLeafIds(int $parentId, array $categories): array
         $nastroikiData  = array_column($nastroikiData, null, 'key');
 
         return $nastroikiData ?? [];
+
     }
 
     // обновяване на сесията за поръчка с нови данни от запазената количка
@@ -439,10 +463,10 @@ public function findLeafIds(int $parentId, array $categories): array
             if (empty($res)) {
                 $this -> setSessionProperty([]);
             } else {
-                $productPriceLevel = 'cenaKKC';
-                $grandTotalPrice   = 0;
-                $grandTotalQty     = 0;
-                $_product_json     = json_decode($res[0]['product_json'] ?? '[]', true);
+                $productPriceLevel       = 'cenaKKC';
+                $grandTotalPrice         = 0;
+                $grandTotalQty           = 0;
+                $_product_json           = json_decode($res[0]['product_json'] ?? '[]', true);
                 $cartSession['products'] = [];
 
                 foreach ($res as $v) {
@@ -467,12 +491,13 @@ public function findLeafIds(int $parentId, array $categories): array
                 $this -> setSessionProperty($cartSession);
             }
         }
+
     }
 
     protected function sendEmail($sendTo, $setSubject, $setMessage, $isDilarForm = false) {
         $email = \Config\Services::email();
 
-        $host = $_SERVER['HTTP_HOST'];
+        $host = $_SERVER['HTTP_HOST'] ?? parse_url(base_url(), PHP_URL_HOST) ?? 'portal';
 
         $settings_portal  = $this -> get_portalSettings();
         $jsonDecodedEmail = !empty($settings_portal['order']['text']) ? json_decode($settings_portal['order']['text'], true) : [];
@@ -480,6 +505,11 @@ public function findLeafIds(int $parentId, array $categories): array
         $systemEmail     = $jsonDecodedEmail['email']['systemEmail'] ?? '';
         $additionalEmail = $jsonDecodedEmail['email']['additional'] ?? '';
         $dilarEmail      = $jsonDecodedEmail['email']['dilarEmail'] ?? '';
+        $systemEmail     = trim((string) $systemEmail);
+        $additionalEmail = trim((string) $additionalEmail);
+        $dilarEmail      = trim((string) $dilarEmail);
+        $sendTo          = trim((string) $sendTo);
+        $fromName        = $this -> customConfig -> comany ?? $host;
 
 //        $combinedEmails = $systemEmail;
 //        if (!empty($additionalEmail)) {
@@ -491,9 +521,11 @@ public function findLeafIds(int $parentId, array $categories): array
             return false;
         }
 
-        $email -> setTo($isDilarForm ? $dilarEmail : $sendTo)
-                -> setFrom($isDilarForm ? 'портал' : $systemEmail, $host)
-                -> setReplyTo($isDilarForm ? '' : $systemEmail)
+        $primaryRecipient = $isDilarForm ? $dilarEmail : $sendTo;
+
+        $email -> setTo($primaryRecipient)
+                -> setFrom($systemEmail, $fromName)
+                -> setReplyTo($systemEmail, $fromName)
                 -> setSubject($setSubject)
                 -> setMessage($setMessage)
                 -> setNewLine("\r\n")
@@ -504,7 +536,8 @@ public function findLeafIds(int $parentId, array $categories): array
             if (!$isDilarForm) {
                 $email -> clear(); // Reset email configuration for new email
                 $email -> setTo($systemEmail)
-                        -> setFrom('портал', $host)
+                        -> setFrom($systemEmail, $fromName)
+                        -> setReplyTo($sendTo ?: $systemEmail, $fromName)
                         -> setBCC($additionalEmail)
                         -> setSubject($setSubject)
                         -> setMessage($setMessage)
@@ -520,6 +553,7 @@ public function findLeafIds(int $parentId, array $categories): array
             log_message('error', 'Failed to send confirmation email to klient');
             return false;
         }
+
     }
 
     protected function addGlobalJS() {
@@ -570,6 +604,7 @@ public function findLeafIds(int $parentId, array $categories): array
         ];
 
         return array_merge($plugins, $components, $autoload);
+
     }
 
     protected function validateForm() {
@@ -584,6 +619,7 @@ public function findLeafIds(int $parentId, array $categories): array
         ]);
 
         return $validation;
+
     }
 
     protected function get_views() {
@@ -641,5 +677,7 @@ public function findLeafIds(int $parentId, array $categories): array
             'orderDetail-itemsMobile'       => "$theme/order/VIEW__orderDetail-itemsMobile",
             'ordersMobile'                  => "$theme/order/VIEW__ordersMobile",
         ];
+
     }
+
 }

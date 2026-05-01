@@ -1,5 +1,5 @@
 
-<form id="form-customerData" class="js-validate table-form" data-route="<?= route_to('Account-changeCustomerData') ?>" method="post">
+<form id="form-customerData" class="js-validate table-form" data-route="<?= route_to('Account-changeCustomerData') ?>" data-skip-preloader method="post">
     <table class="table table-hover table-sm" id="myTable">
         <tbody>
             <tr>
@@ -7,7 +7,7 @@
                 <td>
                     <div class="js-form-message js-focus-state input-group"> 
                         <input class="form-control" 
-                               name="klient_name" 
+                              name="klient_name" 
                                data-msg="Задълтелно поле"
                                data-error-class="u-has-error"
                                data-success-class="u-has-success"

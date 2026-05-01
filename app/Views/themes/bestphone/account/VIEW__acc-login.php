@@ -18,10 +18,13 @@
                             <br />
                             <span class="text-danger"><?= session('error') ?></span>
                         <?php endif; ?>
+
+                        <?php if (session() -> has('message')): ?>
+                            <br />
+                            <span class="text-success"><?= session('message') ?></span>
+                        <?php endif; ?>
                     </div>
                     <!-- End Title -->
-
-                    <p><span class="text-danger">Забележка: </span>При първо влизане използвайте своя булстат за вход</p>
 
                     <form id="login-form" class="js-validate" novalidate="novalidate" method="POST" action="<?= site_url('/login') ?>">
                         <!-- Form Group -->
@@ -70,6 +73,9 @@
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary-orange px-5 text-white rounded-0">Вход</button>
                             </div>
+                            <p class="mb-2">
+                                <a href="<?= route_to('Account-forgotPassword') ?>">Забравена парола?</a>
+                            </p>
                             <p class="mb-3">
                                 Нямате профил? <a href="<?= route_to('Account-register') ?>">Регистрирай се тук</a>.
                             </p>

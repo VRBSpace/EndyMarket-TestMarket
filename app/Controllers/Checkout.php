@@ -20,6 +20,7 @@ class Checkout extends BaseController {
         $cartSession      = $this -> getSessionProperty();
         $jsonData         = array_merge(json_decode($this -> request -> getBody(), true), $cartSession['products'] ?? []);
         $orderDetailData  = [];
+        $cartGrandPrice   = 0;
 
         $MODEL__order  = new MODEL__order();
         $MODEL__klient = new KlientModel();
@@ -32,14 +33,21 @@ class Checkout extends BaseController {
 
         // Insert to OrderDetail
         foreach ($jsonData as $product) {
-            if (isset($product['product_id'])) {
-                $orderDetailData[$product['product_id']] = [
-                    //'order_id'    => $orderId,
-                    //'product_id'  => $product['product_id'],
-                    'qty'   => $product['quantity'],
-                    'price' => $product['item_price']
-                ];
+            if (empty($product['product_id'])) {
+                continue;
             }
+
+            $qty   = $product['quantity'] ?? 0;
+            $price = $product['item_price'] ?? 0;
+
+            $orderDetailData[$product['product_id']] = [
+                //'order_id'    => $orderId,
+                //'product_id'  => $product['product_id'],
+                'qty'   => $qty,
+                'price' => $price
+            ];
+
+            $cartGrandPrice += $qty * $price;
         }
 
         // Проверка дали има детайли за поръчката
@@ -82,20 +90,18 @@ class Checkout extends BaseController {
 
         $transportenRazhod = $jsonData['deliveryPrice'] ?? 0;
 
-        // Извличаме общата цена на продуктите в количката или задаваме 0 по подразбиране
-        $cartPrice = $cartSession['cart_all_products_info']['price'] ?? 0;
-
         $orderData = [
-            'orderTip'          => NULL,
-            'klient_id'         => $user_id ?? null,
+            'orderTip'           => NULL,
+            'klient_id'          => $user_id ?? null,
             //'delivery_obekt'  => $jsonData['delivery_obekt'] ?? null,
-            'delivery_json'     => !empty($deliveryJson) ? json_encode($deliveryJson, JSON_UNESCAPED_UNICODE) : null,
-            'delivery_method'   => $jsonData['delivery_method'] ?? null,
-            'total_price'       => $cartPrice,
-            'transportenRazhod' => $transportenRazhod,
-            'payment_method'    => $jsonData['payment_method'] ?? null,
-            'belezka'           => $jsonData['belezka'] ?? null,
-            'product_json'      => json_encode($orderDetailData, JSON_UNESCAPED_UNICODE),
+            'delivery_json'      => !empty($deliveryJson) ? json_encode($deliveryJson, JSON_UNESCAPED_UNICODE) : null,
+            'delivery_method'    => $jsonData['delivery_method'] ?? null,
+            'total_price'        => $cartGrandPrice,
+            'transportenRazhod'  => $transportenRazhod,
+            'payment_method'     => $jsonData['payment_method'] ?? null,
+            'belezka'            => $jsonData['belezka'] ?? null,
+            'is_accepted_policy' => 1,
+            'product_json'       => json_encode($orderDetailData, JSON_UNESCAPED_UNICODE),
         ];
 
         $orderId = $MODEL__order -> insertData($orderData);
@@ -147,6 +153,7 @@ class Checkout extends BaseController {
         ];
 
         return $this -> response -> setJSON($response);
+
     }
 
     // клиентска поръчка
@@ -154,8 +161,8 @@ class Checkout extends BaseController {
         $sessionAccountId    = $this -> getSessionAccount();
         $cartSession         = $this -> getSessionProperty();
         $cartSessionProducts = $cartSession['products'] ?? [];
+        $cartGrandPrice      = 0;
 
-        // Проверка дали сесията и продуктите са налични
         if (empty($cartSessionProducts) || empty($cartSession)) {
             return json_encode([
                 'success'    => false,
@@ -163,19 +170,28 @@ class Checkout extends BaseController {
             ]);
         }
 
-        $jsonData = array_merge($this -> request -> getPost(), $cartSessionProducts);
+        $post = $this -> request -> getPost();
+
+        $jsonData = array_merge($post, $cartSessionProducts);
         $email    = $jsonData['delivery_json']['email'];
 
         $jsonData['delivery_json'] = json_encode(array_filter((array) $jsonData['delivery_json']) + ['tel' => $jsonData['tel']], JSON_UNESCAPED_UNICODE);
 
         $orderDetailData = [];
         foreach ($cartSessionProducts as $product) {
-            if (!empty($product['product_id'])) {
-                $orderDetailData[$product['product_id']] = [
-                    'qty'   => $product['quantity'],
-                    'price' => $product['item_price']
-                ];
+            if (empty($product['product_id'])) {
+                continue;
             }
+
+            $qty   = $product['quantity'] ?? 0;
+            $price = $product['item_price'] ?? 0;
+
+            $orderDetailData[$product['product_id']] = [
+                'qty'   => $qty,
+                'price' => $price
+            ];
+
+            $cartGrandPrice += $qty * $price;
         }
 
         // Проверка дали има детайли за поръчката
@@ -188,19 +204,17 @@ class Checkout extends BaseController {
 
         $transportenRazhod = $jsonData['deliveryPrice'] ?? 0;
 
-        // Извличаме общата цена на продуктите в количката или задаваме 0 по подразбиране
-        $cartPrice = $cartSession['cart_all_products_info']['price'] ?? 0;
-
         $orderData = [
             //'sp_status_id'    => 'Не приключена',
-            'orderTip'          => 'K',
-            'delivery_json'     => $jsonData['delivery_json'] ?? null,
-            'delivery_method'   => 'curier',
-            'total_price'       => $cartPrice,
-            'transportenRazhod' => $transportenRazhod,
-            'payment_method'    => $jsonData['payment_method'],
-            'belezka'           => $jsonData['belezka'] ?? null,
-            'product_json'      => json_encode($orderDetailData),
+            'orderTip'           => 'K',
+            'delivery_json'      => $jsonData['delivery_json'] ?? null,
+            'delivery_method'    => 'curier',
+            'total_price'        => $cartGrandPrice,
+            'transportenRazhod'  => $transportenRazhod,
+            'payment_method'     => $jsonData['payment_method'],
+            'belezka'            => $jsonData['belezka'] ?? null,
+            'is_accepted_policy' => 1,
+            'product_json'       => json_encode($orderDetailData),
         ];
 
         // Създаване на нова поръчка
@@ -243,6 +257,7 @@ class Checkout extends BaseController {
         }
 
         return $this -> response -> setJSON($response);
+
     }
 
     // бърза поръчка
@@ -250,27 +265,11 @@ class Checkout extends BaseController {
         $jsonData  = $this -> request -> getPost();
         $qty       = (int) ($jsonData['qty'] ?? 1);
         $productId = $jsonData['product_id'];
-        $isAgree   = (int) ($jsonData['is_agree'] ?? 0);
-        $isPrivacyAgree = (int) ($jsonData['is_privacy_agree'] ?? 0);
 
         if (!$productId) {
             return $this -> response -> setJSON([
                         'success'    => false,
                         'errMessage' => 'Невалидно ID на продукт!'
-            ]);
-        }
-
-        if ($isAgree !== 1) {
-            return $this -> response -> setJSON([
-                        'success'    => false,
-                        'errMessage' => 'Необходимо е съгласие с общите правила и условия.'
-            ]);
-        }
-
-        if ($isPrivacyAgree !== 1) {
-            return $this -> response -> setJSON([
-                        'success'    => false,
-                        'errMessage' => 'Необходимо е съгласие с политиката за поверителност.'
             ]);
         }
 
@@ -316,5 +315,7 @@ class Checkout extends BaseController {
         ];
 
         return $this -> response -> setJSON($response);
+
     }
+
 }

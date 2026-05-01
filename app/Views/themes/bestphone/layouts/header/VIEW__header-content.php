@@ -91,12 +91,8 @@ function slugify(string $str): string {
         <?php
         $_isLoggedIn = session() -> has('user_id');
         $_settingsOrder = $settings_portal['order']['order'] ?? [];
-        $_freePrices = [
-            true  => $_settingsOrder['freeDostavkaPrice'] ?? '',
-            false => $_settingsOrder['freeDostavkaKlPrice'] ?? '',
-        ];
-        $_freeDostRange = (float) ($_settingsOrder[$_isLoggedIn ? 'freeDostavkaLeftPrice' : 'freeDostavkaKlLeftPrice'] ?? 0);
-        $_isFree = $_freePrices[$_isLoggedIn];
+        $_freeDostRange = (float) ($_settingsOrder['freeDostavkaLeftPrice'] ?? 0);
+        $_isFree = $_settingsOrder['freeDostavkaPrice'] ?? '';
         ?>
 
         <div class="d-none">

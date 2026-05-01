@@ -11,15 +11,10 @@
                 $_settingsOrder = $settings_portal['order']['order'] ?? [];
 
                 // Създаваме масив със стойности за безплатна доставка според статуса
-                $_freePrices = [
-                    true  => $_settingsOrder['freeDostavkaPrice'] ?? '',
-                    false => $_settingsOrder['freeDostavkaKlPrice'] ?? '',
-                ];
-
-                $_freeDostRange = (float) ($_settingsOrder[$_isLoggedIn ? 'freeDostavkaLeftPrice' : 'freeDostavkaKlLeftPrice'] ?? 0);
+                $_freeDostRange = (float) ($_settingsOrder['freeDostavkaLeftPrice'] ?? 0);
 
                 // Избираме подходящата стойност
-                $_isFree = $_freePrices[$_isLoggedIn];
+                $_isFree = $_settingsOrder['freeDostavkaPrice'] ?? '';
 
                 // Показваме лентата само ако има зададена стойност
                 if (!empty($_isFree)):

@@ -84,7 +84,7 @@
 
                     totalFreePriceValue = parseFloat(freeDostavkaPrice) - parseFloat(result.totalPrice);
                     totalFreePrice.text(totalFreePriceValue.toFixed(2));
-                    isMinPrice = parseFloat(result.totalPrice) * 1.2 >= settingMinPrice.val();
+                    isMinPrice = parseFloat(result.totalPrice) >= settingMinPrice.val();
                     text_minPrice.toggleClass('hide', isMinPrice);
 
                     $('#js-blockTotalFreePrice').toggleClass('hide', !( totalFreePriceValue > 0 && totalFreePriceValue <= freeDostRange ));
@@ -108,7 +108,9 @@
                             alert(response.message);
                         }
 
-                        $('#js-cartItems #cart-table tfoot').load(location.href + " #js-cartItems #cart-table tfoot>*");
+                        $('#js-cartItems #cart-table tfoot').load(location.href + " #js-cartItems #cart-table tfoot>*", function () {
+                            $(document).trigger('cart:cartUpdated');
+                        });
                     }
                 });
             },
@@ -141,6 +143,8 @@
                         checkedCourier.trigger('change');
                     }
                 }
+
+                $(document).trigger('cart:deliveryObjectChanged');
             }
         },
 
@@ -171,7 +175,7 @@
 
                 totalFreePriceValue = parseFloat(freeDostavkaPrice) - parseFloat(result.totalPrice);
                 totalFreePrice.text(totalFreePriceValue.toFixed(2));
-                isMinPrice = parseFloat(result.totalPrice) * 1.2 >= settingMinPrice.val();
+                isMinPrice = parseFloat(result.totalPrice) >= settingMinPrice.val();
 
                 $('#js-label-totalQuantity').text(result.totalQty);
                 $('#js-blockTotalFreePrice').toggleClass('hide', !( totalFreePriceValue > 0 && totalFreePriceValue <= freeDostRange ));
@@ -252,6 +256,7 @@
                         $('#js-deliveryObekt-block').html(response.view);
                         alert('Обектът е избран');
                         swal.close();
+                        $(document).trigger('cart:deliveryObjectChanged');
                     }
                 });
             },
@@ -398,6 +403,7 @@
 
                                     text_minPrice.toggleClass('hide', isMinPrice);
                                     $('.js-checkout-btn').toggleClass('hide', !isMinPrice);
+                                    $(document).trigger('cart:cartUpdated');
                                 });
                             }
                             else {

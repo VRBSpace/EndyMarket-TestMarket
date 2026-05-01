@@ -365,6 +365,7 @@ class Shop extends BaseController
         $priceFrom = $this->request->getVar("priceFrom") ?? 0;
         $searchName = $this->request->getVar("searchName");
         $promo = $this->request->getVar("promo");
+        $isPromoPage = !empty($promo);
         $brandTxt = $this->request->getVar("brandTxt");
 
         $subsubcategoryId = $this->request->getVar("subsubcategoryId");
@@ -532,6 +533,26 @@ class Shop extends BaseController
             : explode("_", $urlParams["f_price"]);
         $f_isInstock = empty($urlParams["f_instock"]) ? null : 1;
 
+        if ($isPromoPage) {
+            // Promo page supports only brand and price filters.
+            $podCharValIds = [];
+            $f_subCatIds = null;
+            $f_models = null;
+            $f_isInstock = null;
+
+            unset(
+                $urlParams["f_podCharValId"],
+                $urlParams["f_instock"],
+                $urlParams["f_models"],
+                $urlParams["f_modelsOther"],
+                $urlParams["f_subCatIds"],
+                $urlParams["catToModel"],
+                $urlParams["categoryId"],
+                $urlParams["categoryRootId"],
+                $urlParams["subsubcategoryId"]
+            );
+        }
+
         if (!empty($categoryId) || !empty($searchName)) {
             $brandsModels = $this->MODEL__filter->get__brandsModels([
                 "categoryId" => $categoryId,
@@ -541,7 +562,7 @@ class Shop extends BaseController
             ]);
         }
 
-        if (!empty($f_models)) {
+        if (!$isPromoPage && !empty($f_models)) {
             // филтриране на х-ки на продукти
             $filters = $this->MODEL__filter->get_characteristic_filtersBySubcategories(
                 $f_subCatIds
@@ -554,7 +575,7 @@ class Shop extends BaseController
         }
 
         // ако има подкатегория
-        if (!empty($categoryId)) {
+        if (!$isPromoPage && !empty($categoryId)) {
             $brands = $this->MODEL__filter->get__brands([
                 "categoryId" => $categoryId,
                 "subCategoryIds" => $branchIds ?? null,
@@ -570,7 +591,7 @@ class Shop extends BaseController
             $subCategoryAttr = $this->MODEL__filter->get__subCategoryAttr(
                 $categoryId
             );
-        } elseif (!empty($urlParams["catToModel"])) {
+        } elseif (!$isPromoPage && !empty($urlParams["catToModel"])) {
             $product_to_category = $this->MODEL__filter->get__product_to_category(
                 ["productPriceLevel" => $productPriceLevel]
             );
@@ -619,7 +640,9 @@ class Shop extends BaseController
         ];
 
         // Ако сме на промо страница (/shop?promo=1), взимаме продуктите от _ofer_special.id = 10
-        if (!empty($promo)) {
+        $promoOfferIds = [];
+
+        if ($isPromoPage) {
             $promoOfferId = 10;
             $promoRow = db_connect()
                 ->table("_ofer_special")
@@ -663,6 +686,14 @@ class Shop extends BaseController
             }
         }
 
+        if ($isPromoPage && !empty($promoOfferIds)) {
+            $brands = $this->MODEL__filter->get__brands([
+                "productIds" => $promoOfferIds,
+                "searchName" => $searchName,
+                "productPriceLevel" => $productPriceLevel,
+            ]);
+        }
+
         $product_models = $this->MODEL__filter->get__brandsModels();
         $brands_forModels = $this->MODEL__brand->get__brands();
         $productModelsTree = $this->buildModelByBrand(
@@ -671,8 +702,11 @@ class Shop extends BaseController
         );
         $products = $this->MODEL__product->get__all_product($commonArg);
 
-        // Динамични филтри по характеристики на база реално върнатите продукти
-        $productIdsForFilters = array_column($products ?? [], "product_id");
+        // Динамични филтри по характеристики на база целия филтриран резултат, не само текущата страница.
+        $facetArg = $commonArg;
+        unset($facetArg["page"], $facetArg["perPage"], $facetArg["offset"], $facetArg["sort"]);
+        $productsForFilters = $this->MODEL__product->get__all_product($facetArg);
+        $productIdsForFilters = array_column($productsForFilters ?? [], "product_id");
         if (!empty($productIdsForFilters)) {
             $filters = $this->MODEL__filter->get_characteristic_filtersByProductIds(
                 $productIdsForFilters
@@ -826,6 +860,7 @@ class Shop extends BaseController
             // views
             "seo" => $seoRow,
             "views" => $this->get_views(),
+            "isPromoPage" => $isPromoPage,
         ];
 
         foreach ($this->global() as $key => $val) {

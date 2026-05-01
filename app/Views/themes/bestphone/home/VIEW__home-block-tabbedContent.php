@@ -142,8 +142,8 @@ function reziceImage($image) {
                                     $_promoPrice   = calculatePromoPrice($_basePrice, $_promoPercent);
                                     $_percent      = $_promoPrice !== null ? abs((float) $_promoPercent) : null;
                                     $_currentPrice = $_promoPrice ?? $_basePrice;
-                                    $_displayBase  = get_valuta() === '€' ? ($_basePrice / 1.95583) : $_basePrice;
-                                    $_displayPrice = get_valuta() === '€' ? ($_currentPrice / 1.95583) : $_currentPrice;
+                                    $_displayBase  = $_basePrice;
+                                    $_displayPrice = $_currentPrice;
                                     ?>
                                     <?php if ($_percent !== null): ?>
                                         <span class="label-latest label-sale"><b>- <?= $_percent ?? '' ?> %</b></span>

@@ -99,16 +99,16 @@ class Home extends BaseController {
 
         // Допълнителни категории
         $categorySections = [
-            ['key' => 'cosmetics', 'title' => 'Козметика', 'categoryRootId' => 771, 'categoryId' => 771],
-            ['key' => 'garden_flowers', 'title' => 'Градина и цветя', 'categoryRootId' => 766, 'categoryId' => 766],
-            ['key' => 'hair_care', 'title' => 'Грижа за коса', 'categoryRootId' => 521, 'categoryId' => 521],
-            ['key' => 'home_needs', 'title' => 'Домашни потреби', 'categoryRootId' => 767, 'categoryId' => 767],
-            ['key' => 'for_kids', 'title' => 'За детето', 'categoryRootId' => 768, 'categoryId' => 768],
-            ['key' => 'pc_periphery', 'title' => 'Компютърна периферия', 'categoryRootId' => 772, 'categoryId' => 772],
-            ['key' => 'furniture', 'title' => 'Мебели', 'categoryRootId' => 773, 'categoryId' => 773],
-            ['key' => 'flooring', 'title' => 'Подови настилки', 'categoryRootId' => 775, 'categoryId' => 775],
-            ['key' => 'souvenirs', 'title' => 'Сувенири и декорация', 'categoryRootId' => 778, 'categoryId' => 778],
-            ['key' => 'tableware', 'title' => 'Съдове за хранене', 'categoryRootId' => 186, 'categoryId' => 186],
+            ['key' => 'cosmetics', 'title' => 'Козметика', 'categoryRootId' => 771, 'categoryId' => 771, 'offerId' => 11],
+            ['key' => 'garden_flowers', 'title' => 'Градина и цветя', 'categoryRootId' => 766, 'categoryId' => 766, 'offerId' => 12],
+            ['key' => 'hair_care', 'title' => 'Грижа за коса', 'categoryRootId' => 521, 'categoryId' => 521, 'offerId' => 13],
+            ['key' => 'home_needs', 'title' => 'Домашни потреби', 'categoryRootId' => 767, 'categoryId' => 767, 'offerId' => 14],
+            ['key' => 'for_kids', 'title' => 'За детето', 'categoryRootId' => 768, 'categoryId' => 768, 'offerId' => 15],
+            ['key' => 'pc_periphery', 'title' => 'Компютърна периферия', 'categoryRootId' => 772, 'categoryId' => 772, 'offerId' => 16],
+            ['key' => 'furniture', 'title' => 'Мебели', 'categoryRootId' => 773, 'categoryId' => 773, 'offerId' => 17],
+            ['key' => 'flooring', 'title' => 'Подови настилки', 'categoryRootId' => 775, 'categoryId' => 775, 'offerId' => 18],
+            ['key' => 'souvenirs', 'title' => 'Сувенири и декорация', 'categoryRootId' => 778, 'categoryId' => 778, 'offerId' => 19],
+            ['key' => 'tableware', 'title' => 'Съдове за хранене', 'categoryRootId' => 186, 'categoryId' => 186, 'offerId' => null],
         ];
 
         // събиране на целите клонове за всяка секция (родител + всички подкатегории)
@@ -120,6 +120,24 @@ class Home extends BaseController {
 
         $categoryProducts = [];
         foreach ($categorySections as $_section) {
+            $offerId = (int) ($_section['offerId'] ?? 0);
+
+            if ($offerId > 0) {
+                $offerRow = db_connect() -> table('_ofer_special') -> where('id', $offerId) -> get() -> getRowArray();
+                $offerIds = array_values(array_filter(array_map('intval', preg_split('/[^0-9]+/', $offerRow['productsID'] ?? ''))));
+
+                if (!empty($offerIds)) {
+                    $categoryProducts[$_section['key']] = $this -> MODEL__product -> get__all_product([
+                        'productIds'        => $offerIds,
+                        'productPriceLevel' => $productPriceLevel,
+                        'sort'              => 'FIELD(p.product_id,' . implode(',', $offerIds) . ')',
+                        'perPage'           => count($offerIds),
+                        'offset'            => 0
+                    ]);
+                    continue;
+                }
+            }
+
             $branchIds = $this -> collectCategoryBranchIds($_section['categoryId'], $byParent);
             $categoryProducts[$_section['key']] = $this -> MODEL__product -> get__all_product([
                 'perPage' => 15,

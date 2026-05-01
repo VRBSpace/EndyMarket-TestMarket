@@ -58,6 +58,21 @@ class MODEL__global extends BaseModel {
             $sql -> where('pm.model_id', $_GET['f_mainModelId']);
         }
 
+        $selectedCharValueIds = $data['productCharValueIds'] ?? [];
+        if (empty($selectedCharValueIds) && !empty($_GET['f_podCharValId'])) {
+            $selectedCharValueIds = explode('_', $_GET['f_podCharValId']);
+        }
+
+        if (!empty($selectedCharValueIds)) {
+            $matchedProductIds = $this->resolveCharacteristicFilteredProductIds((array) $selectedCharValueIds);
+
+            if (empty($matchedProductIds)) {
+                $sql->where('1 = 0');
+            } else {
+                $sql->whereIn('p.product_id', $matchedProductIds);
+            }
+        }
+
         if (isset($data['rootCategoryIds']) || !empty($data['f_rootCatId'])) {
             $sql -> where('p.categoryRoot_id', $data['f_rootCatId']);
         }

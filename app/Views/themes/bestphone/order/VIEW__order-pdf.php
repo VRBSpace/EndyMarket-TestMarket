@@ -4,6 +4,25 @@
     </div>
 <?php endif ?>
 
+<?php
+$_paymentMethodRaw = strtoupper(trim((string) ($orderData -> payment_method ?? '')));
+$_paymentMethodLabel = match ($_paymentMethodRaw) {
+    'E', 'N', 'CASH' => 'в брой',
+    'B', 'BANK', 'BANK_TRANSFER' => 'банков превод',
+    'D', 'C', 'CARD' => 'с карта',
+    default => $_paymentMethodRaw !== '' ? $orderData -> payment_method : 'не е посочен'
+};
+
+$_courierLabelMap = [
+    'speedy_machina' => 'до автомат на Speedy',
+    'speedy_office' => 'до офис на Speedy',
+    'speedy_door' => 'до адрес на Speedy',
+    'econt_machina' => 'до еконтомат на Еконт',
+    'econt_office' => 'до офис на Еконт',
+    'econt_door' => 'до адрес на Еконт',
+];
+?>
+
 <div id="printArea" class="container">
     <div class="row mb-4 justify-content-center">
         <h2 class="section-title text-center">Детайлна поръчка N: <?= $orderData -> order_id ?>
@@ -95,6 +114,12 @@
 
             <?php
             $val = json_decode($orderData -> delivery_json ?? '[]');
+            $_mapDeliveryMetod = [
+                'firmCar' => 'с фирмен транспорт',
+                'selfCar' => 'със собствен транспорт',
+                'curier'  => 'с куриер'
+            ];
+            $_deliveryMetod = $orderData -> delivery_method ?? '';
 
             $_ofis                 = $val -> ofis ?? '';
             $_grad                 = $val -> grad ?? '';
@@ -117,15 +142,8 @@
 
             <div class="bg-white border border-color-1 rounded p-3 mb-4">
                 <h3 class="section-title">Метод на плащане</h3>
-             <div class="mb-4">
-                    <?=
-                    match ($orderData -> payment_method) {
-                        'N' => 'в брой',
-                        'B' => 'банков превод',
-                        'C' => 'с карта',
-                        default => ''
-                    }
-                    ?>
+                <div class="mb-4">
+                    <?= $_paymentMethodLabel ?>
                 </div>
 
                 <h3 class="section-title">Данни за доставка</h3>
@@ -154,36 +172,14 @@
                                 <?php if ($orderData -> delivery_method): ?>
                                     <tr>
                                         <td>Метод на доставка:</td>
-
-                                        <td>
-                                            <?php
-                                            $_mapDeliveryMetod = [
-                                                'firmCar' => 'с фирмен транспорт',
-                                                'selfCar' => 'със собствен транспорт',
-                                                'curier'  => 'с куриер'
-                                            ];
-                                            $_deliveryMetod    = $orderData -> delivery_method ?? '';
-                                            echo $_mapDeliveryMetod[$_deliveryMetod] ?? '';
-                                            ?>
-                                        </td>
+                                        <td><?= $_mapDeliveryMetod[$_deliveryMetod] ?? $_deliveryMetod ?></td>
                                     </tr>
+                                <?php endif ?>
 
-                                <?php else: ?>
+                                <?php if (!empty($_shipping_code)): ?>
                                     <tr>
                                         <td>Куриер:</td>
-                                        <td> 
-                                            <?php
-                                            echo match ($_shipping_code) {
-                                                'speedy_machina' => 'до автомат на Speedy',
-                                                'speedy_office' => 'до офис на Speedy',
-                                                'speedy_door' => 'до адрес на Speedy',
-                                                'econt_machina' => 'до еконтомат на Еконт',
-                                                'econt_office' => 'до офис на Еконт',
-                                                'econt_door' => 'до адрес на Еконт',
-                                                default => ''
-                                            };
-                                            ?>
-                                        </td>
+                                        <td><?= $_courierLabelMap[$_shipping_code] ?? $_shipping_code ?></td>
                                     </tr>
                                 <?php endif ?>
 

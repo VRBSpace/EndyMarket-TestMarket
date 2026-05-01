@@ -1,6 +1,14 @@
+<?php
+
+$_isDDS    = !empty($settingsJson -> prices_with_dds);
+// Етикет за ДДС
+$_ddsLabel = $_isDDS ? 'с ДДС' : 'без ДДС';
+?>
+
 <table id="cart-table" class="css-cart-table cart-table table table-hover">
     <tbody class="notAutoNum">
         <?php
+
         foreach ($products as $product):
             $_productJson = json_decode($product['product_json']) -> {$product['product_id']};
             $_qty         = $_productJson -> qty;
@@ -32,16 +40,16 @@
                                     </div>
 
                                     <div class="row text-left">
-                                        <div class="col">Ед. цена: </div>
+                                        <div class="col">Ед. цена <?= $_ddsLabel ?>: </div>
                                         <div class="col-5"> 
-                                            <span class="js-zenaProdava"><?= $_price ?> <?= get_valuta() ?></span>
+                                            <span class="js-zenaProdava"><?= $_price . ' ' . get_valuta() ?></span>
                                         </div>
                                     </div>
 
                                     <div class="row text-left">
-                                        <div class="col">Общо без ДДС: </div>
+                                        <div class="col">Общо <?= $_ddsLabel ?>: </div>
                                         <div class="js-total col-5"> 
-                                            <?= $_total_price ?> <?= get_valuta() ?>
+                                            <?= $_total_price . ' ' . get_valuta() ?>
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +68,7 @@
                 <div class="row col">
                     <div class="col">Сума без ДДС:</div> 
                     <div class="suma col text-right">
-                        <?= sprintf("%.2f", $orderData -> total_price) ?> <?= get_valuta() ?>
+                        <?= sprintf("%.2f %s", $orderData -> total_price, get_valuta()) ?>
                     </div>
                 </div>
             </td>
@@ -71,7 +79,7 @@
                 <div class="row col">
                     <div class="col">ДДС:</div> 
                     <div class="suma col text-right">
-                        <?= sprintf("%.2f", ( $orderData -> total_price * 0.2)) ?> <?= get_valuta() ?>
+                        <?= sprintf("%.2f %s", ($orderData -> total_price * 0.2), get_valuta()) ?>
                     </div>
                 </div> 
             </td>
@@ -79,6 +87,7 @@
 
         <!-- транспортни разходи -->
         <?php
+
         $_transportenRazhod = $orderData -> transportenRazhod ?? 0;
         $_freeDostavkaPrice = $settings_portal['order']['order']['freeDostavkaPrice'] ?? 0;
 
@@ -89,13 +98,14 @@
                     <div class="row col">
                         <div class="col">Доставка:</div> 
                         <div class="col text-right">
-                            <?= sprintf("%.2f", $_transportenRazhod) ?> <?= get_valuta() ?>
+                            <?= sprintf("%.2f %s", $_transportenRazhod, get_valuta()) ?>
                         </div>
                     </div>  
                 </td>
             </tr>
 
             <?php
+
         elseif (!empty($_freeDostavkaPrice) && $orderData -> total_price >= $_freeDostavkaPrice):
             ?>
             <tr>
@@ -113,7 +123,7 @@
                 <div class="row col">
                     <div class="col">Тотал с ДДС:</div> 
                     <div class="suma col text-right">
-                        <?= sprintf("%.2f", ( $orderData -> total_price * 1.2 + $orderData -> transportenRazhod)) ?> <?= get_valuta() ?>
+                        <?= sprintf("%.2f %s", ($orderData -> total_price * 1.2 + $orderData -> transportenRazhod), get_valuta()) ?> 
                     </div>
                 </div>  
             </td>

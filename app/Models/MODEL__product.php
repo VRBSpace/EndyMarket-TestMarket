@@ -7,7 +7,6 @@ use \App\Models\BaseModel as BaseModel;
 class MODEL__product extends BaseModel {
 
     // в MODEL__product (примерно в началото на класа)
-    public const TBL_PRODUCT_MODELVAR = '_product_model_var';
     public const TBL_PRODUCT_VARIATION = '_product_variation';
     public const TBL_PRODUCT_VARIATION_VALUE = '_product_variation_value';
 
@@ -22,7 +21,6 @@ class MODEL__product extends BaseModel {
                 -> join(self::TBL_PRODUCT_MODEL_ADDIT_LINK . ' pam', 'pam.model_main_id=p.model_id', 'left')// Допълнителни модели
                 -> join(self::TBL_MODEL . ' pm2', 'pm2.model_id = pam.model_addit_id', 'left') // самите доп модели
                 // -> join(self::TBL_MODEL . ' pm2', 'pm2.model_id IN ( p.model2_id, p.model3_id)', 'left')
-                -> join(self::TBL_PRODUCT_MODELVAR . ' pmv', 'p.model_var_id_year=pmv.product_model_var_id', 'left')
                 // Допълнителни модели
                 -> join(self::TBL_PRODUCT_SITES . ' ps', 'ps.product_id=p.product_id', 'inner')
                 -> groupStart()
@@ -73,7 +71,7 @@ class MODEL__product extends BaseModel {
         }
 
         if (!empty($_GET['f_year'])) {
-            $sql -> where('pmv.model_year', $_GET['f_year']);
+            //$sql -> where('pmv.model_year', $_GET['f_year']);
         }
 
         //        if (isset($data['brandTxt'])) {
@@ -215,7 +213,7 @@ class MODEL__product extends BaseModel {
     public function getProduct($productId) {
 
         $query = $this -> db -> table(self::TBL_PRODUCT . ' p')
-                        -> select('p.*, c.category_name, sc.category_name AS subCategory_name,pl.*,b.*,pm.model,GROUP_CONCAT(DISTINCT pm2.model) AS additional_models, pmv.model_year')
+                        -> select('p.*, c.category_name, sc.category_name AS subCategory_name,pl.*,b.*,pm.model,GROUP_CONCAT(DISTINCT pm2.model) AS additional_models')
                         -> join(self::TBL_PRODUCT_PRICE_LEVEL . ' pl', 'pl.product_id=p.product_id', 'left')
                         -> join(self::TBL_BRAND . ' b', 'brand_id', 'left')
                         -> join(self::TBL_MODEL . ' pm', 'pm.model_id=p.model_id', 'left')
@@ -224,7 +222,6 @@ class MODEL__product extends BaseModel {
                         // -> join(self::TBL_MODEL . ' pm2', 'pm2.model_id IN ( p.model2_id, p.model3_id)', 'left') // Допълнителни модели
                         -> join(self::TBL_CATEGORY . ' c', 'category_id', 'left')
                         -> join(self::TBL_CATEGORY . ' sc', 'sc.category_id = p.category_id', 'left')
-                        -> join(self::TBL_PRODUCT_MODELVAR . ' pmv', 'pmv.model_id = pm.model_id', 'left') // <-- ТУК ВЗИМАМЕ ГОДИНАТА
                         // -> join(self::TBL_BRANDS . ' b', 'brand_id', 'left')
                         -> where('p.product_id', $productId)
                         -> groupBy('p.product_id') // заради GROUP_CONCAT е добра практика

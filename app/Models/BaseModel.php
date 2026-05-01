@@ -34,7 +34,6 @@ class BaseModel extends Model {
     //////////////////////////////////////////////////////////////////////////////////////
     protected const TBL_BRAND                  = '_brand';
     // protected const TBL_PRODUCT_MODEL          = '_product_model';
-    protected const TBL_PRODUCT_MODELVAR       = '_product_model_var';
     protected const TBL_PRODUCT_CHAR_VALUE     = '_product_characteristic_value';
     ////////////////////////////////////////////////////////////////////////////////
     protected const TBL_RAZNOS                 = '_raznos';

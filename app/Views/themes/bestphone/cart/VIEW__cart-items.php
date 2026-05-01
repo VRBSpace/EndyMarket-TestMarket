@@ -1,22 +1,28 @@
 <?php
+
 $_userId = session() -> has('user_id');
 
 $_settingsOrder = $settings_portal['order']['order'] ?? [];
 
 // Граници за безплатна доставка
-$_totalFreeDostLimit = (float) ($_settingsOrder[$_userId ? 'freeDostavkaPrice' : 'freeDostavkaKlPrice'] ?? 0);
+$_totalFreeDostLimit = (float) ($_settingsOrder['freeDostavkaPrice'] ?? 0);
+$_freeDostRange      = (float) ($_settingsOrder['freeDostavkaLeftPrice'] ?? 0);
 
-$_freeDostRange = (float) ($_settingsOrder[$_userId ? 'freeDostavkaLeftPrice' : 'freeDostavkaKlLeftPrice'] ?? 0);
+// Обща сума в количката с ДДС - смятаме я от редовете в количката.
+$_grandTotalPrice  = (float) array_sum(array_map(
+                        static fn($item) => (float) ($item['total_price'] ?? 0),
+                        $cartSessionProductsList ?? []
+                ));
+$_totalPrice       = $_grandTotalPrice;
+$_sesionTotalPrice = $_grandTotalPrice;
 
-// Обща сума в количката
-$_totalPrice = (float) ($cartSession['cart_all_products_info']['price'] ?? 0);
-$_sesionTotalPrice = (float) ($cartSession['cart_all_products_info']['price'] ?? 0);
+$_ddsLabel = !empty($settingsJson -> prices_with_dds) ? 'с ДДС' : 'без ДДС';
 
-// Колко остава до безплатна доставка
+$_subtotalPrice = $_grandTotalPrice / $dds;
+$_ddsPrice      = $_grandTotalPrice - $_subtotalPrice;
+
+// freeDostavkaPrice вече се третира като праг в основната валута на сайта
 $_amountLeft = $_totalFreeDostLimit - $_totalPrice;
-
-// Етикет за ДДС
-$_ddsLabel = $_userId ? 'БЕЗ ДДС' : 'С ДДС';
 
 // Определяне дали да се показва блока (показваме ако сумата е над 0 и оставащата сума е в зададения диапазон)
 $_showBlock = $_totalFreeDostLimit > 0 && $_amountLeft > 0 && $_amountLeft <= $_freeDostRange;
@@ -34,8 +40,8 @@ $_showBlock = $_totalFreeDostLimit > 0 && $_amountLeft > 0 && $_amountLeft <= $_
                 <th class="product-thumbnail text-center text-white">Снимка</th>
                 <th class="product-name text-white">Име на продукт</th>
                 <th class="product-quantity w-lg-15 text-white">Количество</th>
-                <th class="product-price text-white">Ед.цена&nbsp;<div class=""><?= $_userId ? 'без ДДС' : 'с ДДС' ?></div></th>
-                <th class="product-subtotal w-10 text-white">Общо&nbsp;<div class=""><?= $_userId ? 'без ДДС' : 'с ДДС' ?></div></th>
+                <th class="product-price text-white">Ед.цена&nbsp;<div class=""><?= $_ddsLabel ?></div></th>
+                <th class="product-subtotal w-10 text-white">Общо&nbsp;<div class=""><?= $_ddsLabel ?></div></th>
             </tr>
         </thead>
 
@@ -84,41 +90,41 @@ $_showBlock = $_totalFreeDostLimit > 0 && $_amountLeft > 0 && $_amountLeft <= $_
 
                     <td data-title="Цена">
                         <span class="js-zenaProdava"><?= number_format($cartProduct['item_price'], 2) ?> <?= get_valuta() ?></span>
-                        <br><?= priceToEur2($cartProduct['item_price']) ?>
+                        <br>(<?= priceToEur2($cartProduct['item_price']) ?>)
                     </td>
 
                     <td class="js-total">
                         <?= number_format($cartProduct['total_price'], 2) ?> <?= get_valuta() ?>
+                        <br>(<?= priceToEur2($cartProduct['total_price']) ?>)
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
 
         <tfoot class="orange-bg">
-            <?php if ($_userId): ?>
-                <tr id="js-total_bez_dds">
-                    <td colspan="6">
-                        <span class="float-right text-white">Сума без ДДС:</span>
-                    </td>
+            <tr id="js-total_bez_dds">
+                <td colspan="6">
+                    <span class="float-right text-white">Сума без ДДС:</span>
+                </td>
 
-                    <td class="suma text-white"><?= number_format($cartSession['cart_all_products_info']['price'], 2) ?> <?= get_valuta() ?>
-                        <br> <?= priceToEur2($_sesionTotalPrice) ?>
-                    </td>
-                </tr>
+                <td class="suma text-white"><?= number_format($_subtotalPrice, 2) ?> <?= get_valuta() ?>
+                    <br>(<?= priceToEur2($_subtotalPrice) ?>)
+                </td>
+            </tr>
 
-                <tr id="js-dds">
-                    <td colspan="6">
-                        <span class="float-right text-white">ДДС:</span>
-                    </td>
+            <tr id="js-dds">
+                <td colspan="6">
+                    <span class="float-right text-white">ДДС:</span>
+                </td>
 
-                    <td class="suma text-white"><?= number_format($cartSession['cart_all_products_info']['price'] * 0.2, 2) ?> <?= get_valuta() ?>
-                        <br> <?= priceToEur2($_sesionTotalPrice * 0.2) ?>
-                    </td>
-                </tr> 
-            <?php endif ?>
+                <td class="suma text-white"><?= number_format($_ddsPrice, 2) ?> <?= get_valuta() ?>
+                    <br>(<?= priceToEur2($_ddsPrice) ?>)
+                </td>
+            </tr>
 
             <!-- транспортни разходи -->
             <?php
+
             $_deliveryPrice = $settings_portal['order']['order']['deliveryPrice'] ?? 0;
             // ако $_amountLeft > 0 значи остават еди колко си до безп дост
             // ако $_amountLeft <= 0 значи имаме безп дост
@@ -131,12 +137,12 @@ $_showBlock = $_totalFreeDostLimit > 0 && $_amountLeft > 0 && $_amountLeft <= $_
 
                     <td class="text-white">
                         <?= number_format($_deliveryPrice, 2) ?> <?= get_valuta() ?>
-                        <br> <?= priceToEur2($_deliveryPrice) ?>
+                        <br>(<?= priceToEur2($_deliveryPrice) ?>)
                         <input id="deliveryPrice" type="hidden" value="<?= number_format($_deliveryPrice, 2) ?>">
                     </td>
                 </tr>
 
-            <?php elseif (!empty($_totalFreeDostLimit) && !empty($_freeDostRange) && $_amountLeft <= 0): ?>
+            <?php elseif (!empty($_totalFreeDostLimit) && $_amountLeft <= 0): ?>
                 <tr>
                     <td colspan="6">
                         <span class="float-right text-white">Доставка:</span>
@@ -151,8 +157,8 @@ $_showBlock = $_totalFreeDostLimit > 0 && $_amountLeft > 0 && $_amountLeft <= $_
                     <span class="float-right text-white">Тотал с ДДС:</span>
                 </td>
 
-                <td class="suma text-white"><?= number_format(($cartSession['cart_all_products_info']['price'] * ($_userId ? 1.2 : 1)), 2) ?> <?= get_valuta() ?>
-                    <br> <?= priceToEur2($_sesionTotalPrice * ($_userId ? 1.2 : 1)) ?>
+                <td class="suma text-white"><?= number_format($_grandTotalPrice, 2) ?> <?= get_valuta() ?>
+                    <br>(<?= priceToEur2($_grandTotalPrice) ?>)
                 </td>
             </tr>
         </tfoot>
@@ -164,5 +170,5 @@ $_showBlock = $_totalFreeDostLimit > 0 && $_amountLeft > 0 && $_amountLeft <= $_
         <i class="fa fa-trash"></i>&nbsp;изтрий цялата поръчка</a>
 
     <a id="exportXls" class="btn btn-primary rounded-0 transition-3d-hover" href="javascript;" data-route="<?= route_to('Cart-xls_export') ?>">
-        <i class="fa fa-file-excel"></i>&nbsp;Ексел експорт на заявката</a>  
+        <i class="fa fa-file-excel"></i>&nbsp;Ексел експорт на поръчката</a>  
 </div>

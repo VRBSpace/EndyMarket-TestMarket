@@ -123,6 +123,17 @@ function renderDeliveryObject($val, $i) {
         </tbody>
     </table>
 
+    <div id="js-existingDeliveryMeta"
+         data-izbor-kurier="<?= esc($_shipping_code) ?>"
+         data-grad="<?= esc($_grad) ?>"
+         data-post-code="<?= esc($_postCode) ?>"
+         data-ofis="<?= esc($_ofis) ?>"
+         data-quarter="<?= esc($_kvartal) ?>"
+         data-street="<?= esc($_ulica) ?>"
+         data-street-num="<?= esc($_ulicaNo) ?>"
+         data-other="<?= esc($_other) ?>">
+    </div>
+
 
     <?php
     return ob_get_clean();

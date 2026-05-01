@@ -104,12 +104,10 @@ class MODEL__filter extends BaseModel {
                     'pl.*',
                     'b.brandTxt',
                     'b.brand_id',
-                    'pmv.model_year',
                     'pm.model',
                     'pm.model_id',
                     'MAX(pm.image_model) AS image_model',
                     // Множество години от модификации
-                    'GROUP_CONCAT(DISTINCT pmv.model_year ORDER BY pmv.model_year ASC) AS yearsArr',
                     // ID на продукти с този модел
                     'GROUP_CONCAT(DISTINCT p.product_id) AS productIds',
                     // Допълнителни модели - JSON формат
@@ -134,7 +132,6 @@ class MODEL__filter extends BaseModel {
                 // Доп. модели – през линк
                 -> join(self::TBL_PRODUCT_MODEL_ADDIT_LINK . ' pam', 'pam.model_main_id = p.model_id', 'left')
                 -> join(self::TBL_MODEL . ' pm2', 'pm2.model_id = pam.model_addit_id', 'left')
-                -> join(self::TBL_PRODUCT_MODELVAR . ' pmv', 'pm.model_id = pmv.model_id', 'left')
                 -> join(self::TBL_PRODUCT_PRICE_LEVEL . ' pl', 'pl.product_id = p.product_id', 'left')
                 // Само продукти, които са видими на текущия сайт
                 -> join(self::TBL_PRODUCT_SITES . ' ps', 'ps.product_id = p.product_id', 'inner')

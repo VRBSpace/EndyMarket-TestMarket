@@ -28,6 +28,9 @@ $_sizeTitleProduct = !empty($settings_portal['func']['sizeTitleProduct']) ? "fon
             } else {
                 $_price = $_basePrice;
             }
+
+            $_displayBasePrice = $_basePrice;
+            $_displayPrice = $_price;
             ?>
 
             <li class="col-12 mb-4">
@@ -116,17 +119,15 @@ $_sizeTitleProduct = !empty($settings_portal['func']['sizeTitleProduct']) ? "fon
         <div class="prodcut-price d-flex align-items-center justify-content-center">
             <?php if ($_percent !== null): ?>
                 <div class="css-old-price text-gray font-size-15 mr-2">
-                    <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-12">.$1</sup>', number_format($_basePrice, 2)) ?>
+                    <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-12">.$1</sup>', number_format($_displayBasePrice, 2)) ?>
                     <small><?= get_valuta() ?></small>
               </div>
             <?php endif ?>
 
             <div class="text-center font-size-24 text-red fw-bold <?= ($_percent !== null) ? 'text-danger' : '' ?>">
-                <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-14">.$1</sup>', number_format($_price, 2)) ?>
+                <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-14">.$1</sup>', number_format($_displayPrice, 2)) ?>
                 <small class="fw-bold"><?= get_valuta() ?></small>
-                <div class="ml-3 text-gray-100 font-size-24 fw-bold">
-                    <?= priceToEur($_price) ?>
-                </div>
+                <span class="font-size-13 text-gray-100 fw-500"> <?= '/ ' . priceToEur2($_displayPrice) ?></span>
             </div>
         </div>
                                     </div>

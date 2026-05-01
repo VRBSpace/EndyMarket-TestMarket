@@ -1,6 +1,7 @@
 <?= view("{$_ENV['app.theme']}/layouts/header/VIEW__head") ?>
 <?= view("{$_ENV['app.theme']}/layouts/header/VIEW__header") ?>
 <?php
+
 helper('price');
 // Рендер на продуктова карта за всички слайдери на страницата (един източник на markup)
 $renderProductCard = function ($product) use ($productPriceLevel, $customConfig, $_sizeTitleProduct) {
@@ -25,10 +26,11 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
     } else {
         $_price = $_basePrice;
     }
-    $_displayBasePrice = get_valuta() === '€' ? ($_basePrice / 1.95583) : $_basePrice;
-    $_displayPrice     = get_valuta() === '€' ? ($_price / 1.95583) : $_price;
+    $_displayBasePrice = $_basePrice;
+    $_displayPrice     = $_price;
 
-    ob_start(); ?>
+    ob_start();
+    ?>
     <div class="js-product-item css-product-item product-item mb-4 h-100" data-id="<?= $product['product_id'] ?>">
         <div class="product-item__outer w-100">
             <div class="css-product-item__inner px-xl-4 p-3">
@@ -36,17 +38,17 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
 
                     <figure class="mb-2 position-relative overflow-hidden">
                         <div class="product-badge-stack position-absolute">
-                            <?php if ($_percent !== null): ?>
+    <?php if ($_percent !== null): ?>
                                 <span class="badge badge-warning rounded-top-pill rounded-bottom-left-pill font-size-15">
                                     <small class="fw-600">- <?= $_percent ?? '' ?> %</small>
                                 </span>
                             <?php endif; ?>
 
-                            <?php if (!empty($_badges[$product['badge_index']] ?? '')): ?>
+                                <?php if (!empty($_badges[$product['badge_index']] ?? '')): ?>
                                 <span class="badge badge-<?= $_badgeClass ?> rounded-top-pill rounded-bottom-left-pill font-size-15" style="<?= $product['badge_index'] == 4 ? 'background: #e697fd;' : '' ?>">
-                                    <?= $_badges[$product['badge_index']] ?? '' ?>
+                                <?= $_badges[$product['badge_index']] ?? '' ?>
                                 </span>
-                            <?php endif; ?>
+    <?php endif; ?>
                         </div>
 
                         <a class="d-block text-center img-fancybox1" href="<?= site_url('product/' . $product['product_id']) ?>">
@@ -69,16 +71,16 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
 
                     <div class="mb-2">
                         <div class="prodcut-price d-flex">
-                            <?php if ($_percent !== null): ?>
+                                <?php if ($_percent !== null): ?>
                                 <div class="css-old-price text-gray font-size-15 mr-2">
-                                    <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-12">.$1</sup>', number_format($_displayBasePrice, 2)) ?>
+        <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-12">.$1</sup>', number_format($_displayBasePrice, 2)) ?>
                                     <small><?= get_valuta() ?></small>
                                     <!-- <small class="discount">- <?= $_percent ?? '' ?> %</small> -->
                                 </div>
-                            <?php endif ?>
+                                <?php endif ?>
 
                             <div class="text-center font-size-16 text-red fw-bold <?= ($_percent !== null) ? 'text-danger' : '' ?>">
-                                <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-14">.$1</sup>', number_format($_displayPrice, 2)) ?>
+    <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-14">.$1</sup>', number_format($_displayPrice, 2)) ?>
                                 <small class="fw-bold"><?= get_valuta() ?></small>
                                 <span class="font-size-13 text-gray-100 fw-500"> <?= '/ ' . priceToEur2($_displayPrice) ?></span>
                             </div>
@@ -86,9 +88,9 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                     </div>
 
                     <div class="mb-1 d-flex">
-                        <?php if ($customConfig->btn['showCart']): ?>
+                            <?php if ($customConfig -> btn['showCart']): ?>
                             <div class="<?= ISMOBILE ? '' : 'd-none' ?> w-100 d-xl-block prodcut-add-cart">
-                                <?php if ($product['nalichnost'] > 0 && $_price > 0): ?>
+        <?php if ($product['nalichnost'] > 0 && $_price > 0): ?>
                                     <div class=" input-group mb-1 prodcut-add-cart">
                                         <div class="css-add-to-cart-quantity col height-40 py-2 px-3">
                                             <div class="js-quantity d-flex align-items-center">
@@ -113,21 +115,22 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                                         </a>
                                     </div>
 
-                                <?php else: ?>
+        <?php else: ?>
                                     <a class="m-auto btn-add-cart transition-3d-hover" style="background: #fff;color: #ee1a19; width: 100%; border: 1px solid #ee1a19; border-radius: 3px;" title="За запитване <?= $_ENV['app.phoneRequest'] ?>">
                                         <!-- <i class="ec ec-phone"></i> -->
                                         Няма наличност
                                     </a>
-                                <?php endif ?>
+                            <?php endif ?>
                             </div>
-                        <?php endif ?>
+    <?php endif ?>
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<?php
+    <?php
+
     return ob_get_clean();
 };
 ?>
@@ -142,7 +145,7 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                 <div class="home-ratio home-ratio-16x9">
                     <div class="home-ratio__inner h-100">
                         <!-- Slideshow -->
-                        <?= view($views['slideshow']) ?>
+<?= view($views['slideshow']) ?>
                         <!-- End Slideshow -->
                     </div>
                 </div>
@@ -150,7 +153,7 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
             <div class="<?= ISMOBILE ? 'w-100' : 'home-hero-banners' ?>">
                 <div class="home-banners-stack d-flex flex-column">
                     <!-- BANNERS FROM OFERTABG -->
-                    <?= view($views['banersBlock1']) ?>
+<?= view($views['banersBlock1']) ?>
                     <!-- END BANNERS FROM OFERTABG -->
                 </div>
             </div>
@@ -161,15 +164,17 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
     <!-- Category Filter Container -->
     <div class="row py-4" style="background-image: url('https://fullkit.moxcreative.com/otoplaza/wp-content/uploads/sites/28/2023/08/white-painted-wall-texture-background-1.jpg');">
         <?php
+
         // if (ISMOBILE) {
         //     return;
         // }
-        $_sort = $settings_portal['func']['sort'] ?? '';
+        $_sort      = $settings_portal['func']['sort'] ?? '';
         ?>
 
         <div class="container d-flex flex-column gap-3">
             <div class="d-flex align-items-center justify-content-between">
                 <?php
+
                 // събиране на всички банери, филтрирани по сесия, и взимане на 3..10 (пропускаме първите 2)
                 $banerItems = [];
                 if (!empty($banerBlock1_images)) {
@@ -184,8 +189,8 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                             $_json = json_decode($b['text']);
                             if (is_array($_json)) {
                                 foreach ($_json as $image) {
-                                    $_imgSrc = ($_ENV['app.imagePortalDir'] ?? '') . ($image->img ?? '');
-                                    $_link   = !empty($image->url) ? $image->url . ($_sort ?? '') : '#';
+                                    $_imgSrc      = ($_ENV['app.imagePortalDir'] ?? '') . ($image -> img ?? '');
+                                    $_link        = !empty($image -> url) ? $image -> url . ($_sort ?? '') : '#';
                                     $banerItems[] = ['src' => $_imgSrc, 'link' => $_link];
                                 }
                             }
@@ -196,18 +201,18 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                 $banerItems = array_slice($banerItems, 3, 8);
                 ?>
 
-                <?php if (!empty($banerItems)): ?>
+<?php if (!empty($banerItems)): ?>
                     <div class="category-banners-scroller <?= ISMOBILE ? 'mt-3' : '' ?>">
-                        <?php foreach ($banerItems as $_b): ?>
+    <?php foreach ($banerItems as $_b): ?>
                             <div class="category-banner-item">
                                 <div class="category-banner-thumb position-relative">
                                     <img class="img-fluid rounded-8 w-100 h-100" src="<?= $_b['src'] ?>" alt="" style="object-fit: cover;">
                                     <a href="<?= $_b['link'] ?>" class="position-absolute w-100 h-100" style="top:0;left:0;"></a>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+    <?php endforeach; ?>
                     </div>
-                <?php endif; ?>
+<?php endif; ?>
             </div>
         </div>
     </div>
@@ -220,8 +225,8 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                 <h2 class="fw-bold h4 mb-0 text-dark heading-slider <?= ISMOBILE ? 'font-size-16' : '' ?>">Намалени продукти</h2>
             </div>
             <div id="js-promo-products-grid" class="tab-pane fade pt-2 show active" role="tabpanel" aria-labelledby="pills-promo-example1-tab" data-target-group="groups">
-                <?php $discountProducts = array_slice($sale_products ?? [], 0, 15); ?>
- 
+<?php $discountProducts = array_slice($sale_products ?? [], 0, 15); ?>
+
                 <div
                     class="js-slick-carousel u-slick new-products-slider"
                     data-arrows-classes="d-none d-xl-block u-slick__arrow-normal u-slick__arrow-centered--y rounded-circle text-black font-size-30 z-index-2"
@@ -234,9 +239,9 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                     <?php foreach ($discountProducts as $k => $product): ?>
 
                         <div class="js-slide h-100">
-                            <?= $renderProductCard($product) ?>
+    <?= $renderProductCard($product) ?>
                         </div>
-                    <?php endforeach ?>
+<?php endforeach ?>
                 </div>
             </div>
         </div>
@@ -264,26 +269,63 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
     </div>
     <!-- END QUICK VIEW PRODUCT -->
 
-    <!-- COUNTER SECTION -->
-    <section class="css-counter-section <?= ISMOBILE ? 'py-1' : 'py-5' ?> bg-light">
+    <!-- SERVICE HIGHLIGHTS -->
+    <?php
+    $_settingsOrder           = $settings_portal['order']['order'] ?? [];
+    $_freeShippingLimit       = (float) ($_settingsOrder['freeDostavkaPrice'] ?? 0);
+    $_freeShippingLimitLabel  = $_freeShippingLimit > 0 ? rtrim(rtrim(number_format($_freeShippingLimit, 2, '.', ''), '0'), '.') . ' ' . get_valuta() : null;
+    $_freeShippingSecondLabel = $_freeShippingLimit > 0 ? priceToEur2($_freeShippingLimit) : null;
+
+    $_serviceCards = [
+        [
+            'icon'  => 'fa-shipping-fast',
+            'title' => 'Безплатна доставка',
+            'text'  => $_freeShippingLimitLabel
+                ? 'за поръчки над ' . $_freeShippingLimitLabel . ($_freeShippingSecondLabel ? ' (' . $_freeShippingSecondLabel . ')' : '')
+                : 'за поръчки над зададения лимит',
+        ],
+        [
+            'icon'  => 'fa-shield-alt',
+            'title' => '1 година гаранция',
+            'text'  => 'от ЕндиМаркет',
+        ],
+        [
+            'icon'  => 'fa-exchange-alt',
+            'title' => 'Връщане или замяна',
+            'text'  => 'на продукт до 14 дни',
+        ],
+        [
+            'icon'  => 'fa-box-open',
+            'title' => 'Преглед и тест',
+            'text'  => 'при доставка',
+        ],
+    ];
+    ?>
+    <section class="css-counter-section py-3 py-md-5 bg-light">
         <div class="container">
-            <div class="row g-4 text-center align-items-center justify-content-center counter-icons">
-                <div class="col-6 col-md-3 d-flex justify-content-center <?= ISMOBILE ? 'p-0' : '' ?>">
-                    <img src="https://cdncloudcart.com/52779/files/image/icons-01.svg" class="img-fluid counter-icon-img" alt="Икона 1" loading="lazy">
-                </div>
-                <div class="col-6 col-md-3 d-flex justify-content-center <?= ISMOBILE ? 'p-0' : '' ?>">
-                    <img src="https://cdncloudcart.com/52779/files/image/icons-02.svg" class="img-fluid counter-icon-img" alt="Икона 2" loading="lazy">
-                </div>
-                <div class="col-6 col-md-3 d-flex justify-content-center <?= ISMOBILE ? 'p-0' : '' ?>">
-                    <img src="https://cdncloudcart.com/52779/files/image/icons-03.svg" class="img-fluid counter-icon-img" alt="Икона 3" loading="lazy">
-                </div>
-                <div class="col-6 col-md-3 d-flex justify-content-center <?= ISMOBILE ? 'p-0' : '' ?>">
-                    <img src="https://cdncloudcart.com/52779/files/image/icons-04.svg" class="img-fluid counter-icon-img" alt="Икона 4" loading="lazy">
-                </div>
+            <div class="row">
+                <?php foreach ($_serviceCards as $_card): ?>
+                    <div class="col-12 col-sm-6 col-xl-3 mb-3 mb-xl-0">
+                        <div class="h-100 bg-white rounded-lg shadow-sm border-0 d-flex align-items-center p-3 p-lg-4 text-left position-relative overflow-hidden" style="min-height: 138px;">
+                            <span class="position-absolute" style="top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #ee1a19 0%, #ff8a5b 100%);"></span>
+                            <div class="flex-shrink-0 mr-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 58px; height: 58px; background: rgba(238, 26, 25, 0.08); color: #ee1a19;">
+                                <i class="fas <?= $_card['icon'] ?>" style="font-size: 24px;"></i>
+                            </div>
+                            <div class="min-width-0">
+                                <div class="text-uppercase font-weight-bold text-dark h5 mb-1" style="line-height: 1.15; letter-spacing: 0.02em;">
+                                    <?= $_card['title'] ?>
+                                </div>
+                               <div style="line-height: 1.35; font-size: 16px; color: #3f4654;">
+                                    <?= $_card['text'] ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
-    <!-- END COUNTER SECTION -->
+    <!-- END SERVICE HIGHLIGHTS -->
 
     <!-- NEW PRODUCTS -->
     <section class="py-5 bg-light position-relative overflow-hidden">
@@ -292,7 +334,7 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                 <h2 class="fw-bold h4 mb-0 text-dark heading-slider <?= ISMOBILE ? 'font-size-16' : '' ?>">Нови продукти</h2>
             </div>
             <div id="js-products-grid" class="tab-pane fade pt-2 show active" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
-                <?php $latestProducts = array_slice($latest_products ?? [], 0, 10); ?>
+<?php $latestProducts = array_slice($latest_products ?? [], 0, 10); ?>
 
                 <div
                     class="js-slick-carousel u-slick new-products-slider"
@@ -306,16 +348,16 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                     <?php foreach ($latestProducts as $k => $product): ?>
 
                         <div class="js-slide h-100">
-                            <?= $renderProductCard($product) ?>
+    <?= $renderProductCard($product) ?>
                         </div>
-                    <?php endforeach ?>
+<?php endforeach ?>
                 </div>
             </div>
         </div>
     </section>
     <!-- END NEW PRODUCTS -->
 
-    <?php foreach (($categorySections ?? []) as $_section): ?>
+                <?php foreach (($categorySections ?? []) as $_section): ?>
         <section class="<?= ISMOBILE ? 'py-1' : 'py-5' ?> bg-light position-relative overflow-hidden">
             <div class="container d-flex flex-column <?= ISMOBILE ? 'p-0' : '' ?>">
                 <div class="heading-container-slider d-flex align-items-center justify-content-between mb-3">
@@ -323,13 +365,13 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                     <?php if (!empty($_section['categoryId'])): ?>
                         <a class="d-inline-flex align-items-center text-dark" href="/shop/?categoryId=<?= $_section['categoryId'] ?>">
                             <svg class="mb-0" width="10" height="auto" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.429687 1.01563C0.143229 1.30208 0 1.6276 0 1.99219C0 2.35677 0.143229 2.68229 0.429687 2.96874L7.46094 10L0.429687 17.0313C0.143229 17.3177 0 17.6433 0 18.0079C0 18.3724 0.143229 18.6914 0.429687 18.9649C0.716146 19.2383 1.04167 19.375 1.40625 19.375C1.77083 19.375 2.08333 19.2317 2.34374 18.9453L10.3516 10.9766C10.4818 10.8464 10.5859 10.6901 10.6641 10.5078C10.7422 10.3255 10.7813 10.1563 10.7813 10C10.7813 9.84374 10.7422 9.67449 10.6641 9.49219C10.5859 9.3099 10.4818 9.15364 10.3516 9.02344L2.34374 1.01563C2.08333 0.755209 1.77083 0.625 1.40625 0.625C1.04167 0.625 0.716146 0.755209 0.429687 1.01563Z" fill="black"></path>
+                            <path d="M0.429687 1.01563C0.143229 1.30208 0 1.6276 0 1.99219C0 2.35677 0.143229 2.68229 0.429687 2.96874L7.46094 10L0.429687 17.0313C0.143229 17.3177 0 17.6433 0 18.0079C0 18.3724 0.143229 18.6914 0.429687 18.9649C0.716146 19.2383 1.04167 19.375 1.40625 19.375C1.77083 19.375 2.08333 19.2317 2.34374 18.9453L10.3516 10.9766C10.4818 10.8464 10.5859 10.6901 10.6641 10.5078C10.7422 10.3255 10.7813 10.1563 10.7813 10C10.7813 9.84374 10.7422 9.67449 10.6641 9.49219C10.5859 9.3099 10.4818 9.15364 10.3516 9.02344L2.34374 1.01563C2.08333 0.755209 1.77083 0.625 1.40625 0.625C1.04167 0.625 0.716146 0.755209 0.429687 1.01563Z" fill="black"></path>
                             </svg>
                         </a>
-                    <?php endif; ?>
+    <?php endif; ?>
                 </div>
                 <div class="tab-pane fade pt-2 show active" role="tabpanel" data-target-group="groups">
-                    <?php $_items = array_slice($categoryProducts[$_section['key']] ?? [], 0, 15); ?>
+    <?php $_items = array_slice($categoryProducts[$_section['key']] ?? [], 0, 15); ?>
 
                     <div
                         class="js-slick-carousel u-slick new-products-slider"
@@ -343,14 +385,14 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                         <?php foreach ($_items as $k => $product): ?>
 
                             <div class="js-slide h-100">
-                                <?= $renderProductCard($product) ?>
+        <?= $renderProductCard($product) ?>
                             </div>
-                        <?php endforeach ?>
+        <?php endforeach ?>
                     </div>
                 </div>
             </div>
         </section>
-    <?php endforeach ?>
+<?php endforeach ?>
 
     <!-- ABOUT / LOCATION SECTION -->
     <section class="py-5 bg-white about-section">
@@ -374,10 +416,14 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                         <div class="about-map__frame">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2962.238503517078!2d25.587828400000003!3d42.059506899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a801f03383bc2b%3A0x8a84c695c4a83274!2z0JXQvdC00Lgg0LzQsNGA0LrQtdGC!5e0!3m2!1sbg!2sbg!4v1724929419713!5m2!1sbg!2sbg"
-                                allowfullscreen
-                                loading="lazy"
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
                                 referrerpolicy="no-referrer-when-downgrade"
-                                title="Карта на Енди Маркет"></iframe>
+                                title="Карта на Енди Маркет">
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -402,6 +448,7 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
 </main>
 
 <?php
+
 echo view("{$_ENV['app.theme']}/layouts/sidebar/VIEW__sidebar-account"); // Account Sidebar Navigation
 echo view("{$_ENV['app.theme']}/layouts/footer/VIEW__footer");
 ?>

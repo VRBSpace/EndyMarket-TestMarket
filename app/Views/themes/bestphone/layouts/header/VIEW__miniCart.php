@@ -77,14 +77,12 @@ if (!empty($isCloned)) {
             <!-- безплатна доставка -->
             <?php
             // Проверка за потребител
-            $_isLoggedIn = session() -> has('user_id');
-
             $_settingsOrder = $settings_portal['order']['order'] ?? [];
 
             // Граници за безплатна доставка
-            $_totalFreeDostLimit = (float) ($_settingsOrder[$_isLoggedIn ? 'freeDostavkaPrice' : 'freeDostavkaKlPrice'] ?? 0);
+            $_totalFreeDostLimit = (float) ($_settingsOrder['freeDostavkaPrice'] ?? 0);
 
-            $_freeDostRange = (float) ($_settingsOrder[$_isLoggedIn ? 'freeDostavkaLeftPrice' : 'freeDostavkaKlLeftPrice'] ?? 0);
+            $_freeDostRange = (float) ($_settingsOrder['freeDostavkaLeftPrice'] ?? 0);
 
             // Обща сума в количката
             $_totalPrice = (float) ($cartSession['cart_all_products_info']['price'] ?? 0);
@@ -93,7 +91,7 @@ if (!empty($isCloned)) {
             $_amountLeft = $_totalFreeDostLimit - $_totalPrice;
 
             // Етикет за ДДС
-            $_ddsLabel = $_isLoggedIn ? 'БЕЗ ДДС' : 'С ДДС';
+            $_ddsLabel = session() -> has('user_id') ? 'БЕЗ ДДС' : 'С ДДС';
 
             // Показване на съобщение
             if ($_totalFreeDostLimit > 0 && $_amountLeft >= 0 && $_amountLeft <= $_freeDostRange):

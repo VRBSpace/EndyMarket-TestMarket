@@ -7916,6 +7916,13 @@ a.badge-indigo:focus, a.badge-indigo.focus {
     border-color: #ffeeba;
 }
 
+#js-deliveryEstimate.alert-warning {
+    color: #000 !important;
+    background-color: hsl(0deg 100% 47% / 20%)!important;
+    border-color: #ee0000!important;
+    border-left: 9px solid #ee0000!important;
+}
+
 .alert-warning hr {
     border-top-color: #ffe8a1;
 }

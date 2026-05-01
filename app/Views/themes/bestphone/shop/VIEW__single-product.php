@@ -2,126 +2,12 @@
 <?= view("{$_ENV['app.theme']}/layouts/header/VIEW__header") ?>
 
 <?php
+
 helper('price');
-// Detect product page
-$isProductPage = str_contains(current_url(), '/product/');
+helper('google_schema'); // seo разширено инфо за google резултата от търсенето
 
-// Generate schema if product page
-if ($isProductPage) {
+echo h_google_schema($product ?? null);
 
-    // --- FALLBACK DATA FROM PRODUCT ---
-    $schemaName = $product -> product_name ?? 'Продукт';
-    $schemaDesc = strip_tags($product -> short_description ?? '');
-    if (strlen($schemaDesc) < 10) {
-        $schemaDesc = 'Купете ' . $schemaName . ' на топ цена. Бърза доставка и гарантирано качество.';
-    }
-
-    $schemaImage = !empty($product -> image) ? $_ENV['app.imageDir'] . $product -> image : base_url('uploads/no-image.jpg');
-
-    $schemaPrice     = $product -> cenaKKC ?? '0.00';
-    $schemaCanonical = current_url();
-
-    // Optional recommended extras
-    $shippingDetails = [
-        "@type"               => "OfferShippingDetails",
-        "shippingRate"        => [
-            "@type"    => "MonetaryAmount",
-            "value"    => "5.00",
-            "currency" => "BGN"
-        ],
-        "shippingDestination" => [
-            "@type"          => "DefinedRegion",
-            "addressCountry" => [
-                "@type" => "Country",
-                "name"  => "BG"
-            ]
-        ],
-        "deliveryTime"        => [
-            "@type"        => "ShippingDeliveryTime",
-            "transitTime"  => [
-                "@type"    => "QuantitativeValue",
-                "minValue" => 1,
-                "maxValue" => 3,
-                "unitCode" => "DAY"
-            ],
-            "businessDays" => [
-                "@type"     => "OpeningHoursSpecification",
-                "dayOfWeek" => [
-                    "https://schema.org/Monday",
-                    "https://schema.org/Tuesday",
-                    "https://schema.org/Wednesday",
-                    "https://schema.org/Thursday",
-                    "https://schema.org/Friday"
-                ]
-            ],
-            "handlingTime" => [
-                "@type"    => "QuantitativeValue",
-                "minValue" => 1,
-                "maxValue" => 2,
-                "unitCode" => "DAY"
-            ]
-        ]
-    ];
-
-    $returnPolicy = [
-        "@type"                => "MerchantReturnPolicy",
-        "returnPolicyCategory" => "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays"   => 14,
-        "returnMethod"         => "https://schema.org/ReturnByMail",
-        "returnFees"           => "https://schema.org/FreeReturn",
-        "applicableCountry"    => "BG"
-    ];
-
-    // The schema itself
-    $schemaArray = [
-        "@context"    => "https://schema.org",
-        "@type"       => "Product",
-        "name"        => $schemaName,
-        "description" => $schemaDesc,
-        "image"       => $schemaImage,
-        "sku"         => $product -> kod ?? '',
-        "mpn"         => $product -> oem ?? '',
-        "brand"       => [
-            "@type" => "Brand",
-            "name"  => $product -> brandTxt ?? "Brand"
-        ],
-        // === OPTIONAL BUT IMPORTANT FOR SEO ===
-        "aggregateRating" => [
-            "@type"       => "AggregateRating",
-            "ratingValue" => "5",
-            "reviewCount" => "1"
-        ],
-        "review" => [[
-        "@type"        => "Review",
-        "reviewRating" => [
-            "@type"       => "Rating",
-            "ratingValue" => 5,
-            "bestRating"  => 5
-        ],
-        "author"       => [
-            "@type" => "Person",
-            "name"  => "Клиент"
-        ]
-            ]],
-        "offers" => [
-            "@type"         => "Offer",
-            "priceCurrency" => "BGN",
-            "price"         => $schemaPrice,
-            "availability"  => "https://schema.org/InStock",
-            "url"           => $schemaCanonical,
-            // OPTIONAL BUT RECOMMENDED
-            "priceValidUntil" => date("Y-m-d", strtotime("+1 year")),
-            "shippingDetails"         => $shippingDetails,
-            "hasMerchantReturnPolicy" => $returnPolicy
-        ]
-    ];
-    ?>
-    <script type="application/ld+json">
-    <?= json_encode($schemaArray, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
-    </script>
-<?php } ?>
-
-<?php
 $_w         = ISMOBILE ? 'w-50' : '';
 $_brojBlock = <<<HTML
          <div class="border py-1 px-3 $_w">
@@ -170,8 +56,8 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
     } else {
         $_price = $_basePrice;
     }
-    $_displayBasePrice = get_valuta() === '€' ? ($_basePrice / 1.95583) : $_basePrice;
-    $_displayPrice     = get_valuta() === '€' ? ($_price / 1.95583) : $_price;
+    $_displayBasePrice = $_basePrice;
+    $_displayPrice     = $_price;
 
     ob_start();
     ?>
@@ -186,13 +72,13 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                                 <span class="badge badge-warning rounded-top-pill rounded-bottom-left-pill font-size-15">
                                     <small class="fw-600">- <?= $_percent ?> %</small>
                                 </span>
-    <?php endif; ?>
-
-                            <?php if (!empty($_badges[$product['badge_index']] ?? '')): ?>
-                                <span class="badge badge-<?= $_badgeClass ?> rounded-top-pill rounded-bottom-left-pill font-size-15" style="<?= ($product['badge_index'] ?? '') == 4 ? 'background: #e697fd;' : '' ?>">
-        <?= $_badges[$product['badge_index']] ?? '' ?>
-                                </span>
                             <?php endif; ?>
+
+                                <?php if (!empty($_badges[$product['badge_index']] ?? '')): ?>
+                                <span class="badge badge-<?= $_badgeClass ?> rounded-top-pill rounded-bottom-left-pill font-size-15" style="<?= ($product['badge_index'] ?? '') == 4 ? 'background: #e697fd;' : '' ?>">
+                                <?= $_badges[$product['badge_index']] ?? '' ?>
+                                </span>
+    <?php endif; ?>
                         </div>
 
                         <a class="d-block text-center img-fancybox1" href="<?= site_url('product/' . $product['product_id']) ?>">
@@ -215,23 +101,23 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
 
                     <div class="mb-2">
                         <div class="prodcut-price d-flex">
-                            <?php if ($_percent !== null): ?>
+                                <?php if ($_percent !== null): ?>
                                 <div class="css-old-price text-gray font-size-15 mr-2">
         <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-12">.$1</sup>', number_format($_displayBasePrice, 2)) ?>
                                     <small><?= get_valuta() ?></small>
                                 </div>
-                            <?php endif ?>
+    <?php endif ?>
 
                             <div class="text-center font-size-16 text-red fw-bold <?= ($_percent !== null) ? 'text-danger' : '' ?>">
-                                <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-14">.$1</sup>', number_format($_displayPrice, 2)) ?>
+    <?= preg_replace('/\\.([0-9]*)/', '<sup class="font-size-14">.$1</sup>', number_format($_displayPrice, 2)) ?>
                                 <small class="fw-bold"><?= get_valuta() ?></small>
                                 <span class="font-size-13 text-gray-100 fw-500"> <?= '/ ' . priceToEur2($_displayPrice) ?></span>
-                           </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="mb-1 d-flex">
-    <?php if ($customConfig -> btn['showCart']): ?>
+                            <?php if ($customConfig -> btn['showCart']): ?>
                             <div class="<?= ISMOBILE ? '' : 'd-none' ?> w-100 d-xl-block prodcut-add-cart">
         <?php if (($product['nalichnost'] ?? 0) > 0 && $_price > 0): ?>
                                     <div class=" input-group mb-1 prodcut-add-cart">
@@ -262,9 +148,9 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                                     <a class="m-auto btn-add-cart transition-3d-hover" style="background: #fff;color: #ee1a19; width: 100%; border: 1px solid #ee1a19; border-radius: 3px;" title="За запитване <?= $_ENV['app.phoneRequest'] ?>">
                                         Няма наличност
                                     </a>
-        <?php endif ?>
-                            </div>
                             <?php endif ?>
+                            </div>
+    <?php endif ?>
 
                     </div>
                 </div>
@@ -272,6 +158,7 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
         </div>
     </div>
     <?php
+
     return ob_get_clean();
 };
 ?>
@@ -292,28 +179,29 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
 
                 <div class="js-product-item row">
                     <div class="col-md-6 mb-4 mb-md-0 p-0">
-                <?php
-                // Определяне на цената на продукта
-                $_basePrice = $product -> cenaKKC ?? 0;
-                $_percent   = null;
-                $_price     = $_basePrice;
+                        <?php
 
-                $_basePrice = $product -> $productPriceLevel ?? $_basePrice;
+                        // Определяне на цената на продукта
+                        $_basePrice = $product -> cenaKKC ?? 0;
+                        $_percent   = null;
+                        $_price     = $_basePrice;
 
-                $_promoPercent = getPromoPercentFromGensoftJson($product -> gensoft_json ?? null);
-                $_promoPrice   = calculatePromoPrice($_basePrice, $_promoPercent);
-                if ($_promoPrice !== null) {
-                    $_price   = $_promoPrice;
-                    $_percent = abs((float) $_promoPercent);
-                } else {
-                    $_price = $_basePrice;
-                }
+                        $_basePrice = $product -> $productPriceLevel ?? $_basePrice;
 
-                // Показване процента на отстъпката
-                if ($_percent !== null) {
-                    echo '<span class="label-latest label-sale"><b>- ' . ($_percent ?? '') . ' %</b></span>';
-                }
-                ?>
+                        $_promoPercent = getPromoPercentFromGensoftJson($product -> gensoft_json ?? null);
+                        $_promoPrice   = calculatePromoPrice($_basePrice, $_promoPercent);
+                        if ($_promoPrice !== null) {
+                            $_price   = $_promoPrice;
+                            $_percent = abs((float) $_promoPercent);
+                        } else {
+                            $_price = $_basePrice;
+                        }
+
+                        // Показване процента на отстъпката
+                        if ($_percent !== null) {
+                            echo '<span class="label-latest label-sale"><b>- ' . ($_percent ?? '') . ' %</b></span>';
+                        }
+                        ?>
                         <div id="sliderSyncingNav" class="js-slick-carousel css-product-images u-slick mb-2 p-0"
                              data-infinite="false"
                              data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
@@ -327,7 +215,7 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                                 </a>
                             </figure>
 
-<?php if (!empty($additional_mages)): ?>
+                            <?php if (!empty($additional_mages)): ?>
     <?php foreach ($additional_mages as $image): ?>
                                     <div class="js-slide" style="cursor: pointer;">
                                         <a class="img-fancybox" data-fancybox="product-gallery" data-options='{"loop": false}' href="<?= $_ENV['app.imageDir'] . $image ?>">
@@ -353,9 +241,9 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                                     <picture class="js-slide" style="cursor: pointer;">
                                         <img class="lazy img-fluid" src="<?= $_ENV['app.imageDir'] . $image ?>" alt="Image Description">
                                     </picture>
-    <?php endforeach; ?>
+                            <?php endforeach; ?>
                             </figure>
-                            <?php endif; ?>
+<?php endif; ?>
                     </div>
 
                     <!--                        <div class="col-md-1 d-none d-md-block">
@@ -367,14 +255,15 @@ $renderProductCard = function ($product) use ($productPriceLevel, $customConfig,
                     <div class="col-md-6 mb-md-6 mb-lg-0">
                         <div class="mb-2">
                             <div class=" <?= ISMOBILE ? '' : 'mb-3 pb-md-1 pb-3' ?>">
-<?php
-$_badges     = [1 => 'НОВО', 2 => 'ОЧАКВАН', 4 => 'ФИКСИРАНА ЦЕНА'];
-$_badgeClass = match ($product -> badge_index) {
-    '1' => 'danger',
-    '2' => 'warning', //success
-    default => ''
-}
-?>
+                                <?php
+
+                                $_badges     = [1 => 'НОВО', 2 => 'ОЧАКВАН', 4 => 'ФИКСИРАНА ЦЕНА'];
+                                $_badgeClass = match ($product -> badge_index) {
+                                    '1' => 'danger',
+                                    '2' => 'warning', //success
+                                    default => ''
+                                }
+                                ?>
                                 <div class="mb-2">
                                     <span class="badge badge-<?= $_badgeClass ?> font-size-15" style="<?= $product -> badge_index == 4 ? 'background: #e697fd;' : '' ?>">
                                         <span><?= $_badges[$product -> badge_index] ?? '' ?></span>
@@ -384,246 +273,249 @@ $_badgeClass = match ($product -> badge_index) {
                                 </h1>
 
                                 <div class="md-3 text-gray-9 font-size-14">Наличност:
-<?php
-$nalichClass = 'red';
-$nalichTxt   = 'не';
+                                    <?php
 
-if ($product -> nalichnost > 0) {
-    $nalichClass = 'green';
-    $nalichTxt   = 'да';
-}
-?>
+                                    $nalichClass = 'red';
+                                    $nalichTxt   = 'не';
+
+                                    if ($product -> nalichnost > 0) {
+                                        $nalichClass = 'green';
+                                        $nalichTxt   = 'да';
+                                    }
+                                    ?>
                                     <span class="text-<?= $nalichClass ?> font-weight-bold"><?= $nalichTxt ?></span>
                                 </div>
 
                                 <div class="border-bottom mb-3 pb-md-1 pb-3">
                                 </div>
 
-<?php
-$variationItems = $variation_products['results'] ?? [];
-if (!empty($variationItems)):
-    $buildVariationLabel = static function (array $vp): string {
-        $vpAttrs = $vp['variation_attributes'] ?? [];
-        $vpTextParts = [];
-        foreach ($vpAttrs as $va) {
-            $vpTextParts[] = trim((string) ($va['value_text'] ?? ''));
-        }
+                                <?php
 
-        $label = implode(' / ', array_filter($vpTextParts));
-        if ($label === '') {
-            $label = (string) ($vp['product_name'] ?? ('Продукт #' . (int) ($vp['product_id'] ?? 0)));
-        }
+                                $variationItems = $variation_products['results'] ?? [];
+                                if (!empty($variationItems)):
+                                    $buildVariationLabel = static function (array $vp): string {
+                                        $vpAttrs     = $vp['variation_attributes'] ?? [];
+                                        $vpTextParts = [];
+                                        foreach ($vpAttrs as $va) {
+                                            $vpTextParts[] = trim((string) ($va['value_text'] ?? ''));
+                                        }
 
-        return $label;
-    };
+                                        $label = implode(' / ', array_filter($vpTextParts));
+                                        if ($label === '') {
+                                            $label = (string) ($vp['product_name'] ?? ('Продукт #' . (int) ($vp['product_id'] ?? 0)));
+                                        }
 
-    // Стабилна подредба A-Z, за да не се местят опциите при избор на различна вариация.
-    $variationItemsSorted = $variationItems;
-    usort($variationItemsSorted, static function ($a, $b) use ($buildVariationLabel) {
-        $aLabel = mb_strtolower($buildVariationLabel((array) $a));
-        $bLabel = mb_strtolower($buildVariationLabel((array) $b));
+                                        return $label;
+                                    };
 
-        return strcmp($aLabel, $bLabel);
-    });
+                                    // Стабилна подредба A-Z, за да не се местят опциите при избор на различна вариация.
+                                    $variationItemsSorted = $variationItems;
+                                    usort($variationItemsSorted, static function ($a, $b) use ($buildVariationLabel) {
+                                        $aLabel = mb_strtolower($buildVariationLabel((array) $a));
+                                        $bLabel = mb_strtolower($buildVariationLabel((array) $b));
 
-    $currentProductId = (int) ($product -> product_id ?? 0);
-    $productsById = [];
-    foreach ($variationItemsSorted as $vp) {
-        $productsById[(int) ($vp['product_id'] ?? 0)] = $vp;
-    }
+                                        return strcmp($aLabel, $bLabel);
+                                    });
 
-    $currentVariation = $productsById[$currentProductId] ?? ($variationItemsSorted[0] ?? null);
-    $selectedByAttr = $currentVariation['variation_attributes'] ?? [];
+                                    $currentProductId = (int) ($product -> product_id ?? 0);
+                                    $productsById     = [];
+                                    foreach ($variationItemsSorted as $vp) {
+                                        $productsById[(int) ($vp['product_id'] ?? 0)] = $vp;
+                                    }
 
-    $attributeGroups = [];
-    foreach ($variationItemsSorted as $vp) {
-        foreach (($vp['variation_attributes'] ?? []) as $attrKey => $attr) {
-            if (!isset($attributeGroups[$attrKey])) {
-                $attributeGroups[$attrKey] = [
-                    'name' => $attr['name'] ?? $attrKey,
-                    'options' => [],
-                ];
-            }
+                                    $currentVariation = $productsById[$currentProductId] ?? ($variationItemsSorted[0] ?? null);
+                                    $selectedByAttr   = $currentVariation['variation_attributes'] ?? [];
 
-            $optionKey = (string) ($attr['value_id'] ?? 0);
-            if (!isset($attributeGroups[$attrKey]['options'][$optionKey])) {
-                $attributeGroups[$attrKey]['options'][$optionKey] = [
-                    'value_id' => (int) ($attr['value_id'] ?? 0),
-                    'value_text' => $attr['value_text'] ?? '',
-                    'products' => [],
-                ];
-            }
+                                    $attributeGroups = [];
+                                    foreach ($variationItemsSorted as $vp) {
+                                        foreach (($vp['variation_attributes'] ?? []) as $attrKey => $attr) {
+                                            if (!isset($attributeGroups[$attrKey])) {
+                                                $attributeGroups[$attrKey] = [
+                                                    'name'    => $attr['name'] ?? $attrKey,
+                                                    'options' => [],
+                                                ];
+                                            }
 
-            $attributeGroups[$attrKey]['options'][$optionKey]['products'][] = (int) ($vp['product_id'] ?? 0);
-        }
-    }
+                                            $optionKey = (string) ($attr['value_id'] ?? 0);
+                                            if (!isset($attributeGroups[$attrKey]['options'][$optionKey])) {
+                                                $attributeGroups[$attrKey]['options'][$optionKey] = [
+                                                    'value_id'   => (int) ($attr['value_id'] ?? 0),
+                                                    'value_text' => $attr['value_text'] ?? '',
+                                                    'products'   => [],
+                                                ];
+                                            }
 
-    uasort($attributeGroups, static function ($a, $b) {
-        $aName = mb_strtolower((string) ($a['name'] ?? ''));
-        $bName = mb_strtolower((string) ($b['name'] ?? ''));
+                                            $attributeGroups[$attrKey]['options'][$optionKey]['products'][] = (int) ($vp['product_id'] ?? 0);
+                                        }
+                                    }
 
-        return strcmp($aName, $bName);
-    });
+                                    uasort($attributeGroups, static function ($a, $b) {
+                                        $aName = mb_strtolower((string) ($a['name'] ?? ''));
+                                        $bName = mb_strtolower((string) ($b['name'] ?? ''));
 
-    foreach ($attributeGroups as &$group) {
-        uasort($group['options'], static function ($a, $b) {
-            $aText = mb_strtolower((string) ($a['value_text'] ?? ''));
-            $bText = mb_strtolower((string) ($b['value_text'] ?? ''));
+                                        return strcmp($aName, $bName);
+                                    });
 
-            return strcmp($aText, $bText);
-        });
-    }
-    unset($group);
+                                    foreach ($attributeGroups as &$group) {
+                                        uasort($group['options'], static function ($a, $b) {
+                                            $aText = mb_strtolower((string) ($a['value_text'] ?? ''));
+                                            $bText = mb_strtolower((string) ($b['value_text'] ?? ''));
 
-    $findCandidateForOption = function ($targetAttrKey, $targetValueId) use ($variationItemsSorted, $selectedByAttr) {
-        $firstMatch = null;
-        $inStockMatch = null;
+                                            return strcmp($aText, $bText);
+                                        });
+                                    }
+                                    unset($group);
 
-        foreach ($variationItemsSorted as $candidate) {
-            $candidateAttrs = $candidate['variation_attributes'] ?? [];
-            if (!isset($candidateAttrs[$targetAttrKey])) {
-                continue;
-            }
+                                    $findCandidateForOption = function ($targetAttrKey, $targetValueId) use ($variationItemsSorted, $selectedByAttr) {
+                                        $firstMatch   = null;
+                                        $inStockMatch = null;
 
-            if ((int) ($candidateAttrs[$targetAttrKey]['value_id'] ?? 0) !== (int) $targetValueId) {
-                continue;
-            }
+                                        foreach ($variationItemsSorted as $candidate) {
+                                            $candidateAttrs = $candidate['variation_attributes'] ?? [];
+                                            if (!isset($candidateAttrs[$targetAttrKey])) {
+                                                continue;
+                                            }
 
-            $isMatch = true;
-            foreach ($selectedByAttr as $key => $selectedAttr) {
-                if ($key === $targetAttrKey) {
-                    continue;
-                }
+                                            if ((int) ($candidateAttrs[$targetAttrKey]['value_id'] ?? 0) !== (int) $targetValueId) {
+                                                continue;
+                                            }
 
-                if (!isset($candidateAttrs[$key])) {
-                    $isMatch = false;
-                    break;
-                }
-
-                if ((int) ($candidateAttrs[$key]['value_id'] ?? 0) !== (int) ($selectedAttr['value_id'] ?? 0)) {
-                    $isMatch = false;
-                    break;
-                }
-            }
-
-            if (!$isMatch) {
-                continue;
-            }
-
-            if ($firstMatch === null) {
-                $firstMatch = $candidate;
-            }
-
-            if ((int) ($candidate['nalichnost'] ?? 0) > 0) {
-                $inStockMatch = $candidate;
-                break;
-            }
-        }
-
-        return $inStockMatch ?? $firstMatch;
-    };
-?>
-                                <section class="css-variation-switcher mb-3">
-                                    <?php foreach ($attributeGroups as $attrKey => $group): ?>
-                                        <?php
-                                        $selectedAttr = $selectedByAttr[$attrKey] ?? null;
-                                        $selectedText = $selectedAttr['value_text'] ?? '';
-                                        ?>
-                                        <div class="css-variation-group mb-2">
-                                            <div class="css-variation-group-title">
-                                                Избери <?= mb_strtolower($group['name'] ?? $attrKey) ?>:
-                                            </div>
-
-                                            <div class="css-variation-options">
-                                                <?php foreach (($group['options'] ?? []) as $option): ?>
-                                                    <?php
-                                                    $targetProduct = $findCandidateForOption($attrKey, (int) ($option['value_id'] ?? 0));
-                                                    $targetProductId = (int) ($targetProduct['product_id'] ?? 0);
-                                                    $isCurrent = $targetProductId === $currentProductId;
-                                                    $hasCandidate = $targetProductId > 0;
-                                                    $isOutOfStock = $hasCandidate && (int) ($targetProduct['nalichnost'] ?? 0) <= 0;
-
-                                                    $optionClasses = 'css-variation-option';
-                                                    if ($isCurrent) {
-                                                        $optionClasses .= ' is-selected';
-                                                    }
-                                                    if (!$hasCandidate) {
-                                                        $optionClasses .= ' is-disabled';
-                                                    } elseif ($isOutOfStock) {
-                                                        $optionClasses .= ' is-out';
-                                                    }
-                                                    ?>
-
-                                                    <?php if ($hasCandidate): ?>
-                                                        <a
-                                                            href="<?= site_url('product/' . $targetProductId) ?>"
-                                                            class="<?= $optionClasses ?>">
-                                                            <?= esc($option['value_text'] ?? '') ?>
-                                                        </a>
-                                                    <?php else: ?>
-                                                        <span class="<?= $optionClasses ?>">
-                                                            <?= esc($option['value_text'] ?? '') ?>
-                                                        </span>
-                                                    <?php endif; ?>
-                                                <?php endforeach; ?>
-                                            </div>
-                                        </div>
-                                    <?php endforeach; ?>
-
-                                    <div class="css-variation-image-options">
-                                        <?php foreach ($variationItemsSorted as $vp): ?>
-                                            <?php
-                                            $vpId = (int) ($vp['product_id'] ?? 0);
-                                            $vpAttrs = $vp['variation_attributes'] ?? [];
-                                            uasort($vpAttrs, static function ($a, $b) {
-                                                $aName = mb_strtolower((string) ($a['name'] ?? ''));
-                                                $bName = mb_strtolower((string) ($b['name'] ?? ''));
-
-                                                return strcmp($aName, $bName);
-                                            });
-
-                                            $tooltipLines = [];
-                                            foreach ($vpAttrs as $attr) {
-                                                $attrName = trim((string) ($attr['name'] ?? ''));
-                                                $attrVal = trim((string) ($attr['value_text'] ?? ''));
-                                                if ($attrName === '' || $attrVal === '') {
+                                            $isMatch = true;
+                                            foreach ($selectedByAttr as $key => $selectedAttr) {
+                                                if ($key === $targetAttrKey) {
                                                     continue;
                                                 }
 
-                                                $tooltipLines[] = mb_strtolower($attrName) . ': ' . $attrVal;
-                                            }
-                                            $tooltipText = implode("\n", $tooltipLines);
+                                                if (!isset($candidateAttrs[$key])) {
+                                                    $isMatch = false;
+                                                    break;
+                                                }
 
-                                            $thumbClass = 'css-variation-image-option';
-                                            if ($vpId === $currentProductId) {
-                                                $thumbClass .= ' is-current';
-                                            } elseif ((int) ($vp['nalichnost'] ?? 0) <= 0) {
-                                                $thumbClass .= ' is-out';
+                                                if ((int) ($candidateAttrs[$key]['value_id'] ?? 0) !== (int) ($selectedAttr['value_id'] ?? 0)) {
+                                                    $isMatch = false;
+                                                    break;
+                                                }
                                             }
-                                            $thumbSrc = !empty($vp['image'])
-                                                ? route_to('ResizeImage-thumb') . '?img=' . $vp['image']
-                                                : ($_ENV['app.noImage'] ?? '');
+
+                                            if (!$isMatch) {
+                                                continue;
+                                            }
+
+                                            if ($firstMatch === null) {
+                                                $firstMatch = $candidate;
+                                            }
+
+                                            if ((int) ($candidate['nalichnost'] ?? 0) > 0) {
+                                                $inStockMatch = $candidate;
+                                                break;
+                                            }
+                                        }
+
+                                        return $inStockMatch ?? $firstMatch;
+                                    };
+                                    ?>
+                                    <section class="css-variation-switcher mb-3">
+                                        <?php foreach ($attributeGroups as $attrKey => $group): ?>
+                                            <?php
+
+                                            $selectedAttr = $selectedByAttr[$attrKey] ?? null;
+                                            $selectedText = $selectedAttr['value_text'] ?? '';
                                             ?>
-                                            <a
-                                                href="<?= site_url('product/' . $vpId) ?>"
-                                                class="<?= $thumbClass ?>"
-                                                data-variation-tooltip="<?= esc($tooltipText, 'attr') ?>">
-                                                <span class="css-variation-image-frame">
-                                                    <img src="<?= $thumbSrc ?>" alt="<?= esc($vp['product_name'] ?? 'Вариация') ?>">
-                                                </span>
-                                            </a>
-                                        <?php endforeach; ?>
-                                    </div>
-                                </section>
-<?php endif; ?>
+                                            <div class="css-variation-group mb-2">
+                                                <div class="css-variation-group-title">
+                                                    Избери <?= mb_strtolower($group['name'] ?? $attrKey) ?>:
+                                                </div>
+
+                                                <div class="css-variation-options">
+                                                    <?php foreach (($group['options'] ?? []) as $option): ?>
+                                                        <?php
+
+                                                        $targetProduct   = $findCandidateForOption($attrKey, (int) ($option['value_id'] ?? 0));
+                                                        $targetProductId = (int) ($targetProduct['product_id'] ?? 0);
+                                                        $isCurrent       = $targetProductId === $currentProductId;
+                                                        $hasCandidate    = $targetProductId > 0;
+                                                        $isOutOfStock    = $hasCandidate && (int) ($targetProduct['nalichnost'] ?? 0) <= 0;
+
+                                                        $optionClasses = 'css-variation-option';
+                                                        if ($isCurrent) {
+                                                            $optionClasses .= ' is-selected';
+                                                        }
+                                                        if (!$hasCandidate) {
+                                                            $optionClasses .= ' is-disabled';
+                                                        } elseif ($isOutOfStock) {
+                                                            $optionClasses .= ' is-out';
+                                                        }
+                                                        ?>
+
+            <?php if ($hasCandidate): ?>
+                                                            <a
+                                                                href="<?= site_url('product/' . $targetProductId) ?>"
+                                                                class="<?= $optionClasses ?>">
+                                                            <?= esc($option['value_text'] ?? '') ?>
+                                                            </a>
+                                                            <?php else: ?>
+                                                            <span class="<?= $optionClasses ?>">
+                                                            <?= esc($option['value_text'] ?? '') ?>
+                                                            </span>
+                                                        <?php endif; ?>
+        <?php endforeach; ?>
+                                                </div>
+                                            </div>
+    <?php endforeach; ?>
+
+                                        <div class="css-variation-image-options">
+                                            <?php foreach ($variationItemsSorted as $vp): ?>
+                                                <?php
+
+                                                $vpId    = (int) ($vp['product_id'] ?? 0);
+                                                $vpAttrs = $vp['variation_attributes'] ?? [];
+                                                uasort($vpAttrs, static function ($a, $b) {
+                                                    $aName = mb_strtolower((string) ($a['name'] ?? ''));
+                                                    $bName = mb_strtolower((string) ($b['name'] ?? ''));
+
+                                                    return strcmp($aName, $bName);
+                                                });
+
+                                                $tooltipLines = [];
+                                                foreach ($vpAttrs as $attr) {
+                                                    $attrName = trim((string) ($attr['name'] ?? ''));
+                                                    $attrVal  = trim((string) ($attr['value_text'] ?? ''));
+                                                    if ($attrName === '' || $attrVal === '') {
+                                                        continue;
+                                                    }
+
+                                                    $tooltipLines[] = mb_strtolower($attrName) . ': ' . $attrVal;
+                                                }
+                                                $tooltipText = implode("\n", $tooltipLines);
+
+                                                $thumbClass = 'css-variation-image-option';
+                                                if ($vpId === $currentProductId) {
+                                                    $thumbClass .= ' is-current';
+                                                } elseif ((int) ($vp['nalichnost'] ?? 0) <= 0) {
+                                                    $thumbClass .= ' is-out';
+                                                }
+                                                $thumbSrc = !empty($vp['image']) ? route_to('ResizeImage-thumb') . '?img=' . $vp['image'] : ($_ENV['app.noImage'] ?? '');
+                                                ?>
+                                                <a
+                                                    href="<?= site_url('product/' . $vpId) ?>"
+                                                    class="<?= $thumbClass ?>"
+                                                    data-variation-tooltip="<?= esc($tooltipText, 'attr') ?>">
+                                                    <span class="css-variation-image-frame">
+                                                        <img src="<?= $thumbSrc ?>" alt="<?= esc($vp['product_name'] ?? 'Вариация') ?>">
+                                                    </span>
+                                                </a>
+    <?php endforeach; ?>
+                                        </div>
+                                    </section>
+                                <?php endif; ?>
 
 <?php if (!empty($product -> short_description)): ?>
                                     <div class="my-2">
                                         <span>Кратко описание:</span>
                                         <br>
-    <?= $product -> short_description ?>
+                                    <?= $product -> short_description ?>
                                     </div>
-                                <?php endif ?>
+<?php endif ?>
 
                                 <!-- <div class="mb-2">
                                         <a class="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
@@ -634,11 +526,11 @@ if (!empty($variationItems)):
                                     <div class="<?= ISMOBILE ? '' : 'mb-4 mr-6' ?>">
                                         <div class="d-flex align-items-start flex-column <?= ISMOBILE ? 'justify-content-around' : '' ?>">
                                             <!-- Показване на новата цена -->
-<ins class="font-size-36 text-decoration-none fw-bold mr-4 <?= $_percent !== null ? 'text-danger' : '' ?>">
+                                            <ins class="font-size-36 text-decoration-none fw-bold mr-4 <?= $_percent !== null ? 'text-danger' : '' ?>">
 
-<?= preg_replace('/\.([0-9]*)/', '<sup>.$1</sup>', number_format($_price, 2)) ?>
+                                                <?= preg_replace('/\.([0-9]*)/', '<sup>.$1</sup>', number_format($_price, 2)) ?>
                                                 <small class="font-size-20 fw-bold"><?= get_valuta() ?></small>
-                                                <?= '/ ' . priceToEur2($_price) ?>
+<?= '/ ' . priceToEur2($_price) ?>
                                             </ins>
 
                                             <!-- Показване на старата цена -->
@@ -648,14 +540,18 @@ if (!empty($variationItems)):
                                                     <small><?= get_valuta() ?></small>
                                                     <small class="ml-1">(- <?= $_percent ?? '' ?> %)</small>
                                                 </div>
-                                            <?php endif ?>
-                                            <div class="vat-status">Цените са <?= $productPriceLevel == 'cenaKKC' ? 'с' : 'без' ?> ДДС</div>
+<?php endif ?>
+                                        </div>
+
+                                        <!--  дали цената е с/без ДДС-->
+                                        <div class="mb-2 small font-weight-bold badge badge-success">
+<?= !empty($settingsJson -> prices_with_dds) ? 'Цените са с ДДС' : 'Цените са без ДДС' ?>
                                         </div>
                                     </div>
 
-                                            <?php if ($customConfig -> btn['showCart']): ?>
+                                        <?php if ($customConfig -> btn['showCart']): ?>
                                         <div class="d-md-flex align-items-end mb-3 <?= ISMOBILE ? 'w-100 mt-3' : 'w-40' ?>">
-    <?php $_isPrice = $_price ?>
+                                            <?php $_isPrice = $_price ?>
 
     <?php if (!empty($_isPrice) && $product -> nalichnost > 0): ?>
                                                 <div class="w-100">
@@ -695,14 +591,14 @@ if (!empty($variationItems)):
                                                         </a>
                                                     </div>
                                                 </div>
-    <?php endif ?>
+                                        <?php endif ?>
                                         </div>
 <?php endif ?>
                                 </div>
 
                                 <!-- Бърза поръчка ///////////////////////////////////// -->
                                 <!-- --------------------------------------------------- -->
-                                    <?php if ($product -> nalichnost > 0 && $customConfig -> isVisible['fastOrder']): ?>
+<?php if ($product -> nalichnost > 0 && $customConfig -> isVisible['fastOrder']): ?>
                                     <section class="<?= ISMOBILE ? 'text-center mb-4' : 'd-flex justify-content-start mb-4' ?>">
                                         <button id="btn_fast_order" type="button" class="<?= ISMOBILE ? 'w-100 mb-4' : 'w-50' ?> btn btn-mega p-1 css-btn-secondary-v2 fast-order-trigger">БЪРЗА ПОРЪЧКА</button>
 
@@ -760,7 +656,7 @@ if (!empty($variationItems)):
 
                                                 <div class="">
                                                     <h6>Коментар към поръчката (не е задължително)</h6>
-                                                   <input class="form-control fast-order-input" type="text" name="belezka" autocomplete="off">
+                                                    <input class="form-control fast-order-input" type="text" name="belezka" autocomplete="off">
                                                 </div>
 
                                                 <div class="mt-3">
@@ -773,7 +669,7 @@ if (!empty($variationItems)):
                                                     <a href="https://portal.testmarketbg.com/privacy-data" target="_blank" rel="noopener noreferrer" class="text-red">Съгласяване с политика за поверителност</a>
                                                 </div>
 
-                                             <div class="mt-4">
+                                                <div class="mt-4">
                                                     <button class="fast-order-submit w-100" type="submit">Поръчай сега</button>
                                                 </div>
 
@@ -837,7 +733,7 @@ if (!empty($variationItems)):
                                         <span>Тегло:</span>
                                         <b><?= $product -> teglo ?> кг.</b>
                                     </div>
-                                <?php endif ?>
+<?php endif ?>
 
                                 <div class="d-md-flex align-items-center">
 <?php if (isset($product -> img_path)) : ?>
@@ -846,21 +742,22 @@ if (!empty($variationItems)):
                                                 <img class="lazy img-fluid" src="<?= base_url($product -> img_path) ?>" alt="...">
                                             </a>
                                         </figure>
-                                    <?php endif; ?>
+<?php endif; ?>
                                 </div>
                             </div>
 
                             <div class="border-bottom mb-3 pb-md-1 pb-3">
                             </div>
 
-<?php
+                            <?php
+
 // Текущият URL
-$currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http");
-$currentUrl .= "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                            $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http");
+                            $currentUrl .= "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 // Текст за споделяне (по желание)
-$shareText = "Виж този продукт!";
-?>
+                            $shareText = "Виж този продукт!";
+                            ?>
 
                             <!-- Контейнер с заглавие и бутони -->
                             <div class="product-share d-flex justify-content-start align-items-center flex-wrap mb-4">
@@ -919,31 +816,32 @@ $shareText = "Виж този продукт!";
 
                             <div class="tab-content">
                                 <div id="Description" class="tab-pane fade active show pt-1" role="tabpanel">
-                                    <?= $product -> description ?>
+<?= $product -> description ?>
                                 </div>
 
                                 <div id="Specification" class="tab-pane fade pt-1" role="tabpanel">
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <tbody>
-<?php
-$_prodChar = !empty($productCharacteristics) ? array_column($productCharacteristics, null, 'category_characteristic_id') : [];
+                                                <?php
 
-$_sizeArr = sizeof($categoryAttributes); // размер на масива
-foreach ($categoryAttributes as $k => $ca):
-    $_cssClass      = ($k === 0 || $k === $_sizeArr - 1) ? 'hrv' : '';
-    $_categoryValue = $ca['category_characteristic_value'] ?? '';
-    $_catCharId     = $ca['category_characteristic_id'];
-    $_prodCharValue = $_prodChar[$_catCharId]['product_characteristic_text'] ?? '';
-    if (empty($_prodCharValue)) {
-        continue;
-    }
-    ?>
+                                                $_prodChar = !empty($productCharacteristics) ? array_column($productCharacteristics, null, 'category_characteristic_id') : [];
+
+                                                $_sizeArr = sizeof($categoryAttributes); // размер на масива
+                                                foreach ($categoryAttributes as $k => $ca):
+                                                    $_cssClass      = ($k === 0 || $k === $_sizeArr - 1) ? 'hrv' : '';
+                                                    $_categoryValue = $ca['category_characteristic_value'] ?? '';
+                                                    $_catCharId     = $ca['category_characteristic_id'];
+                                                    $_prodCharValue = $_prodChar[$_catCharId]['product_characteristic_text'] ?? '';
+                                                    if (empty($_prodCharValue)) {
+                                                        continue;
+                                                    }
+                                                    ?>
                                                     <tr>
                                                         <td class="col-5 px-4 px-xl-5 border-top-0 border-bottom2 border-end <?= $_cssClass ?>"><?= $_categoryValue ?></td>
                                                         <td class="border-top-0 border-bottom2"><?= $_prodCharValue ?></td>
                                                     </tr>
-                                                <?php endforeach; ?>
+<?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -1005,16 +903,16 @@ foreach ($categoryAttributes as $k => $ca):
                         data-slides-scroll="5"
                         data-responsive='[{"breakpoint": 1400, "settings": { "slidesToShow": 4, "slidesToScroll": 4 }}, {"breakpoint": 1200, "settings": { "slidesToShow": 4, "slidesToScroll": 2 }}, {"breakpoint": 992, "settings": { "slidesToShow": 3, "slidesToScroll": 2 }}, {"breakpoint": 768, "settings": { "slidesToShow": 2, "slidesToScroll": 2 }}, {"breakpoint": 554, "settings": { "slidesToShow": 1, "slidesToScroll": 1 }}]'
                         >
-    <?php foreach (array_slice($related_products, 0, 10) as $rp): ?>
-        <?php if ((int) ($rp['product_id'] ?? 0) === (int) $product -> product_id) continue; ?>
+                            <?php foreach (array_slice($related_products, 0, 10) as $rp): ?>
+                                <?php if ((int) ($rp['product_id'] ?? 0) === (int) $product -> product_id) continue; ?>
                             <div class="js-slide h-100">
-        <?= $renderProductCard($rp) ?>
+                            <?= $renderProductCard($rp) ?>
                             </div>
-                            <?php endforeach; ?>
+    <?php endforeach; ?>
                     </div>
                 </div>
             </section>
-                        <?php endif; ?>
+<?php endif; ?>
 
         <!-- END RELATED PRODUCTS -->
     </div>
@@ -1030,6 +928,7 @@ foreach ($categoryAttributes as $k => $ca):
 </main><!-- ========== END MAIN CONTENT ========== -->
 
 <?php
+
 echo view("{$_ENV['app.theme']}/layouts/sidebar/VIEW__sidebar-account");  // Account Sidebar Navigation
 echo view("{$_ENV['app.theme']}/layouts/footer/VIEW__footer");
 ?>
